@@ -3213,22 +3213,13 @@ function kitCol(title, rows){ return `<div class="kit-col"><h3>${title}</h3>${ro
 function kitReqList(items){
   return `<ul>${items.map(i => `<li><b>${i.b}</b>${i.skill ? "" : `<div class="side"><span class="tag ${i.need ? "need" : "opt"}">${i.need ? "ต้องมี" : "เลือกได้"}</span></div>`}<span>${i.s}</span></li>`).join("")}</ul>`;
 }
-function downloadCard(c){
-  const k = c.kit, files = k.files || [], notes = k.notes || [];
-  if (!files.length) return "";
-  return `<div class="dlcard" id="dl">
-    <div class="dl-head"><span class="dl-ic">${ICON_DL}</span><div><h3>ไฟล์ที่ต้องดาวน์โหลด</h3><p>ดาวน์โหลดจาก Drive ถ้าได้ไฟล์ .zip ให้ดับเบิลคลิกเพื่อแตกไฟล์ก่อนเริ่ม</p></div></div>
-    <ul class="dl-files">${files.map(f => `<li><div class="dl-info"><b>${f.b}</b>${f.short ? `<span class="dl-short">${f.short}</span>` : ""}</div>${driveBtn(f.url, "ดาวน์โหลด", true)}</li>`).join("")}</ul>
-    ${notes.length ? `<ul class="dl-notes">${notes.map(n => `<li class="${n.indexOf("⚠") === 0 ? "warn" : ""}">${n}</li>`).join("")}</ul>` : ""}
-  </div>`;
-}
 function kitParts(c){
   const k = c.kit, notes = k.notes || [], files = k.files || [];
-  const out = { download: downloadCard(c), tools: "", extra: [], install: "" };
+  const out = { download: "", tools: "", extra: [], install: "" };
   const cols = [];
   if (k.tools) cols.push(kitCol("เครื่องมือ", kitReqList(k.tools)));
   if (k.settings) cols.push(kitCol("Settings &amp; Skills", kitReqList(k.settings)));
-  if (!files.length) cols.push(kitCol("ไฟล์", notes.length ? `<ul>${notes.map(n => `<li class="note${n.indexOf("⚠") === 0 ? " warn" : ""}"><span>${n}</span></li>`).join("")}</ul>` : '<p class="none">ไม่ต้องใช้ไฟล์</p>'));
+  if (!files.length || notes.length) cols.push(kitCol(files.length ? "หมายเหตุ" : "ไฟล์", notes.length ? `<ul>${notes.map(n => `<li class="note${n.indexOf("⚠") === 0 ? " warn" : ""}"><span>${n}</span></li>`).join("")}</ul>` : '<p class="none">ไม่ต้องใช้ไฟล์</p>'));
   const n = (k.tools || []).length + (k.settings || []).length;
   if (cols.length) out.tools = dd(`kit-${c.id}`, "เครื่องมือ การตั้งค่า และ Skill", `${n || cols.length} รายการ`, `<div class="kit">${cols.join("")}</div>`);
   if (k.fileTable) {
@@ -3412,7 +3403,7 @@ function renderCase(c){
 
     <section id="kit">
       <h2>Data Preparation</h2>
-      <p class="h2-sub">เตรียมตัว · ดาวน์โหลดไฟล์ แล้วเช็กเครื่องมือกับการตั้งค่า</p>
+      <p class="h2-sub">เตรียมตัว · เช็กเครื่องมือกับการตั้งค่า</p>
       ${kp.download}${kp.tools}${kp.extra.join("")}${kp.install}
     </section>
 
@@ -3528,7 +3519,7 @@ function renderEngine(ex){
     ${learnSection(ex)}
     <section id="kit">
       <h2>Data Preparation</h2>
-      <p class="h2-sub">เตรียมตัว · ดาวน์โหลดไฟล์ แล้วเช็กเครื่องมือกับการตั้งค่า</p>
+      <p class="h2-sub">เตรียมตัว · เช็กเครื่องมือกับการตั้งค่า</p>
       ${kp.download}${kp.tools}${kp.extra.join("")}${kp.install}
     </section>
     ${CASE_FOOT}`;
