@@ -370,10 +370,14 @@ a.ex:active{transform:translateY(0)}
 .how ol li{counter-increment:h;display:grid;grid-template-columns:24px 1fr;gap:10px;padding:6px 0;font-size:14.5px;line-height:1.6}
 .how ol li::before{content:counter(h);display:grid;place-items:center;width:22px;height:22px;margin-top:1px;border-radius:50%;border:1.5px solid var(--ink-soft);font-size:12px;font-weight:600;color:var(--ink-soft)}
 .how .install{margin-top:0}
-.how-p{margin:0;font-size:14.5px}
+.how-p{margin:0;font-size:14.5px;overflow-wrap:anywhere}
 .sp-panel.inst{margin-top:14px}
 .sp-install{grid-column:1/-1}
 .sp-wide{grid-column:1/-1}
+.os-pick{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:14px;color:var(--ink-soft)}
+[data-os-panel][hidden]{display:none}
+button.dl{border:0;cursor:pointer;font-family:inherit}
+.how ol+.sp-top{margin-top:10px}
 .sp-install>h3{margin-bottom:12px}
 .sp-install>h3 small{font-weight:400;font-size:13px;color:var(--ink-soft);margin-left:8px}
 .how-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
@@ -2788,7 +2792,7 @@ const CASES = [
   "id": "audit-1",
   "tier": "grid",
   "group": "audit",
-  "order": 1,
+  "order": 5,
   "code": "Audit",
   "title": "Excel to Skill",
   "titleTh": "สอน AI อ่าน Excel ของเรา แล้วเก็บวิธีนั้นเป็น Skill",
@@ -3016,7 +3020,7 @@ const SKILLS = [
   { b:"kode-thai", s:"ตรวจและขัดภาษาไทยซ้ำๆ จนไม่มีจุดให้แก้ ต้องติดตั้งคู่กับ kien-thai" },
   { b:"skill-creator", s:"ช่วยสร้าง Skill ของเราเอง ใน Cowork มีให้อยู่แล้ว จึงต้องติดตั้งเฉพาะตอนใช้ Claude Code" }
 ];
-const WAT_INSTRUCTION = "# Agent Instructions\n\nYou're working inside the **WAT framework** (Workflows, Agents, Tools). This architecture separates concerns so that probabilistic AI handles reasoning while deterministic code handles execution. That separation is what makes this system reliable.\n\n## The WAT Architecture\n\n**Layer 1: Workflows (The Instructions)**\n- Markdown SOPs stored in `workflows/`\n- Each workflow defines the objective, required inputs, which tools to use, expected outputs, and how to handle edge cases\n- Written in plain language, the same way you'd brief someone on your team\n\n**Layer 2: Agents (The Decision-Maker)**\n- This is your role. You're responsible for intelligent coordination.\n- Read the relevant workflow, run tools in the correct sequence, handle failures gracefully, and ask clarifying questions when needed\n- You connect intent to execution without trying to do everything yourself\n- Example: If you need to pull data from a website, don't attempt it directly. Read `workflows/scrape_website.md`, figure out the required inputs, then execute `tools/scrape_single_site.py`\n\n**Layer 3: Tools (The Execution)**\n- Python scripts in `tools/` that do the actual work\n- API calls, data transformations, file operations, database queries\n- Credentials and API keys are stored in `.env`\n- These scripts are consistent, testable, and fast\n\n**Why this matters:** When AI tries to handle every step directly, accuracy drops fast. If each step is 90% accurate, you're down to 59% success after just five steps. By offloading execution to deterministic scripts, you stay focused on orchestration and decision-making where you excel.\n\n## How to Operate\n\n**1. Look for existing tools first**\nBefore building anything new, check `tools/` based on what your workflow requires. Only create new scripts when nothing exists for that task.\n\n**2. Learn and adapt when things fail**\nWhen you hit an error:\n- Read the full error message and trace\n- Fix the script and retest (if it uses paid API calls or credits, check with me before running again)\n- Document what you learned in the workflow (rate limits, timing quirks, unexpected behavior)\n- Example: You get rate-limited on an API, so you dig into the docs, discover a batch endpoint, refactor the tool to use it, verify it works, then update the workflow so this never happens again\n\n**3. Keep workflows current**\nWorkflows should evolve as you learn. When you find better methods, discover constraints, or encounter recurring issues, update the workflow. That said, don't create or overwrite workflows without asking unless I explicitly tell you to. These are your instructions and need to be preserved and refined, not tossed after one use.\n\n## The Self-Improvement Loop\n\nEvery failure is a chance to make the system stronger:\n1. Identify what broke\n2. Fix the tool\n3. Verify the fix works\n4. Update the workflow with the new approach\n5. Move on with a more robust system\n\nThis loop is how the framework improves over time.\n\n## File Structure\n\n**What goes where:**\n- **Deliverables**: Final outputs go to cloud services (Google Sheets, Slides, etc.) where I can access them directly\n- **Intermediates**: Temporary processing files that can be regenerated\n\n**Directory layout:**\n```\n.tmp/           # Temporary files (scraped data, intermediate exports). Regenerated as needed.\ntools/          # Python scripts for deterministic execution\nworkflows/      # Markdown SOPs defining what to do and how\n.env            # API keys and environment variables (NEVER store secrets anywhere else)\ncredentials.json, token.json  # Google OAuth (gitignored)\n```\n\n**Core principle:** Local files are just for processing. Anything I need to see or use lives in cloud services. Everything in `.tmp/` is disposable.\n\n## Bottom Line\n\nYou sit between what I want (workflows) and what actually gets done (tools). Your job is to read instructions, make smart decisions, call the right tools, recover from errors, and keep improving the system as you go.\n\nStay pragmatic. Stay reliable. Keep learning.";
+const WAT_INSTRUCTION = "# How to work with me\n\nYou are my assistant. We work as a team: I set the goal, you plan and decide, and small programs do the exact work.\n\n## The three parts (WAT)\n- **Workflows** = step-by-step recipes, saved in `workflows/`. Each one says: the goal, what you need from me, the steps, and what a good result looks like.\n- **Agent** = you. Read the recipe, follow the steps in order, fix problems, and ask me when unsure.\n- **Tools** = small programs in `tools/` that do one exact job (move files, calculate, read a spreadsheet). Use an existing one before making a new one.\n\nPasswords and keys live only in the `.env` file. Never show them to me or copy them anywhere.\n\n## Before you start\n1. Read this file, then `memory/MEMORY.md`.\n2. Find the recipe for the task. If there is none, suggest one in 5 lines and wait for my OK.\n\n## Ask me first before\n- deleting or replacing files\n- anything that costs money\n- sending anything to other people\n- installing software\n\nNever make up facts or numbers. If something is missing, tell me.\nKeep answers short: the result first, details only if I ask.\n\n## Memory (your notebook)\n- `memory/MEMORY.md` is the table of contents: one line per note.\n- One note per fact: about me, my preferences, decisions, lessons.\n- Write a note when I correct you, approve an approach, or make a decision. Update the old note instead of adding a copy.\n- Don't note what is already visible in the files.\n\n## When something goes wrong\nFind the cause, fix it, test it, then update the recipe or the notebook so it doesn't happen again. Ask me before changing a recipe.\n\n## Folders\n- `workflows/` recipes · `tools/` small programs · `memory/` notebook · `.tmp/` throwaway files · `.env` passwords (private)\n- Finished work goes where I can open it: this folder, Docs, Sheets or Slides.\n\n## About me (I fill this in)\n- My job: [fill in]\n- Language and tone I like: [fill in]\n- What a good result looks like to me: [fill in]";
 const SKILL_INSTALL = "for s in grilling frontend-design kien-thai kode-thai skill-creator; do unzip -o ~/Downloads/$s.zip -d ~/.claude/skills/; done";
 const PRECHECK = [
   { b:"ล็อกอิน Claude Desktop", s:"ต้องใช้แพลน Pro ขึ้นไป เพราะ Cowork ใช้กับแพลนฟรีไม่ได้" },
@@ -3082,7 +3086,7 @@ function caseCard(c){
 }
 const TIER_NOUN = { dots:"exercises", grid:"cases", lines:"workshops" };
 function renderTier(t){
-  const T = TIERS[t], list = CASES.filter(c => c.tier === t && !c.group).sort((a,b) => a.order - b.order);
+  const T = TIERS[t], list = CASES.filter(c => c.tier === t).sort((a,b) => a.order - b.order);
   const mins = list.reduce((n,c) => n + (parseInt(c.minutes, 10) || 0), 0);
   return `<section class="tier tier-${t}" id="tier-${t}">
     <header class="tier-band">
@@ -3120,18 +3124,34 @@ function renderSetup(){
       </div>
       <div class="sp-panel sp-wide">
         <h3><span class="sp-n">2</span>ติดตั้ง Claude Code</h3>
-        <p class="sp-note">ต้องใช้แพลน Pro ขึ้นไป แพลนฟรีใช้ไม่ได้ ทำตามลำดับ 4 ข้อนี้ ข้อ 3 สำหรับ Mac</p>
+        <p class="sp-note">ต้องใช้แพลน Pro ขึ้นไป (แพลนฟรีใช้ไม่ได้) ทำตามลำดับ 4 ข้อนี้ ทำครั้งเดียวจบ ถ้าติดตรงไหนให้ผู้ช่วยสอนช่วยได้เลย</p>
+        <div class="os-pick"><span>คุณใช้เครื่องอะไร</span><div class="seg" role="group" aria-label="เลือกระบบปฏิบัติการ"><button type="button" data-os="mac" aria-pressed="true">Mac</button><button type="button" data-os="win" aria-pressed="false">Windows</button></div></div>
         <div class="how-row">
-        ${howBlock("1 · ดาวน์โหลดและติดตั้ง Claude Desktop", "แอปเดียวกับที่ล็อกอินในข้อ 1", `<p class="how-p">ดาวน์โหลดที่ code.claude.com/docs/en/desktop-quickstart ติดตั้งแล้วล็อกอินด้วยบัญชีแพลน Pro ขึ้นไป</p>`)}
-        ${howBlock("2 · กดแท็บ Code", "ไม่ต้องติดตั้ง Node.js หรือ CLI", `<p class="how-p">กดแท็บ Code ที่แถบด้านซ้ายบน เลือก Local แล้วกด Open folder… เลือกโฟลเดอร์ที่จะทำงาน</p>`)}
+        ${howBlock("1 · ติดตั้งแอป Claude Desktop", "ใช้ได้ทั้ง Mac และ Windows", `<p class="how-p">ดาวน์โหลดที่ code.claude.com/docs/en/desktop-quickstart ติดตั้งแล้วล็อกอินด้วยบัญชีแพลน Pro ขึ้นไป</p>`)}
+        ${howBlock("2 · เปิดแท็บ Code", "ไม่ต้องติดตั้งอะไรเพิ่ม", `<p class="how-p">กดแท็บ Code ที่เมนูซ้ายบน เลือก Local แล้วกด Open folder… เลือกโฟลเดอร์ที่จะทำงาน (สร้างโฟลเดอร์ใหม่ที่ว่างๆ ไว้ก่อนก็ได้)</p>`)}
         </div>
-        ${howBlock("3 · ลง Homebrew และ Python", "เฉพาะ Mac · ทำใน Terminal", `<p class="how-p">เปิดแอป Terminal (กด Cmd + Space แล้วพิมพ์ Terminal) วางคำสั่งแรก ระบบจะถามรหัสผ่านเครื่อง ตอนพิมพ์จะไม่เห็นตัวอักษร พิมพ์แล้วกด Enter รอจนจบ</p>`
-          + installBlock('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"', "ก. Homebrew · วางใน Terminal")
-          + `<p class="how-p">ตอนจบ ถ้า Homebrew แสดงหัวข้อ Next steps ให้คัดลอกคำสั่งในหัวข้อนั้นไปวางต่อ แล้วค่อยลง Python</p>`
-          + installBlock("brew install python", "ข. Python · วางใน Terminal")
-          + installBlock("python3 --version", "ค. เช็ก · ถ้าขึ้นเลขเวอร์ชัน แปลว่าเสร็จ"))}
-        ${howBlock("4 · ใส่ WAT Framework instruction", "ทำครั้งเดียว", `<p class="how-p">เปิด Settings ของแอป Claude Desktop หาช่อง Personal preferences (บางเวอร์ชันชื่อ Instructions for Claude) แล้ววางข้อความนี้ทั้งก้อน</p>`
-          + dd("wat", "ข้อความ WAT Framework", "คลิกเพื่อดูและคัดลอก", installBlock(WAT_INSTRUCTION, "คัดลอกทั้งก้อนไปวาง")))}
+        ${howBlock("3 · ลงโปรแกรมช่วยเสริมชื่อ Python", "ลงครั้งเดียว ไม่ต้องรู้จักก็ใช้ได้", `<p class="how-p">Python เป็นโปรแกรมที่ Claude ใช้ทำงานบางอย่างแทนเรา เช่น จัดไฟล์หรือคำนวณตัวเลข เราไม่ต้องใช้เอง แค่ลงไว้ให้ Claude หยิบใช้ ขั้นนี้ทำโดยการ <b>พิมพ์คำสั่งในหน้าต่างพิมพ์คำสั่ง</b> ซึ่งแค่คัดลอกกับวางตามที่เห็นด้านล่างก็พอ</p>
+          <div data-os-panel="mac"><p class="how-p"><b>ก่อนอื่น เปิดหน้าต่างพิมพ์คำสั่ง</b> กด Cmd + Space พิมพ์คำว่า Terminal แล้วกด Enter จะได้หน้าต่างสีขาวหรือดำที่ใช้พิมพ์คำสั่ง</p>
+          <p class="how-p">ข้อ ก. ติดตั้ง Homebrew ซึ่งเป็น "ร้านแอปของ Mac" ที่ใช้ลงโปรแกรมต่อได้ คัดลอกคำสั่งไปวาง กด Enter ระบบจะถามรหัสผ่านเครื่อง ตอนพิมพ์จะไม่เห็นตัวอักษรขึ้น ไม่ใช่ว่าพิมพ์ไม่ติด พิมพ์ให้ครบแล้วกด Enter ตัวหนังสือจะขึ้นเยอะมาก รอจนหยุด</p>`
+          + installBlock('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"', "ก. ติดตั้ง Homebrew · วางในหน้าต่างพิมพ์คำสั่ง")
+          + `<p class="how-p">พอจบ ถ้ามีหัวข้อ Next steps ให้คัดลอกบรรทัดคำสั่งใต้หัวข้อนั้นไปวางต่อ แล้วกด Enter จากนั้นค่อยทำข้อ ข.</p>`
+          + installBlock("brew install python", "ข. ติดตั้ง Python · วางในหน้าต่างพิมพ์คำสั่ง")
+          + installBlock("python3 --version", "ค. เช็กว่าสำเร็จ · ถ้าขึ้นว่า Python 3 ตามด้วยตัวเลข แปลว่าเสร็จแล้ว")
+          + `</div><div data-os-panel="win"><p class="how-p"><b>ก่อนอื่น เปิดหน้าต่างพิมพ์คำสั่ง</b> กดปุ่ม Windows พิมพ์คำว่า PowerShell แล้วกด Enter จะได้หน้าต่างสีน้ำเงินที่ใช้พิมพ์คำสั่ง</p>
+          <p class="how-p">ข้อ ก. ติดตั้ง Python คัดลอกคำสั่งไปวาง แล้วกด Enter ถ้าระบบถามให้ยืนยัน (Y/N) ให้พิมพ์ Y แล้วกด Enter รอจนหยุด</p>`
+          + installBlock("winget install Python.Python.3.12", "ก. ติดตั้ง Python · วางในหน้าต่าง PowerShell")
+          + `<p class="how-p">เสร็จแล้วปิดหน้าต่างนี้ แล้วเปิดใหม่อีกครั้งก่อนเช็ก</p>`
+          + installBlock("python --version", "ข. เช็กว่าสำเร็จ · ถ้าขึ้นว่า Python ตามด้วยตัวเลข แปลว่าเสร็จแล้ว")
+          + `<p class="how-p">ถ้ามีหน้าต่าง Microsoft Store เด้งขึ้นมาแทน แปลว่ายังไม่ได้ลง ให้กลับไปทำข้อ ก. ใหม่</p>`
+          + `</div>`)}
+        ${howBlock("4 · ใส่ “คู่มือการทำงาน” ให้ Claude (ไฟล์ CLAUDE.md)", "ทำครั้งเดียว · ใช้ได้ทั้ง Mac และ Windows", `<p class="how-p">ไฟล์นี้เหมือนใบสั่งงานที่ติดไว้ในโฟลเดอร์ Claude จะอ่านทุกครั้งที่เริ่มงาน ทำให้ทำงานตามวิธีของเราและจำเราได้ ไม่ต้องเข้าใจทุกบรรทัดตอนนี้ เราจะค่อยๆ เติมกันในคลาส ข้อความในไฟล์เป็นภาษาอังกฤษสั้นๆ เพื่อให้ Claude อ่านได้เร็วและประหยัดโควตา</p>
+          <ol><li><span>กดปุ่มด้านล่างเพื่อดาวน์โหลดไฟล์ แล้วย้ายไฟล์ CLAUDE.md ไปไว้ในโฟลเดอร์ที่เปิดในแท็บ Code</span></li>
+          <li><span>เปิดไฟล์ด้วยโปรแกรมจดข้อความ แล้วกรอกหัวข้อ "About me" ด้านล่างสุด 3 บรรทัด (ตอนนี้เป็น [fill in]) เช่น งานของเรา ภาษาที่ชอบ และผลงานแบบไหนที่เราชอบ</span></li>
+          <li><span>กลับไปพิมพ์ในแท็บ Code ว่า: <b>ช่วยสร้างโฟลเดอร์ชื่อ workflows, tools และ memory ในโฟลเดอร์นี้ให้หน่อย</b></span></li></ol>
+          <p class="how-p">3 โฟลเดอร์นี้คืออะไร: <b>workflows</b> = สูตรขั้นตอนการทำงานที่เก็บไว้ใช้ซ้ำ · <b>tools</b> = โปรแกรมเล็กๆ ที่ Claude ใช้ทำงานเฉพาะอย่าง · <b>memory</b> = สมุดจดของ Claude ไว้จำสิ่งที่เราสอนและตกลงกัน</p>
+          <div class="sp-top"><button type="button" class="dl big" data-dl="wat">${ICON_DL}<span>ดาวน์โหลด CLAUDE.md</span></button></div>`
+          + dd("wat", "อยากดูข้อความในไฟล์", "หรือคัดลอกไปวางเอง", installBlock(WAT_INSTRUCTION, "คัดลอกทั้งก้อนไปวางในไฟล์ CLAUDE.md")))}
+        ${dd("cli", "ข้ามได้: อยากใช้ Claude Code ในหน้าต่างพิมพ์คำสั่งแทนแอป?", "ไม่ต้องทำในคลาส", `<div data-os-panel="mac">` + installBlock("curl -fsSL https://claude.ai/install.sh | bash", "Mac · วางในหน้าต่าง Terminal") + `</div><div data-os-panel="win">` + installBlock("irm https://claude.ai/install.ps1 | iex", "Windows · วางในหน้าต่าง PowerShell") + `</div>` + installBlock("claude --version", "เช็กว่าสำเร็จ · ถ้าขึ้นตัวเลข แปลว่าเสร็จแล้ว จากนั้นพิมพ์ claude เพื่อล็อกอิน"))}
       </div>
       <div class="sp-panel skillpack sp-wide">
         <h3><span class="sp-n">3</span>ติดตั้ง Starter Skill Pack <span class="tag opt">Optional</span></h3>
@@ -3168,6 +3188,24 @@ function renderHub(){
     <p class="foot">© 2026 Co-Thinking with AI · All rights reserved</p>`;
   renderSide(null, [{ id:"sec-setup", label:"Setup" }, { id:"sec-gloss", label:"คำที่ควรรู้" }, ...["dots","grid","lines"].map(t => ({ id:"tier-" + t, label:TIERS[t].en }))]);
   wireCopy(app);
+  wireSetup(app);
+}
+function wireSetup(root){
+  const seg = root.querySelector(".os-pick .seg"); if (!seg) return;
+  const set = os => {
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.os === os)));
+    root.querySelectorAll("[data-os-panel]").forEach(p => { p.hidden = p.dataset.osPanel !== os; });
+    try { localStorage.setItem("wh-os", os); } catch (e) {}
+  };
+  seg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => set(b.dataset.os)));
+  let os = null; try { os = localStorage.getItem("wh-os"); } catch (e) {}
+  set(os || (/^Win/.test(navigator.platform || "") ? "win" : "mac"));
+  root.querySelectorAll("button[data-dl]").forEach(b => b.addEventListener("click", () => {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([WAT_INSTRUCTION], { type: "text/markdown;charset=utf-8" }));
+    a.download = "CLAUDE.md"; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }));
 }
 
 /* ---------- case page ---------- */
