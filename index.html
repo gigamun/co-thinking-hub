@@ -373,6 +373,7 @@ a.ex:active{transform:translateY(0)}
 .how-p{margin:0;font-size:14.5px}
 .sp-panel.inst{margin-top:14px}
 .sp-install{grid-column:1/-1}
+.sp-wide{grid-column:1/-1}
 .sp-install>h3{margin-bottom:12px}
 .sp-install>h3 small{font-weight:400;font-size:13px;color:var(--ink-soft);margin-left:8px}
 .how-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
@@ -2782,6 +2783,210 @@ const CASES = [
     "step": 5
    }
   ]
+ },
+ {
+  "id": "audit-1",
+  "tier": "grid",
+  "group": "audit",
+  "order": 1,
+  "code": "Audit",
+  "title": "Excel to Skill",
+  "titleTh": "สอน AI อ่าน Excel ของเรา แล้วเก็บวิธีนั้นเป็น Skill",
+  "minutes": "40",
+  "mode": "hands-on",
+  "tools": [
+   "Claude Cowork",
+   "Skill skill-creator"
+  ],
+  "lede": "คุณได้ Excel ใหญ่ไฟล์เดียวของบริษัทสมมติ ในไฟล์มีทั้งชีตที่ต้องใช้และชีตที่ไม่เกี่ยวเลย คุณจะให้ Claude สำรวจก่อน แล้วสอนว่าอะไรสำคัญ อะไรทิ้ง และจัดกลุ่มแบบไหน จากนั้นเก็บวิธีนั้นเป็น Skill แล้วลองกับไฟล์ใหม่ที่หน้าตาไม่เหมือนเดิม สอนครั้งเดียวใช้ซ้ำได้",
+  "learn": [
+   "<b>ให้ Claude สำรวจก่อนลงมือ</b> ไฟล์ใหญ่ที่รกต้องรู้ก่อนว่ามีอะไรบ้าง ค่อยตัดสินใจว่าจะใช้ส่วนไหน<span class=\"use\">ใช้กับงานแบบนี้ได้: รับไฟล์จากลูกค้าที่ไม่รู้ว่ามีอะไรข้างใน · ไฟล์ export จากระบบที่มีหลายชีต</span>",
+   "<b>สอน Claude ว่าอะไรสำคัญ</b> ความรู้ว่าส่วนไหนใช้ ส่วนไหนทิ้ง อยู่ในหัวเรา Claude ไม่รู้ถ้าเราไม่บอก นี่คือแก่นของ Skill<span class=\"use\">ใช้กับงานแบบนี้ได้: คัดข้อมูลจากรายงานยาวๆ · จัดหมวดรายการตามเกณฑ์ของทีม</span>",
+   "<b>ตรวจผลด้วยวิธีง่ายที่สุด</b> ยอดรวมหลังจัดกลุ่มต้องเท่ากับยอดก่อนจัด ถ้าไม่เท่าให้ Claude บอกส่วนต่าง ไม่แก้เอง<span class=\"use\">ใช้กับงานแบบนี้ได้: สรุปยอดจากหลายไฟล์ · ตรวจรายงานก่อนส่งต่อ</span>",
+   "<b>เก็บวิธีทำเป็น Skill แล้วใช้ซ้ำ</b> ทำมือหนึ่งรอบให้ถูก แล้วให้ skill-creator เก็บไว้ ครั้งหน้าพิมพ์คำสั่งเดียว<span class=\"use\">ใช้กับงานแบบนี้ได้: งานจัดกลุ่มที่ต้องทำทุกเดือน · งานตรวจที่ใช้เกณฑ์เดิมซ้ำ</span>",
+   "<b>ทดสอบกับไฟล์ที่หน้าตาต่างจากเดิม</b> ไฟล์ใหม่ที่ชื่อคอลัมน์ไม่เหมือนเดิม หรือมีรายการที่ไม่เคยเจอ คือจุดที่ Skill ส่วนใหญ่พัง และเป็นจุดที่เรียนรู้มากที่สุด<span class=\"use\">ใช้กับงานแบบนี้ได้: ไฟล์งวดใหม่ที่ระบบเปลี่ยนรูปแบบ · ไฟล์จากลูกค้ารายใหม่</span>"
+  ],
+  "deliver": [
+   "Skill expense-grouping ที่บันทึกแล้ว และสรุปค่าใช้จ่ายจัดกลุ่ม 2 ชุด (ไตรมาส 1 ทำมือ, ไตรมาส 2 ด้วยคำสั่งเดียว)"
+  ],
+  "kit": {
+   "tools": [
+    {
+     "b": "Claude Desktop → แท็บ Cowork",
+     "s": "ต้องใช้แพลน Pro ขึ้นไป",
+     "need": true
+    }
+   ],
+   "settings": [
+    {
+     "b": "เปิด Code execution",
+     "s": "Settings → Capabilities → Code execution and file creation",
+     "need": true
+    },
+    {
+     "b": "Skill",
+     "s": "skill-creator มีอยู่แล้วใน Cowork",
+     "need": true,
+     "skill": true
+    }
+   ],
+   "files": [
+    {
+     "b": "ชุดไฟล์เคส Excel to Skill",
+     "path": "Case/Case-5-Excel-Skill/",
+     "url": "",
+     "has": [
+      "RAW-Input/gl-extract-q1 (Excel ไตรมาส 1 ของบริษัทสมมติ 6 ชีต: บัญชีแยกประเภท เงินเดือน โหวตมื้อเที่ยง บันทึกประชุม สำเนาเก่า และหน้าอ่านก่อน)",
+      "Round-2/gl-extract-q2 (Excel ไตรมาส 2 ที่ชื่อคอลัมน์และลำดับไม่เหมือนไตรมาส 1 ใช้ในขั้น 5)"
+     ],
+     "short": "gl-extract-q1.xlsx · gl-extract-q2.xlsx (ข้อมูลสมมติทั้งหมด)"
+    }
+   ],
+   "notes": [
+    "ชื่อบริษัทและตัวเลขทั้งหมดเป็นข้อมูลสมมติ"
+   ]
+  },
+  "steps": [
+   {
+    "title": "เปิดโฟลเดอร์ใน Cowork",
+    "setup": true,
+    "objective": "ให้ Claude เห็นไฟล์ Excel ไตรมาส 1",
+    "todo": [
+     "ดาวน์โหลดโฟลเดอร์ Case-5-Excel-Skill แล้วแตกไฟล์",
+     "เปิด Claude Desktop → แท็บ Cowork → Work in a folder → เลือกโฟลเดอร์ Case-5-Excel-Skill"
+    ],
+    "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ Excel ใน RAW-Input"
+   },
+   {
+    "title": "ให้ Claude สำรวจไฟล์",
+    "objective": "รู้ว่าในไฟล์มีอะไรบ้าง ก่อนตัดสินใจว่าจะใช้ส่วนไหน",
+    "expected": "ได้รายการ 6 ชีต Claude แยกได้ว่าชีตบัญชีแยกประเภทเป็นข้อมูลหลัก และชี้ว่ามีชีตสำเนาเก่าที่ซ้ำกับชีตหลัก",
+    "tip": "ถ้า Claude ไม่สังเกตสำเนาเก่า ให้ถามว่า \"ชีตไหนซ้ำกัน และต่างกันตรงไหน\" ตัวอย่างนี้ทำให้เห็นว่า Claude ไม่รู้เองว่าชีตไหนคือของจริง",
+    "prompt": {
+     "en": "Open the Excel file in RAW-Input and scan every sheet.\nFor each sheet, tell me in one line: what it is, how many rows it has, and whether it looks like real data or something unrelated.\nPoint out anything that looks duplicated, outdated, or odd.\nDon't change, move or create anything yet.",
+     "th": "เปิดไฟล์ Excel ใน RAW-Input แล้วสำรวจทุกชีต\nของแต่ละชีต บอกฉันบรรทัดเดียว: ชีตนี้คืออะไร มีกี่แถว และดูเป็นข้อมูลจริงหรือเป็นเรื่องอื่นที่ไม่เกี่ยว\nบอกด้วยถ้ามีอะไรที่ซ้ำ เก่า หรือดูแปลก\nตอนนี้ยังไม่ต้องแก้ ย้าย หรือสร้างอะไรทั้งนั้น"
+    }
+   },
+   {
+    "title": "สอน Claude ว่าอะไรสำคัญ",
+    "objective": "บอกว่าเอาส่วนไหน ทิ้งส่วนไหน และจัดกลุ่มแบบไหน (ขั้นนี้คือสิ่งที่ Skill จะจำ)",
+    "expected": "Claude แสดงตารางบัญชี → กลุ่มให้ตรวจก่อน หลังอนุมัติได้ไฟล์ expense-summary.xlsx ใน outputs/",
+    "tip": "กลุ่มทั้ง 5 เป็นตัวอย่าง เปลี่ยนเป็นกลุ่มที่ทีมของคุณใช้จริงได้ ยิ่งเป็นเกณฑ์ของคุณเอง Skill ยิ่งมีค่า",
+    "prompt": {
+     "en": "Here is what matters in this file:\n- Use only the GL sheet. Ignore every other sheet, including the old copy.\n- Keep only the expense lines: accounts whose name starts with \"ค่า\". Ignore cash, receivables, revenue, inventory and payables.\n- Group the expense accounts into 5 groups: Travel, Marketing, Office, Professional fees, Other. Show me which account goes in which group, and wait for my OK.\n- An expense is Debit minus Credit (refunds are credits).\n\nAfter I approve, create \"expense-summary.xlsx\" in a new outputs/ folder with two sheets: a summary (one row per group with the total) and the detail (every expense line with its group).\nNever invent an amount. If an account doesn't fit any group, ask me.",
+     "th": "สิ่งที่สำคัญในไฟล์นี้:\n- ใช้เฉพาะชีต GL ไม่ต้องดูชีตอื่น รวมถึงชีตสำเนาเก่า\n- เอาเฉพาะบรรทัดค่าใช้จ่าย คือบัญชีที่ชื่อขึ้นต้นด้วย \"ค่า\" ไม่เอาเงินสด ลูกหนี้ รายได้ สินค้าคงเหลือ และเจ้าหนี้\n- จัดบัญชีค่าใช้จ่ายเป็น 5 กลุ่ม: Travel, Marketing, Office, Professional fees, Other แสดงให้ดูว่าบัญชีไหนอยู่กลุ่มไหน แล้วรอฉันอนุมัติ\n- ค่าใช้จ่ายคือ เดบิต ลบ เครดิต (รายการคืนเงินอยู่ฝั่งเครดิต)\n\nหลังฉันอนุมัติ ให้สร้างไฟล์ \"expense-summary.xlsx\" ในโฟลเดอร์ใหม่ชื่อ outputs/ มี 2 ชีต คือ สรุป (1 แถวต่อ 1 กลุ่ม พร้อมยอดรวม) และรายละเอียด (ทุกบรรทัดค่าใช้จ่ายพร้อมกลุ่ม)\nห้ามแต่งตัวเลขเอง ถ้ามีบัญชีที่ไม่เข้ากลุ่มไหน ให้ถามฉัน"
+    }
+   },
+   {
+    "title": "ตรวจผลด้วยวิธีง่ายที่สุด",
+    "objective": "เช็กว่ายอดรวมหลังจัดกลุ่มเท่ากับยอดค่าใช้จ่ายใน GL",
+    "expected": "ยอดค่าใช้จ่ายรวมสุทธิ 877,976 บาท ตรงกันทั้งสองฝั่ง",
+    "tip": "ถ้ายอดไม่ตรง ให้บอก Claude ว่าจะแก้ตรงไหน จุดที่แก้คือกติกาที่จะใส่ใน Skill",
+    "prompt": {
+     "en": "Check expense-summary.xlsx against the GL sheet.\nAdd up all expense lines in the GL sheet (Debit minus Credit) and compare with the total of the 5 groups.\nIf they match, say so. If they don't, show me the difference and which lines are missing or counted twice. Don't fix anything yourself.",
+     "th": "ตรวจ expense-summary.xlsx เทียบกับชีต GL\nรวมบรรทัดค่าใช้จ่ายทั้งหมดในชีต GL (เดบิต ลบ เครดิต) แล้วเทียบกับยอดรวมของทั้ง 5 กลุ่ม\nถ้าเท่ากันให้บอกว่าเท่ากัน ถ้าไม่เท่ากันให้แสดงส่วนต่าง และบอกว่าบรรทัดไหนหายหรือนับซ้ำ ห้ามแก้เอง"
+    }
+   },
+   {
+    "title": "เก็บเป็น Skill ด้วย skill-creator",
+    "objective": "เก็บวิธีที่เพิ่งทำไว้ ครั้งหน้าไม่ต้องสอนใหม่",
+    "expected": "Claude แสดง SKILL.md ให้ตรวจ แล้วบันทึกเป็น Skill ชื่อ expense-grouping / เช็กว่าบันทึกแล้ว: พิมพ์ / ในช่องแชทแล้วเห็น expense-grouping หรือเปิด Settings → Capabilities → Skills",
+    "tip": "SKILL.md รอบแรกไม่ต้องสมบูรณ์ ขั้นถัดไปจะได้ปรับอีกรอบ ถ้าหาชื่อไม่เจอ ให้ขอไฟล์ .zip จาก Claude แล้วอัปโหลดที่ Settings → Capabilities → Skills → Upload skill จากนั้นเปิด Chat ใหม่",
+    "prompt": {
+     "en": "Use skill-creator to turn what we just did into a Skill called expense-grouping.\nI'll run it as: /expense-grouping <file name>\n\nThe Skill should:\n1. Read only the sheet that holds the ledger lines. Ignore payroll, notes, polls and old copies. If you can't tell which sheet is the ledger, ask me.\n2. Keep only expense lines (accounts starting with \"ค่า\"). An expense is Debit minus Credit.\n3. Use the 5 groups and the account-to-group list we agreed on. If an account isn't on the list, ask me which group it belongs to. Never guess.\n4. Never include total rows from the file.\n5. Create expense-summary.xlsx in outputs/ (summary sheet + detail sheet). Never overwrite an existing file.\n6. Check that the group totals equal the expense total in the ledger. If not, show the difference and stop.\n7. Include every correction I made in the last steps.\n\nKeep SKILL.md short. Show it to me before saving.",
+     "th": "ใช้ skill-creator เก็บสิ่งที่เพิ่งทำเป็น Skill ชื่อ expense-grouping\nฉันจะเรียกใช้แบบนี้: /expense-grouping <ชื่อไฟล์>\n\nSkill นี้ต้อง:\n1. อ่านเฉพาะชีตที่เป็นรายการบัญชี ไม่ต้องดูเงินเดือน บันทึก โหวต หรือสำเนาเก่า ถ้าดูไม่ออกว่าชีตไหนคือรายการบัญชี ให้ถามฉัน\n2. เอาเฉพาะบรรทัดค่าใช้จ่าย (บัญชีที่ขึ้นต้นด้วย \"ค่า\") ค่าใช้จ่ายคือ เดบิต ลบ เครดิต\n3. ใช้ 5 กลุ่มและรายการบัญชี → กลุ่มที่ตกลงกันไว้ ถ้าเจอบัญชีที่ไม่อยู่ในรายการ ให้ถามฉันว่าอยู่กลุ่มไหน ห้ามเดา\n4. ห้ามนับแถวรวมที่อยู่ในไฟล์\n5. สร้าง expense-summary.xlsx ใน outputs/ (ชีตสรุป + ชีตรายละเอียด) และห้ามเขียนทับไฟล์เดิม\n6. เช็กว่ายอดรวมของกลุ่มเท่ากับยอดค่าใช้จ่ายในรายการบัญชี ถ้าไม่เท่าให้แสดงส่วนต่างแล้วหยุด\n7. ใส่ทุกจุดที่ฉันสั่งแก้ในขั้นก่อนๆ ไว้ด้วย\n\nเขียน SKILL.md ให้สั้น และให้ฉันดูก่อนบันทึก"
+    }
+   },
+   {
+    "title": "ลองกับไฟล์ไตรมาส 2 แล้วปรับ Skill",
+    "objective": "ใช้ Skill กับไฟล์ที่หน้าตาต่างจากเดิม และดูว่า Skill ถามเมื่อเจอสิ่งที่ไม่เคยเจอ",
+    "todo": [
+     "คัดลอกไฟล์จาก Round-2/ ไปไว้ในโฟลเดอร์ที่เปิดอยู่ และเปิด Chat ใหม่ก่อนลอง"
+    ],
+    "expected": "Claude หาชีตรายการบัญชีเจอเองแม้ชื่อคอลัมน์ต่าง ไม่นับแถว \"รวมทั้งหมด\" และถามว่าบัญชี \"ค่ารับรอง\" (บัญชีใหม่ที่ไม่เคยอยู่ในรายการ) ควรอยู่กลุ่มไหน",
+    "tip": "ถ้า Claude จัดค่ารับรองเข้ากลุ่มเอง หรือรวมแถว \"รวมทั้งหมด\" ไปด้วย ให้สั่งแก้ Skill เช่น \"ถ้าเจอบัญชีที่ไม่อยู่ในรายการ ให้ถามก่อนทุกครั้ง\" แล้วลองใหม่",
+    "prompt": {
+     "en": "/expense-grouping gl-extract-q2",
+     "th": "/expense-grouping gl-extract-q2"
+    },
+    "payoff": 2
+   }
+  ],
+  "more": [
+   {
+    "b": "เพิ่มกลุ่มของทีมคุณ",
+    "s": "ลองแก้รายการบัญชี → กลุ่มใน Skill ให้ตรงกับเกณฑ์ที่ทีมใช้จริง"
+   },
+   {
+    "b": "ลองกับไฟล์ของจริง",
+    "s": "ใช้ไฟล์ที่ไม่มีข้อมูลลับ เพื่อดูว่า Skill ต้องปรับตรงไหน"
+   }
+  ],
+  "workflow": [
+   {
+    "who": "claude",
+    "title": "สำรวจทุกชีตของไฟล์",
+    "text": "บอกว่าชีตไหนคืออะไร ยังไม่แก้อะไร",
+    "tools": [
+     "Claude Cowork"
+    ],
+    "step": 1
+   },
+   {
+    "who": "you",
+    "title": "บอกว่าเอาส่วนไหน ทิ้งส่วนไหน จัดกลุ่มแบบไหน",
+    "text": "ความรู้ที่อยู่ในหัวเรา",
+    "step": 2
+   },
+   {
+    "who": "claude",
+    "title": "จัดกลุ่มและสร้างไฟล์สรุป",
+    "text": "รอเราอนุมัติรายการก่อน",
+    "tools": [
+     "Claude Cowork"
+    ],
+    "step": 2
+   },
+   {
+    "who": "you",
+    "title": "เช็กยอดรวมก่อนและหลังจัดกลุ่ม",
+    "text": "ถ้าไม่เท่า จุดที่แก้คือกติกาใน Skill",
+    "step": 3
+   },
+   {
+    "who": "tool",
+    "title": "เก็บวิธีทำเป็น Skill",
+    "text": "skill-creator เขียน SKILL.md ให้",
+    "tools": [
+     "Skill skill-creator"
+    ],
+    "step": 4
+   },
+   {
+    "who": "tool",
+    "title": "รัน /expense-grouping กับไฟล์ใหม่",
+    "text": "คำสั่งเดียว",
+    "tools": [
+     "Skill expense-grouping"
+    ],
+    "step": 5
+   },
+   {
+    "who": "you",
+    "title": "ปรับ Skill เมื่อเจอสิ่งที่ไม่เคยเจอ",
+    "text": "แก้ทีละจุด แล้วลองใหม่",
+    "step": 5
+   }
+  ],
+  "finale": {
+   "h": "สอน AI หนึ่งครั้ง แล้วใช้ซ้ำได้",
+   "items": [
+    "Skill expense-grouping ที่เรียกใช้ได้ด้วยคำสั่งเดียว",
+    "สรุปค่าใช้จ่ายจัดกลุ่ม 2 ชุด ที่ยอดรวมตรงกับต้นทาง",
+    "กติกาที่กัน Claude ไม่ให้เดาบัญชีที่ไม่เคยเจอ"
+   ],
+   "s": "งานไหนต้องสอน AI ซ้ำทุกครั้ง ลองเก็บเป็น Skill ด้วยวิธีเดียวกัน: ทำมือให้ถูกหนึ่งรอบ ตรวจ เก็บเป็น Skill แล้วลองกับไฟล์ที่หน้าตาต่างจากเดิม"
+  }
  }
 ];
 const KIT = { root:"https://drive.google.com/drive/folders/1hy5FPWZd-5Ignn9-ZmWtybPq6UTMxKvD?usp=sharing", dots:"", grid1:"", grid2:"", lines:{ morning:"", deck:"", portfolio:"", retire:"" } };
@@ -2811,6 +3016,7 @@ const SKILLS = [
   { b:"kode-thai", s:"ตรวจและขัดภาษาไทยซ้ำๆ จนไม่มีจุดให้แก้ ต้องติดตั้งคู่กับ kien-thai" },
   { b:"skill-creator", s:"ช่วยสร้าง Skill ของเราเอง ใน Cowork มีให้อยู่แล้ว จึงต้องติดตั้งเฉพาะตอนใช้ Claude Code" }
 ];
+const WAT_INSTRUCTION = "# Agent Instructions\n\nYou're working inside the **WAT framework** (Workflows, Agents, Tools). This architecture separates concerns so that probabilistic AI handles reasoning while deterministic code handles execution. That separation is what makes this system reliable.\n\n## The WAT Architecture\n\n**Layer 1: Workflows (The Instructions)**\n- Markdown SOPs stored in `workflows/`\n- Each workflow defines the objective, required inputs, which tools to use, expected outputs, and how to handle edge cases\n- Written in plain language, the same way you'd brief someone on your team\n\n**Layer 2: Agents (The Decision-Maker)**\n- This is your role. You're responsible for intelligent coordination.\n- Read the relevant workflow, run tools in the correct sequence, handle failures gracefully, and ask clarifying questions when needed\n- You connect intent to execution without trying to do everything yourself\n- Example: If you need to pull data from a website, don't attempt it directly. Read `workflows/scrape_website.md`, figure out the required inputs, then execute `tools/scrape_single_site.py`\n\n**Layer 3: Tools (The Execution)**\n- Python scripts in `tools/` that do the actual work\n- API calls, data transformations, file operations, database queries\n- Credentials and API keys are stored in `.env`\n- These scripts are consistent, testable, and fast\n\n**Why this matters:** When AI tries to handle every step directly, accuracy drops fast. If each step is 90% accurate, you're down to 59% success after just five steps. By offloading execution to deterministic scripts, you stay focused on orchestration and decision-making where you excel.\n\n## How to Operate\n\n**1. Look for existing tools first**\nBefore building anything new, check `tools/` based on what your workflow requires. Only create new scripts when nothing exists for that task.\n\n**2. Learn and adapt when things fail**\nWhen you hit an error:\n- Read the full error message and trace\n- Fix the script and retest (if it uses paid API calls or credits, check with me before running again)\n- Document what you learned in the workflow (rate limits, timing quirks, unexpected behavior)\n- Example: You get rate-limited on an API, so you dig into the docs, discover a batch endpoint, refactor the tool to use it, verify it works, then update the workflow so this never happens again\n\n**3. Keep workflows current**\nWorkflows should evolve as you learn. When you find better methods, discover constraints, or encounter recurring issues, update the workflow. That said, don't create or overwrite workflows without asking unless I explicitly tell you to. These are your instructions and need to be preserved and refined, not tossed after one use.\n\n## The Self-Improvement Loop\n\nEvery failure is a chance to make the system stronger:\n1. Identify what broke\n2. Fix the tool\n3. Verify the fix works\n4. Update the workflow with the new approach\n5. Move on with a more robust system\n\nThis loop is how the framework improves over time.\n\n## File Structure\n\n**What goes where:**\n- **Deliverables**: Final outputs go to cloud services (Google Sheets, Slides, etc.) where I can access them directly\n- **Intermediates**: Temporary processing files that can be regenerated\n\n**Directory layout:**\n```\n.tmp/           # Temporary files (scraped data, intermediate exports). Regenerated as needed.\ntools/          # Python scripts for deterministic execution\nworkflows/      # Markdown SOPs defining what to do and how\n.env            # API keys and environment variables (NEVER store secrets anywhere else)\ncredentials.json, token.json  # Google OAuth (gitignored)\n```\n\n**Core principle:** Local files are just for processing. Anything I need to see or use lives in cloud services. Everything in `.tmp/` is disposable.\n\n## Bottom Line\n\nYou sit between what I want (workflows) and what actually gets done (tools). Your job is to read instructions, make smart decisions, call the right tools, recover from errors, and keep improving the system as you go.\n\nStay pragmatic. Stay reliable. Keep learning.";
 const SKILL_INSTALL = "for s in grilling frontend-design kien-thai kode-thai skill-creator; do unzip -o ~/Downloads/$s.zip -d ~/.claude/skills/; done";
 const PRECHECK = [
   { b:"ล็อกอิน Claude Desktop", s:"ต้องใช้แพลน Pro ขึ้นไป เพราะ Cowork ใช้กับแพลนฟรีไม่ได้" },
@@ -2876,7 +3082,7 @@ function caseCard(c){
 }
 const TIER_NOUN = { dots:"exercises", grid:"cases", lines:"workshops" };
 function renderTier(t){
-  const T = TIERS[t], list = CASES.filter(c => c.tier === t).sort((a,b) => a.order - b.order);
+  const T = TIERS[t], list = CASES.filter(c => c.tier === t && !c.group).sort((a,b) => a.order - b.order);
   const mins = list.reduce((n,c) => n + (parseInt(c.minutes, 10) || 0), 0);
   return `<section class="tier tier-${t}" id="tier-${t}">
     <header class="tier-band">
@@ -2908,17 +3114,32 @@ function renderGlossary(){
 }
 function renderSetup(){
   const panels = `<div class="setup-grid">
-      <div class="sp-panel">
+      <div class="sp-panel sp-wide">
         <h3><span class="sp-n">1</span>เช็กบัญชีและการตั้งค่า</h3>
         <ul class="setup-list">${PRECHECK.map(c => `<li><b>${esc(c.b)}</b>${esc(c.s)}</li>`).join("")}</ul>
       </div>
-      <div class="sp-panel skillpack">
-        <h3><span class="sp-n">2</span>ติดตั้ง Starter Skill Pack</h3>
-        <p class="sp-note">Skill คือชุดขั้นตอนสำเร็จรูปที่ Claude เรียกใช้ได้ เหมือนสูตรอาหารที่เก็บไว้ใช้ซ้ำ</p>
+      <div class="sp-panel sp-wide">
+        <h3><span class="sp-n">2</span>ติดตั้ง Claude Code</h3>
+        <p class="sp-note">ต้องใช้แพลน Pro ขึ้นไป แพลนฟรีใช้ไม่ได้ ทำตามลำดับ 4 ข้อนี้ ข้อ 3 สำหรับ Mac</p>
+        <div class="how-row">
+        ${howBlock("1 · ดาวน์โหลดและติดตั้ง Claude Desktop", "แอปเดียวกับที่ล็อกอินในข้อ 1", `<p class="how-p">ดาวน์โหลดที่ code.claude.com/docs/en/desktop-quickstart ติดตั้งแล้วล็อกอินด้วยบัญชีแพลน Pro ขึ้นไป</p>`)}
+        ${howBlock("2 · กดแท็บ Code", "ไม่ต้องติดตั้ง Node.js หรือ CLI", `<p class="how-p">กดแท็บ Code ที่แถบด้านซ้ายบน เลือก Local แล้วกด Open folder… เลือกโฟลเดอร์ที่จะทำงาน</p>`)}
+        </div>
+        ${howBlock("3 · ลง Homebrew และ Python", "เฉพาะ Mac · ทำใน Terminal", `<p class="how-p">เปิดแอป Terminal (กด Cmd + Space แล้วพิมพ์ Terminal) วางคำสั่งแรก ระบบจะถามรหัสผ่านเครื่อง ตอนพิมพ์จะไม่เห็นตัวอักษร พิมพ์แล้วกด Enter รอจนจบ</p>`
+          + installBlock('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"', "ก. Homebrew · วางใน Terminal")
+          + `<p class="how-p">ตอนจบ ถ้า Homebrew แสดงหัวข้อ Next steps ให้คัดลอกคำสั่งในหัวข้อนั้นไปวางต่อ แล้วค่อยลง Python</p>`
+          + installBlock("brew install python", "ข. Python · วางใน Terminal")
+          + installBlock("python3 --version", "ค. เช็ก · ถ้าขึ้นเลขเวอร์ชัน แปลว่าเสร็จ"))}
+        ${howBlock("4 · ใส่ WAT Framework instruction", "ทำครั้งเดียว", `<p class="how-p">เปิด Settings ของแอป Claude Desktop หาช่อง Personal preferences (บางเวอร์ชันชื่อ Instructions for Claude) แล้ววางข้อความนี้ทั้งก้อน</p>`
+          + dd("wat", "ข้อความ WAT Framework", "คลิกเพื่อดูและคัดลอก", installBlock(WAT_INSTRUCTION, "คัดลอกทั้งก้อนไปวาง")))}
+      </div>
+      <div class="sp-panel skillpack sp-wide">
+        <h3><span class="sp-n">3</span>ติดตั้ง Starter Skill Pack <span class="tag opt">Optional</span></h3>
+        <p class="sp-note">ข้ามได้ ทำทีหลังก็ได้ Skill คือชุดขั้นตอนสำเร็จรูปที่ Claude เรียกใช้ได้ เหมือนสูตรอาหารที่เก็บไว้ใช้ซ้ำ</p>
         <ul class="skills">${SKILLS.map(k => `<li><span class="sk-n">${esc(k.b)}</span><span>${esc(k.s)}</span></li>`).join("")}</ul>
       </div>
       <div class="sp-panel sp-install">
-        <h3>วิธีติดตั้ง Skill <small>เลือกตามเครื่องมือที่ใช้</small></h3>
+        <h3>วิธีติดตั้ง Skill <small>ทำเมื่อจะติดตั้ง Skill · เลือกตามเครื่องมือที่ใช้</small></h3>
         <div class="how-row">
         ${howBlock("Cowork / claude.ai", "อัปโหลดทีละไฟล์", `<ol><li>Settings → Capabilities → เปิด Code execution and file creation</li>
           <li>Settings → Capabilities → Skills → Upload skill</li>
@@ -2929,9 +3150,9 @@ function renderSetup(){
     </div>`;
   return `<section class="setup" id="sec-setup">
     <h2>Setup <span class="tag need">Start here</span></h2>
-    <p class="h2-sub">ทำให้ครบก่อนเริ่มเคสแรก ติดตั้ง Skill ครั้งเดียวก็ใช้ได้ทุกเคส</p>
+    <p class="h2-sub">ทำขั้น 1–2 ให้ครบก่อนเริ่มเคสแรก ขั้น 3 (Skill) ข้ามได้ ติดตั้งทีหลังก็ได้</p>
     <div class="sp-top">${driveBtn(KIT.root, "Resources ทั้งหมด (Google Drive)", true)}</div>
-    ${dd("setup", "วิธีการ Set-up", "2 ขั้นตอน · ทำครั้งเดียว", panels)}
+    ${dd("setup", "วิธีการ Set-up", "3 ขั้นตอน · ขั้น 3 ข้ามได้", panels)}
   </section>`;
 }
 function renderHub(){
@@ -3050,6 +3271,7 @@ const WF_PHASES = {
   "dots-2":[["Upload files, describe the table",1,2],["Merge and calculate",3,3],["Check the numbers",4,4]],
   "dots-3":[["Choose your instructions",1,1],["Save them in Claude",2,2],["Test them",3,4]],
   "grid-1":[["Sort the files",1,2],["Merge into one sheet",3,4],["Build the branded dashboard",5,6],["Save it for next month",7,8]],
+  "audit-1":[["Look first",1,1],["Teach it",2,4],["Save it",5,5],["Reuse it",6,7]],
   "grid-4":[["Prepare the context",1,1],["Do it once by hand",2,3],["Turn it into a Skill",4,5],["Run and improve",6,8]],
   "grid-2":[["Set up and give the task",1,2],["Pull and analyze their ads",3,4],["Find the gaps",5,6]],
   "lines-1":[["Connect and check",1,3],["Build the brief",4,6],["Schedule it for 8:00",7,7]],
@@ -3177,8 +3399,8 @@ function renderSide(c, sub){
   const subList = items => items && items.length ? `<ul class="sd-sub">${items.map(x => `<li><button type="button" data-go="${x.id}" title="${esc(x.label)}">${esc(x.label)}</button></li>`).join("")}</ul>` : "";
   side.innerHTML = `<nav aria-label="เมนู">
     <a href="#home"${c ? "" : ' aria-current="page"'}>หน้าแรก</a>${c ? "" : subList(sub)}
-    ${["dots","grid","lines"].map(t => `<p class="sd-tier tier-${t}">${TIERS[t].en}</p>
-    <ul class="sd-list">${CASES.filter(x => x.tier === t).sort((a, b) => a.order - b.order).map(x => {
+    ${[["dots", TIERS.dots.en], ["grid", TIERS.grid.en], ["lines", TIERS.lines.en], ["audit", "Audit Class"]].map(([t, label]) => `<p class="sd-tier tier-${t === "audit" ? "grid" : t}">${label}</p>
+    <ul class="sd-list">${CASES.filter(x => t === "audit" ? x.group === "audit" : x.tier === t && !x.group).sort((a, b) => a.order - b.order).map(x => {
       const on = c && x.id === c.id;
       return `<li><a href="#${x.id}"${on ? ' aria-current="page"' : ""}><span class="sd-code">${esc(x.code)}</span>${esc(x.title)}</a>${on ? subList(sub) : ""}</li>`;
     }).join("")}</ul>`).join("")}
