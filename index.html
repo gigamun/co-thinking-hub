@@ -1524,9 +1524,8 @@ const CASES = [
   "minutes": "40",
   "mode": "hands-on",
   "tools": [
-   "Claude Cowork",
-   "Artifacts",
-   "Claude Code (เดโม)"
+   "Claude Code",
+   "Artifacts"
   ],
   "lede": "สมมติว่าคุณทำงานให้ธุรกิจตัวอย่างชื่อ \"ครัวป้าน้อย\" ไฟล์ทั้งหมดกองรวมกันอยู่ในโฟลเดอร์เดียว มีรูปอาหาร บันทึกประชุม ตัวเลขรายได้และต้นทุน รายได้รายสาขา และรูปใบเสร็จค่าใช้จ่าย คุณจะให้ Claude จัดไฟล์เข้าโฟลเดอร์ อ่านใบเสร็จแล้วกรอกลงแบบฟอร์ม Excel รวมตัวเลขเป็น Excel ที่สะอาด และทำ Dashboard (หน้าสรุปตัวเลขที่ดูง่าย) ที่ใส่หน้าตาของแบรนด์ จากนั้นให้เขียนคู่มือประจำโฟลเดอร์ไว้ เดือนหน้าคุณจะได้สั่งคำเดียวจบ",
   "learn": [
@@ -1544,7 +1543,7 @@ const CASES = [
   "kit": {
    "tools": [
     {
-     "b": "Claude Desktop → แท็บ Cowork",
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
      "s": "ต้องใช้แพลน Pro ขึ้นไป",
      "need": true
     },
@@ -1552,11 +1551,6 @@ const CASES = [
      "b": "Artifacts",
      "s": "ใช้เผยแพร่ Dashboard ให้เป็นลิงก์ที่แชร์ได้",
      "need": true
-    },
-    {
-     "b": "Claude Code",
-     "s": "ใช้แทน Cowork ในขั้น 7 ได้ ถ้าถนัด Terminal",
-     "need": false
     }
    ],
    "settings": [
@@ -1567,7 +1561,7 @@ const CASES = [
     },
     {
      "b": "Skill",
-     "s": "ไม่ต้องใช้ Skill (frontend-design ใช้ใน Cowork ไม่ได้)",
+     "s": "ไม่ต้องใช้ Skill",
      "need": false,
      "skill": true
     }
@@ -1590,11 +1584,11 @@ const CASES = [
   },
   "steps": [
    {
-    "title": "เตรียมโฟลเดอร์ แล้วเปิดใน Cowork",
+    "title": "เตรียมโฟลเดอร์ แล้วเปิดใน Claude Code",
     "setup": true,
     "todo": [
      "ดาวน์โหลดโฟลเดอร์ Workshop Files จาก Drive แล้วแตกไฟล์ zip (ดับเบิลคลิกที่ไฟล์ได้เลย) วางไว้ใน Documents",
-     "เปิดแอป Claude Desktop ไปที่แท็บ Cowork แล้วกด Work in a folder เลือกโฟลเดอร์ <code>Case/Case-1-Messy-Files</code>"
+     "เปิดแอป Claude Desktop ไปที่แท็บ Code (Claude Code) แล้วเลือกโฟลเดอร์ <code>Case/Case-1-Messy-Files</code>"
     ],
     "expected": "ชื่อ Case-1-Messy-Files ขึ้นในช่องแชท แปลว่า Claude มองเห็นไฟล์ใน RAW-Input แล้ว"
    },
@@ -1665,19 +1659,19 @@ const CASES = [
     "title": "เปลี่ยนเป็น Script ที่รันซ้ำได้",
     "objective": "พอข้อมูลเดือนใหม่มา รันคำสั่งเดียวก็ได้ Excel และ Dashboard ชุดใหม่",
     "expected": "Dashboard มีข้อมูลเดือนที่ 2 แล้ว และ CLAUDE.md มีคำสั่งรัน script 1 บรรทัด",
-    "tip": "คัดลอกไฟล์จากโฟลเดอร์ Month-2 ไปไว้ใน 00_Inbox ก่อนรัน Prompt ถ้าถนัด Terminal ทำขั้นนี้ใน Claude Code ที่โฟลเดอร์เดียวกันได้",
+    "tip": "คัดลอกไฟล์จากโฟลเดอร์ Month-2 ไปไว้ใน 00_Inbox ก่อนรัน Prompt",
     "must": "ก่อนรัน Prompt คัดลอกไฟล์จากโฟลเดอร์ Month-2 ไปไว้ใน 00_Inbox",
     "prompt": {
      "en": "Read CLAUDE.md. Write a script that takes new files from 00_Inbox, sorts them into the 00–05 folders, adds their data to ครัวป้าน้อย-master.xlsx with the Source column, and rebuilds dashboard.html.\nTest it on the Month 2 files I just dropped into 00_Inbox. Then add \"how to run the script\" to CLAUDE.md.",
      "th": "อ่าน CLAUDE.md ก่อน แล้วเขียน script ที่ดึงไฟล์ใหม่จาก 00_Inbox จัดเข้าโฟลเดอร์ 00–05 เติมข้อมูลลง ครัวป้าน้อย-master.xlsx พร้อมคอลัมน์ Source แล้วสร้าง dashboard.html ใหม่\nทดสอบกับไฟล์เดือนที่ 2 ที่เพิ่งวางไว้ใน 00_Inbox จากนั้นเพิ่มวิธีรัน script ไว้ใน CLAUDE.md"
     },
-    "promptNote": "รันใน Cowork หรือ Claude Code ที่โฟลเดอร์เดียวกัน"
+    "promptNote": "รันใน Claude Code ที่โฟลเดอร์เดียวกัน"
    }
   ],
   "more": [
    {
     "b": "ตั้งเวลาให้อัปเดตเอง",
-    "s": "ใช้ Scheduled task ใน Cowork (งานที่ตั้งเวลาให้ Claude ทำเอง) สั่งคำว่า \"update\" ทุกวันที่ 5 ของเดือน"
+    "s": "ใช้ Scheduled task ใน Claude Code (งานที่ตั้งเวลาให้ Claude ทำเอง) สั่งคำว่า \"update\" ทุกวันที่ 5 ของเดือน"
    },
    {
     "b": "ต่อกับ Google Drive แทนโฟลเดอร์ในเครื่อง",
@@ -1690,7 +1684,7 @@ const CASES = [
     "title": "ดูไฟล์ทั้งหมด แล้วเสนอแผนจัดโฟลเดอร์",
     "text": "แบ่งเข้าโฟลเดอร์ 00–05 แต่ยังไม่ย้ายอะไรจนกว่าคุณจะอนุมัติ",
     "tools": [
-     "Claude Cowork"
+     "Claude Code"
     ],
     "step": 1
    },
@@ -1705,7 +1699,7 @@ const CASES = [
     "title": "ย้ายไฟล์ แล้วรวมเป็น master.xlsx",
     "text": "ทุกแถวมีคอลัมน์ Source บอกว่ามาจากไฟล์ไหน",
     "tools": [
-     "Claude Cowork"
+     "Claude Code"
     ],
     "step": 2
    },
@@ -1720,7 +1714,7 @@ const CASES = [
     "title": "สร้าง Dashboard 3 แท็บ",
     "text": "มีภาพรวม แนวโน้ม และตารางละเอียด พร้อมลิงก์ให้แชร์",
     "tools": [
-     "Claude Cowork",
+     "Claude Code",
      "Artifacts"
     ],
     "step": 3
@@ -1730,7 +1724,7 @@ const CASES = [
     "title": "ใส่หน้าตาของแบรนด์",
     "text": "เปลี่ยนสี ฟอนต์ และบรรยากาศ ส่วนตัวเลขต้องเหมือนเดิม",
     "tools": [
-     "Claude Cowork"
+     "Claude Code"
     ],
     "step": 4
    },
@@ -1739,7 +1733,7 @@ const CASES = [
     "title": "เขียนคู่มือประจำโฟลเดอร์",
     "text": "CLAUDE.md กับ HANDSOFF.md ทำให้แชทใหม่เริ่มต่อได้ทันที",
     "tools": [
-     "Claude Cowork"
+     "Claude Code"
     ],
     "step": 5
    },
@@ -1764,7 +1758,7 @@ const CASES = [
   "minutes": "15",
   "mode": "hands-on",
   "tools": [
-   "Claude Cowork",
+   "Claude Code",
    "Claude in Chrome",
    "Skills"
   ],
@@ -1780,7 +1774,7 @@ const CASES = [
   "kit": {
    "tools": [
     {
-     "b": "Claude Desktop → แท็บ Cowork",
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
      "s": "ต้องใช้แพลน Pro ขึ้นไป",
      "need": true
     },
@@ -1818,12 +1812,12 @@ const CASES = [
   },
   "steps": [
    {
-    "title": "ติดตั้ง Skill แล้วเปิด Cowork",
+    "title": "ติดตั้ง Skill แล้วเปิด Claude Code",
     "setup": true,
     "todo": [
      "ดาวน์โหลด Skill 2 ไฟล์ (.zip) แล้วติดตั้งตามคำสั่งด้านบน",
      "เช็กว่า Claude in Chrome ล็อกอินอยู่ (ดูที่ไอคอน Claude บน Chrome)",
-     "สร้างโฟลเดอร์ \"AI Class Grid 2\" บน Desktop แล้วเปิดใน Cowork"
+     "สร้างโฟลเดอร์ \"AI Class Grid 2\" บน Desktop แล้วเปิดใน Claude Code (แท็บ Code)"
     ],
     "expected": "พิมพ์ / ในช่องแชท แล้วเห็นชื่อ Skill ทั้ง 2 ตัวเด้งขึ้นมา"
    },
@@ -1889,7 +1883,7 @@ const CASES = [
     "title": "สร้างเด็ควิเคราะห์โฆษณา",
     "text": "เรียงแนวทางโฆษณาของคู่แข่งพร้อมตัวอย่าง",
     "tools": [
-     "Claude Cowork",
+     "Claude Code",
      "Skill: deck-builder"
     ],
     "step": 1
@@ -1905,7 +1899,7 @@ const CASES = [
     "title": "สรุปแนวทาง 3 ข้อ และช่องว่าง",
     "text": "ได้ข้อสรุปที่เอาไปทำโฆษณาของเราได้ทันที",
     "tools": [
-     "Claude Cowork"
+     "Claude Code"
     ],
     "step": 2
    }
@@ -1956,7 +1950,7 @@ const CASES = [
   "minutes": "30",
   "mode": "hands-on",
   "tools": [
-   "Claude Cowork",
+   "Claude Code",
    "Skill skill-creator"
   ],
   "lede": "ออก invoice (ใบแจ้งหนี้) เดือนละหลายใบ ต้องเปิดไฟล์เก่า แก้ชื่อลูกค้า ยอดเงิน และเลขที่เอกสารทุกครั้ง พลาดนิดเดียวก็ต้องทำใหม่ เคสนี้จะเตรียม context ให้ Claude ก่อน ลองออก invoice เอง 1 ใบ แล้วเก็บวิธีทำเป็น Skill ของเรา ครั้งต่อไปพิมพ์ /invoice-creation พร้อมชื่อลูกค้าและยอดเงิน ก็ได้ PDF ทันที",
@@ -1972,7 +1966,7 @@ const CASES = [
   "kit": {
    "tools": [
     {
-     "b": "Claude Desktop → แท็บ Cowork",
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
      "s": "ต้องใช้แพลน Pro ขึ้นไป",
      "need": true
     }
@@ -1985,7 +1979,7 @@ const CASES = [
     },
     {
      "b": "Skill",
-     "s": "skill-creator มีอยู่แล้วใน Cowork",
+     "s": "skill-creator อยู่ใน Starter Skill Pack (ติดตั้งตอน Setup)",
      "need": true,
      "skill": true
     }
@@ -2009,12 +2003,12 @@ const CASES = [
   },
   "steps": [
    {
-    "title": "เปิดโฟลเดอร์ Case 4 ใน Cowork",
+    "title": "เปิดโฟลเดอร์ Case 4 ใน Claude Code",
     "setup": true,
     "objective": "ให้ Claude เห็น invoice เก่า รายชื่อลูกค้า และข้อมูลผู้ขาย",
     "todo": [
      "ดาวน์โหลดโฟลเดอร์ Case-4-Invoice-Skill แล้วแตกไฟล์",
-     "เปิด Claude Desktop → แท็บ Cowork → Work in a folder → เลือกโฟลเดอร์นี้"
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์นี้"
     ],
     "expected": "Claude เห็นไฟล์ 3 ไฟล์ในโฟลเดอร์"
    },
@@ -2086,7 +2080,7 @@ const CASES = [
     "title": "ออก invoice ใบแรกตามแบบเดิม",
     "text": "ดึงข้อมูลลูกค้าจาก customers.csv",
     "tools": [
-     "Claude Cowork"
+     "Claude Code"
     ],
     "step": 1
    },
@@ -2125,7 +2119,7 @@ const CASES = [
     "title": "ถามก่อนเมื่อเจอลูกค้าใหม่",
     "text": "ไม่เดาข้อมูลเอง",
     "tools": [
-     "Claude Cowork"
+     "Claude Code"
     ],
     "step": 4
    },
@@ -2156,7 +2150,7 @@ const CASES = [
   "minutes": "20",
   "mode": "hands-on",
   "tools": [
-   "Claude Cowork",
+   "Claude หรือ Claude Code",
    "Projects",
    "Gmail + Google Calendar connector",
    "Scheduled tasks"
@@ -2173,7 +2167,7 @@ const CASES = [
   "kit": {
    "tools": [
     {
-     "b": "Claude Desktop → แท็บ Cowork",
+     "b": "Claude หรือ Claude Code (ใน Claude Desktop)",
      "s": "ต้องใช้แพลน Pro ขึ้นไป",
      "need": true
     },
@@ -2214,7 +2208,7 @@ const CASES = [
     "title": "สร้าง Project และเลือกโฟลเดอร์",
     "setup": true,
     "todo": [
-     "เปิด Claude Desktop → แท็บ Cowork → สร้าง Project ใหม่ ตั้งชื่อว่า Morning Brief",
+     "เปิด Claude (แท็บ Chat) → สร้าง Project ใหม่ ตั้งชื่อว่า Morning Brief หรือถ้าใช้ Claude Code ให้สร้างโฟลเดอร์ชื่อ Morning Brief แล้วเปิดในแท็บ Code",
      "เลือกโฟลเดอร์ให้ Project (สร้างโฟลเดอร์ว่างชื่อ Morning Brief ไว้ก่อนก็ได้)"
     ],
     "objective": "เก็บคำสั่งและไฟล์งานนี้ไว้ที่เดียว ครั้งหน้าเปิดใช้ต่อได้",
@@ -2286,7 +2280,7 @@ const CASES = [
     "title": "หยิบอีเมลล่าสุดกับนัดแรกของวันนี้มาให้ดู",
     "text": "ถ้าตอบได้ แปลว่าต่อสำเร็จ",
     "tools": [
-     "Claude Cowork"
+     "Claude หรือ Claude Code"
     ],
     "step": 2
    },
@@ -2307,7 +2301,7 @@ const CASES = [
     "title": "อ่านอีเมลกับปฏิทิน แล้วจัดกลุ่ม",
     "text": "แยกเป็นรับทราบ ต้องทำ ต้องตามต่อ พร้อมชื่อผู้ส่งและหัวข้อทุกข้อ",
     "tools": [
-     "Claude Cowork",
+     "Claude หรือ Claude Code",
      "Gmail + Google Calendar connector"
     ],
     "step": 3
@@ -2339,7 +2333,7 @@ const CASES = [
   "minutes": "20",
   "mode": "hands-on",
   "tools": [
-   "Claude Cowork",
+   "Claude หรือ Claude Code",
    "Projects",
    "Skill grilling-cowork",
    "Artifacts"
@@ -2356,7 +2350,7 @@ const CASES = [
   "kit": {
    "tools": [
     {
-     "b": "Claude Desktop → แท็บ Cowork",
+     "b": "Claude หรือ Claude Code (ใน Claude Desktop)",
      "s": "ต้องใช้แพลน Pro ขึ้นไป",
      "need": true
     }
@@ -2396,7 +2390,7 @@ const CASES = [
     "title": "สร้าง Project และเลือกโฟลเดอร์",
     "setup": true,
     "todo": [
-     "เปิด Claude Desktop → แท็บ Cowork → สร้าง Project ใหม่ ตั้งชื่อว่า Retirement Plan",
+     "เปิด Claude (แท็บ Chat) → สร้าง Project ใหม่ ตั้งชื่อว่า Retirement Plan หรือถ้าใช้ Claude Code ให้สร้างโฟลเดอร์ชื่อ Retirement Plan แล้วเปิดในแท็บ Code",
      "เลือกโฟลเดอร์ให้ Project (สร้างโฟลเดอร์ว่างชื่อ Retirement Plan ไว้ก่อนก็ได้)"
     ],
     "objective": "เก็บแผนเกษียณไว้ใน Project เดียว กลับมาแก้ต่อได้เรื่อยๆ",
@@ -2455,7 +2449,7 @@ const CASES = [
     "title": "สัมภาษณ์เป็นรอบ และทักเรื่องที่เรามองข้าม",
     "text": "ถามจนข้อมูลครบ แล้วสรุปเป็นตารางให้ยืนยัน",
     "tools": [
-     "Claude Cowork",
+     "Claude หรือ Claude Code",
      "Skill grilling-cowork"
     ],
     "step": 1
@@ -2471,7 +2465,7 @@ const CASES = [
     "title": "บันทึกแผนหลัก แล้วสร้าง Dashboard",
     "text": "เงินที่ต้องมี เงินที่จะมี ส่วนที่ขาด กราฟ และตารางสินทรัพย์",
     "tools": [
-     "Claude Cowork",
+     "Claude หรือ Claude Code",
      "Artifacts"
     ],
     "step": 2
@@ -2493,7 +2487,7 @@ const CASES = [
     "title": "แก้แผนหลัก แล้วรีเฟรช Dashboard",
     "text": "บอกว่าส่วนที่ขาดเปลี่ยนไปเท่าไหร่ และเก็บประวัติพร้อมวันที่",
     "tools": [
-     "Claude Cowork",
+     "Claude หรือ Claude Code",
      "Artifacts"
     ],
     "step": 3
@@ -2510,7 +2504,6 @@ const CASES = [
   "minutes": "30",
   "mode": "hands-on",
   "tools": [
-   "Claude Cowork",
    "Claude Code",
    "Projects",
    "Skill grilling"
@@ -2528,14 +2521,9 @@ const CASES = [
   "kit": {
    "tools": [
     {
-     "b": "Claude Desktop → แท็บ Cowork",
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
      "s": "ต้องใช้แพลน Pro ขึ้นไป",
      "need": true
-    },
-    {
-     "b": "Claude Code",
-     "s": "ใช้แทน Cowork ได้ ถ้าถนัด Terminal",
-     "need": false
     }
    ],
    "settings": [
@@ -2565,9 +2553,9 @@ const CASES = [
     "todo": [
      "สร้างโฟลเดอร์ตามชื่อโปรเจกต์ แล้วแบ่งเป็น 3 โฟลเดอร์: inputs (ไฟล์และข้อมูลที่มี) · references (ตัวอย่างที่ชอบ) · outputs (งานที่ Claude ทำ)",
      "ใส่ของที่มีลง inputs เช่น ข้อความ รูป โลโก้ ข้อมูลตัวอย่าง 5–10 แถว ส่วนลิงก์ที่ชอบ ให้จดในไฟล์ links.md ใน references",
-     "เปิดโฟลเดอร์นี้ใน Cowork (Work in a folder) หรือเปิด Terminal ที่โฟลเดอร์นี้แล้วพิมพ์ claude"
+     "เปิดโฟลเดอร์นี้ใน Claude Code (แท็บ Code ใน Claude Desktop) หรือเปิด Terminal ที่โฟลเดอร์นี้แล้วพิมพ์ claude"
     ],
-    "expected": "เปิดโฟลเดอร์ใน Cowork หรือ Claude Code แล้ว และมีไฟล์ที่เกี่ยวข้องครบ"
+    "expected": "เปิดโฟลเดอร์ใน Claude Code แล้ว และมีไฟล์ที่เกี่ยวข้องครบ"
    },
    {
     "title": "เลือกประเภทโปรเจกต์",
@@ -2746,7 +2734,6 @@ const CASES = [
     "title": "สรุปโปรเจกต์ ชี้จุดที่ขาด และเขียน CLAUDE.md",
     "text": "ยังไม่สร้างอะไร",
     "tools": [
-     "Claude Cowork",
      "Claude Code"
     ],
     "step": 2
@@ -2771,7 +2758,6 @@ const CASES = [
     "title": "นิยามโจทย์ใหม่ เสนอทางเลือกและงานชิ้นแรก",
     "text": "บอกด้วยว่าอะไรยังไม่ควรสร้าง",
     "tools": [
-     "Claude Cowork",
      "Claude Code"
     ],
     "step": 4
@@ -2787,7 +2773,6 @@ const CASES = [
     "title": "สร้าง Draft 1 จาก Brief",
     "text": "ชิ้นเล็กที่สุดที่ใช้ได้จริง",
     "tools": [
-     "Claude Cowork",
      "Claude Code"
     ],
     "step": 5
@@ -2811,7 +2796,7 @@ const CASES = [
   "minutes": "40",
   "mode": "hands-on",
   "tools": [
-   "Claude Cowork",
+   "Claude Code",
    "Skill skill-creator"
   ],
   "lede": "คุณได้ Excel ใหญ่ไฟล์เดียวของบริษัทสมมติ ในไฟล์มีทั้งชีตที่ต้องใช้และชีตที่ไม่เกี่ยวเลย คุณจะให้ Claude สำรวจก่อน แล้วสอนว่าอะไรสำคัญ อะไรทิ้ง และจัดกลุ่มแบบไหน จากนั้นเก็บวิธีนั้นเป็น Skill แล้วลองกับไฟล์ใหม่ที่หน้าตาไม่เหมือนเดิม สอนครั้งเดียวใช้ซ้ำได้",
@@ -2828,7 +2813,7 @@ const CASES = [
   "kit": {
    "tools": [
     {
-     "b": "Claude Desktop → แท็บ Cowork",
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
      "s": "ต้องใช้แพลน Pro ขึ้นไป",
      "need": true
     }
@@ -2841,7 +2826,7 @@ const CASES = [
     },
     {
      "b": "Skill",
-     "s": "skill-creator มีอยู่แล้วใน Cowork",
+     "s": "skill-creator อยู่ใน Starter Skill Pack (ติดตั้งตอน Setup)",
      "need": true,
      "skill": true
     }
@@ -2864,12 +2849,12 @@ const CASES = [
   },
   "steps": [
    {
-    "title": "เปิดโฟลเดอร์ใน Cowork",
+    "title": "เปิดโฟลเดอร์ใน Claude Code",
     "setup": true,
     "objective": "ให้ Claude เห็นไฟล์ Excel ไตรมาส 1",
     "todo": [
      "ดาวน์โหลดโฟลเดอร์ Case-5-Excel-Skill แล้วแตกไฟล์",
-     "เปิด Claude Desktop → แท็บ Cowork → Work in a folder → เลือกโฟลเดอร์ Case-5-Excel-Skill"
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Case-5-Excel-Skill"
     ],
     "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ Excel ใน RAW-Input"
    },
@@ -2944,7 +2929,7 @@ const CASES = [
     "title": "สำรวจทุกชีตของไฟล์",
     "text": "บอกว่าชีตไหนคืออะไร ยังไม่แก้อะไร",
     "tools": [
-     "Claude Cowork"
+     "Claude Code"
     ],
     "step": 1
    },
@@ -2959,7 +2944,7 @@ const CASES = [
     "title": "จัดกลุ่มและสร้างไฟล์สรุป",
     "text": "รอเราอนุมัติรายการก่อน",
     "tools": [
-     "Claude Cowork"
+     "Claude Code"
     ],
     "step": 2
    },
@@ -3027,15 +3012,15 @@ const TIERS = {
 };
 const SKILLS = [
   { b:"grilling", s:"ให้ Claude ถามกลับทีละข้อ จนแผนของเราชัดขึ้น" },
-  { b:"frontend-design", s:"ทำหน้าเว็บให้ดูไม่เหมือนงาน AI ทั่วไป ใช้ได้ใน Chat และ Claude Code ส่วนใน Cowork ใช้ไม่ได้" },
+  { b:"frontend-design", s:"ทำหน้าเว็บให้ดูไม่เหมือนงาน AI ทั่วไป ใช้ได้ทั้งใน Claude และ Claude Code" },
   { b:"kien-thai", s:"ช่วยเขียนภาษาไทยให้อ่านเหมือนคนไทยเขียนเอง" },
   { b:"kode-thai", s:"ตรวจและขัดภาษาไทยซ้ำๆ จนไม่มีจุดให้แก้ ต้องติดตั้งคู่กับ kien-thai" },
-  { b:"skill-creator", s:"ช่วยสร้าง Skill ของเราเอง ใน Cowork มีให้อยู่แล้ว จึงต้องติดตั้งเฉพาะตอนใช้ Claude Code" }
+  { b:"skill-creator", s:"ช่วยสร้าง Skill ของเราเอง" }
 ];
 const WAT_INSTRUCTION = "# How to work with me\n\nYou are my assistant. We work as a team: I set the goal, you plan and decide, and small programs do the exact work.\n\n## The three parts (WAT)\n- **Workflows** = step-by-step recipes, saved in `workflows/`. Each one says: the goal, what you need from me, the steps, and what a good result looks like.\n- **Agent** = you. Read the recipe, follow the steps in order, fix problems, and ask me when unsure.\n- **Tools** = small programs in `tools/` that do one exact job (move files, calculate, read a spreadsheet). Use an existing one before making a new one.\n\nPasswords and keys live only in the `.env` file. Never show them to me or copy them anywhere.\n\n## Before you start\n1. Read this file, then `memory/MEMORY.md`.\n2. Find the recipe for the task. If there is none, suggest one in 5 lines and wait for my OK.\n\n## Ask me first before\n- deleting or replacing files\n- anything that costs money\n- sending anything to other people\n- installing software\n\nNever make up facts or numbers. If something is missing, tell me.\nKeep answers short: the result first, details only if I ask.\n\n## Memory (your notebook)\n- `memory/MEMORY.md` is the table of contents: one line per note.\n- One note per fact: about me, my preferences, decisions, lessons.\n- Write a note when I correct you, approve an approach, or make a decision. Update the old note instead of adding a copy.\n- Don't note what is already visible in the files.\n\n## When something goes wrong\nFind the cause, fix it, test it, then update the recipe or the notebook so it doesn't happen again. Ask me before changing a recipe.\n\n## Folders\n- `workflows/` recipes · `tools/` small programs · `memory/` notebook · `.tmp/` throwaway files · `.env` passwords (private)\n- Finished work goes where I can open it: this folder, Docs, Sheets or Slides.\n\n## About me (I fill this in)\n- My job: [fill in]\n- Language and tone I like: [fill in]\n- What a good result looks like to me: [fill in]";
 const SKILL_INSTALL = "for s in grilling frontend-design kien-thai kode-thai skill-creator; do unzip -o ~/Downloads/$s.zip -d ~/.claude/skills/; done";
 const PRECHECK = [
-  { b:"ล็อกอิน Claude Desktop", s:"ต้องใช้แพลน Pro ขึ้นไป เพราะ Cowork ใช้กับแพลนฟรีไม่ได้" },
+  { b:"ล็อกอิน Claude Desktop", s:"ต้องใช้แพลน Pro ขึ้นไป เพราะ Claude Code ใช้กับแพลนฟรีไม่ได้" },
   { b:"เปิด Code execution", s:"ไปที่ Settings → Capabilities แล้วเปิดไว้ ไม่อย่างนั้น Claude จะสร้างไฟล์และใช้ Skills ไม่ได้" },
   { b:"ติดตั้ง Claude in Chrome", s:"ใช้ใน Case 2 ถ้ายังไม่ได้ติดตั้ง ให้ผู้ช่วยสอนช่วยได้เลย" },
   { b:"ล็อกอิน Google", s:"ใช้กับ Gemini Notebook ใน Exercise 2 และใช้ลองสร้างวิดีโอเองด้วย Google Flow ได้ถ้าสนใจ" }
@@ -3112,8 +3097,7 @@ function renderTier(t){
 const GLOSSARY = [
   ["Prompt","ข้อความที่เราพิมพ์สั่ง AI"],
   ["Claude Chat","หน้าแชทปกติของ Claude ที่ claude.ai หรือในแอป Claude Desktop"],
-  ["Cowork","แท็บใน Claude Desktop ที่ให้ Claude ทำงานกับไฟล์ในเครื่องของเรา"],
-  ["Claude Code","โปรแกรมที่ให้ Claude เขียนและรันโค้ดในเครื่อง ในคลาสนี้ผู้สอนใช้โชว์"],
+  ["Claude Code","แท็บ Code ใน Claude Desktop ที่ให้ Claude ทำงานกับไฟล์ในเครื่องของเรา ในคลาสนี้ทุกคนใช้ตัวนี้"],
   ["Artifact","หน้าเว็บหรือเครื่องมือเล็กๆ ที่ Claude สร้างให้ และแชร์เป็นลิงก์ได้"],
   ["Skill","ชุดขั้นตอนสำเร็จรูปที่ Claude เรียกใช้ได้ เหมือนสูตรอาหารที่เก็บไว้ใช้ซ้ำ"],
   ["Connector","ตัวเชื่อมที่ให้ Claude อ่านข้อมูลจากแอปอื่น เช่น Gmail"],
@@ -3173,7 +3157,7 @@ function renderSetup(){
       <div class="sp-panel sp-install">
         <h3>วิธีติดตั้ง Skill <small>ทำเมื่อจะติดตั้ง Skill · เลือกตามเครื่องมือที่ใช้</small></h3>
         <div class="how-row">
-        ${howBlock("Cowork / claude.ai", "อัปโหลดทีละไฟล์", `<ol><li>Settings → Capabilities → เปิด Code execution and file creation</li>
+        ${howBlock("Claude / claude.ai", "อัปโหลดทีละไฟล์", `<ol><li>Settings → Capabilities → เปิด Code execution and file creation</li>
           <li>Settings → Capabilities → Skills → Upload skill</li>
           <li>เลือกไฟล์ .zip ทีละไฟล์ (grilling, frontend-design, kien-thai, kode-thai)</li></ol>`)}
         ${howBlock("Claude Code", "เฉพาะคนที่ใช้ Claude Code", `<p class="how-p">Terminal คือหน้าต่างสำหรับพิมพ์คำสั่งสั่งคอมพิวเตอร์ ถ้าไม่ถนัด ให้ผู้ช่วยสอนติดตั้งให้ที่โต๊ะ Setup ได้เลย</p>` + installBlock(SKILL_INSTALL, "คัดลอกแล้ววางใน Terminal"))}
@@ -3239,8 +3223,8 @@ function kitParts(c){
     out.extra.push(dd(`ft-${c.id}`, "ไฟล์ข้อมูลรกตรงไหน", `${rows.length} ไฟล์`, `<div class="cmp-wrap"><table class="cmp"><thead><tr>${head.map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead>
       <tbody>${rows.map(r => `<tr>${r.map(x => `<td>${esc(x)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`));
   }
-  if (k.install) out.install = dd(`inst-${c.id}`, "ติดตั้ง Skill", "Cowork หรือ Claude Code", `
-      ${k.install.cowork ? howBlock("Cowork / claude.ai", "อัปโหลดทีละไฟล์", `<p class="how-p">${k.install.cowork}</p>`) : ""}
+  if (k.install) out.install = dd(`inst-${c.id}`, "ติดตั้ง Skill", "Claude หรือ Claude Code", `
+      ${k.install.cowork ? howBlock("Claude / claude.ai", "อัปโหลดทีละไฟล์", `<p class="how-p">${k.install.cowork}</p>`) : ""}
       ${k.install.code ? howBlock("Claude Code", "วางคำสั่งใน Terminal", installBlock(k.install.code, "คัดลอกแล้ววางใน Terminal")) : ""}`);
   return out;
 }
