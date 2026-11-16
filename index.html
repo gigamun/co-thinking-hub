@@ -1623,7 +1623,7 @@ const CASES = [
     "title": "เตรียมโฟลเดอร์ แล้วเปิดใน Claude Code",
     "setup": true,
     "todo": [
-     "ดาวน์โหลดโฟลเดอร์ Case-1-Messy-Files จาก Drive แล้วแตกไฟล์ zip (ดับเบิลคลิกที่ไฟล์ได้เลย) วางไว้ใน Documents",
+     "ดาวน์โหลดโฟลเดอร์ Case-1-Messy-Files จากปุ่ม Resources ในหน้าแรก (Setup) แล้วแตกไฟล์ zip (ดับเบิลคลิกที่ไฟล์ได้เลย) วางไว้ใน Documents",
      "เปิดแอป Claude Desktop ไปที่แท็บ Code (Claude Code) แล้วเลือกโฟลเดอร์ <code>Case-1-Messy-Files</code>"
     ],
     "expected": "ชื่อ Case-1-Messy-Files ขึ้นในช่องแชท แปลว่า Claude มองเห็นไฟล์ใน RAW-Input แล้ว"
@@ -2043,7 +2043,7 @@ const CASES = [
     "setup": true,
     "objective": "ให้ Claude เห็น invoice เก่า รายชื่อลูกค้า และข้อมูลผู้ขาย",
     "todo": [
-     "ดาวน์โหลดโฟลเดอร์ Case-4-Invoice-Skill แล้วแตกไฟล์",
+     "ดาวน์โหลดโฟลเดอร์ Case-4-Invoice-Skill จากปุ่ม Resources ในหน้าแรก (Setup) แล้วแตกไฟล์",
      "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์นี้"
     ],
     "expected": "Claude เห็นไฟล์ 3 ไฟล์ในโฟลเดอร์"
@@ -2889,7 +2889,7 @@ const CASES = [
     "setup": true,
     "objective": "ให้ Claude เห็นไฟล์ Excel ไตรมาส 1",
     "todo": [
-     "ดาวน์โหลดโฟลเดอร์ Case-5-Excel-Skill แล้วแตกไฟล์",
+     "ดาวน์โหลดโฟลเดอร์ Case-5-Excel-Skill จากปุ่ม Resources ในหน้าแรก (Setup) แล้วแตกไฟล์",
      "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Case-5-Excel-Skill"
     ],
     "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ Excel ใน RAW-Input"
@@ -3101,7 +3101,7 @@ const CASES = [
     "setup": true,
     "objective": "ให้ Claude เห็นชีตกับ Template และใช้ Apify ได้",
     "todo": [
-     "ดาวน์โหลดโฟลเดอร์ KOL-Report แล้วแตกไฟล์",
+     "ดาวน์โหลดโฟลเดอร์ KOL-Report จากปุ่ม Agency Files ในหน้าแรก (Setup) แล้วแตกไฟล์",
      "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ KOL-Report",
      "เชื่อม Apify: Settings → Connectors → Add custom connector → ใส่ https://mcp.apify.com แล้วล็อกอิน Apify"
     ],
@@ -3287,7 +3287,7 @@ const CASES = [
     "setup": true,
     "objective": "ให้ Claude เห็นบรีฟ ชีตคำ สคริปต์ และ Template",
     "todo": [
-     "ดาวน์โหลดโฟลเดอร์ Script-Check แล้วแตกไฟล์",
+     "ดาวน์โหลดโฟลเดอร์ Script-Check จากปุ่ม Agency Files ในหน้าแรก (Setup) แล้วแตกไฟล์",
      "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Script-Check"
     ],
     "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ในโฟลเดอร์"
@@ -3471,7 +3471,7 @@ const CASES = [
     "setup": true,
     "objective": "ให้ Claude เห็นชีตค่าจ้างและ Template",
     "todo": [
-     "ดาวน์โหลดโฟลเดอร์ KOL-Payment แล้วแตกไฟล์",
+     "ดาวน์โหลดโฟลเดอร์ KOL-Payment จากปุ่ม Agency Files ในหน้าแรก (Setup) แล้วแตกไฟล์",
      "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ KOL-Payment"
     ],
     "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ในโฟลเดอร์"
@@ -3591,7 +3591,7 @@ const CASES = [
   }
  }
 ];
-const KIT = { root:"https://drive.google.com/drive/folders/1hy5FPWZd-5Ignn9-ZmWtybPq6UTMxKvD?usp=sharing", dots:"", grid1:"", grid2:"", lines:{ morning:"", deck:"", portfolio:"", retire:"" } };
+const KIT = { agency:"", root:"https://drive.google.com/drive/folders/1hy5FPWZd-5Ignn9-ZmWtybPq6UTMxKvD?usp=sharing", dots:"", grid1:"", grid2:"", lines:{ morning:"", deck:"", portfolio:"", retire:"" } };
 const ROUTE_ALIAS = { "ws-0":"grid-1", "ws-4-1":"grid-1", "ws-4-3":"grid-2", "ws-4-4":"grid-3", "ex-1":"dots-1", "ex-3":"dots-2", "ex-2":"dots-3" };
 const ANATOMY = [{"t": "who", "lbl": "เราคือใคร + ข้อมูลสินค้า", "th": "ฉันมีแบรนด์สินค้าสัตว์เลี้ยงเล็กๆ ขายออนไลน์ผ่าน Shopee, TikTok Shop และ LINE OA ตอนนี้กำลังจะเปิดตัวสินค้าใหม่ เป็นพัดลมไฟฟ้าพกพาสำหรับสุนัข หนีบกับสายจูงหรือกระเป๋าสัตว์เลี้ยงได้ ชาร์จผ่าน USB-C ใช้ได้ประมาณ 4 ชั่วโมง ขายราคา 690 บาท งบการตลาดเดือนแรก 50,000 บาท ทีมมี 2 คน", "en": "I own a small pet-products brand that sells online through Shopee, TikTok Shop and LINE OA. I'm about to launch a new product: a portable electric fan for dogs that clips onto a leash or pet bag, charges via USB-C and runs for about 4 hours. It sells for 690 baht. The first-month marketing budget is 50,000 baht, and the team is 2 people."}, {"t": "why", "lbl": "เอาไปใช้ทำอะไร", "th": "ฉันจะเอาแผนนี้ไปคุยกับหุ้นส่วน เพื่อตัดสินใจว่าจะลงเงินตรงไหน", "en": "I'll use this plan with my business partner to decide where to put the money."}, {"t": "ctx", "lbl": "Context", "th": "บริบท: เมืองไทยร้อนเกือบทั้งปี คนเลี้ยงสุนัขในคอนโดมักพาไปเดินตอนเย็น และเจ้าของสุนัขหน้าสั้น (ปั๊ก เฟรนช์บูลด็อก ชิสุ) เป็นห่วงเรื่องสุนัขร้อนเป็นพิเศษ", "en": "Context: Thailand is hot almost all year. Condo dog owners usually walk their dogs in the evening, and owners of flat-faced breeds (Pug, French Bulldog, Shih Tzu) worry about overheating in particular."}, {"t": "out", "lbl": "หน้าตาผลลัพธ์", "th": "ช่วยวางแผนการตลาดสำหรับเดือนแรกของการเปิดตัว โดยตอบตามหัวข้อนี้:\n1. กลุ่มเป้าหมายหลัก 2 กลุ่ม: เป็นใคร มีปัญหาอะไร และอะไรทำให้ตัดสินใจซื้อ\n2. ข้อความหลัก 1 ประโยค พร้อมเหตุผลว่าทำไมต้องซื้อตอนนี้\n3. ตารางช่องทาง: ช่องทาง / หน้าที่ / งบ / KPI (รวมแล้วไม่เกิน 50,000 บาท)\n4. แผน 4 สัปดาห์ ว่าแต่ละสัปดาห์ทำอะไร\n5. ความเสี่ยง 3 ข้อ พร้อมวิธีรับมือแต่ละข้อ", "en": "Plan the marketing for the first month of the launch, in this format:\n1. 2 main target groups: who they are, their problem, and what makes them buy\n2. 1 key message, plus the reason to buy now\n3. Channel table: channel / role / budget / KPI (total no more than 50,000 baht)\n4. A 4-week timeline of what happens each week\n5. 3 risks and how to handle each"}, {"t": "rule", "lbl": "กติกา", "th": "กติกา:\n- ทุกเป้าหมายต้องมีตัวเลข ห้ามเขียนกว้างๆ เช่น \"สร้างการรับรู้\" เฉยๆ\n- ตัวเลขที่ประมาณเอง ให้ใส่ (ประมาณการ) ต่อท้าย\n- ห้ามอ้างสรรพคุณทางการแพทย์ เช่น \"ป้องกันฮีทสโตรก\"\n- เขียนเป็นภาษาไทย กระชับ อ่านจบใน 3 นาที", "en": "Rules:\n- Every goal needs a number. No vague goals like \"build awareness\".\n- Mark any number you estimate with (estimate).\n- No medical claims, such as \"prevents heatstroke\".\n- Write in Thai, concise, readable in 3 minutes."}, {"t": "fall", "lbl": "ถ้าข้อมูลไม่พอ", "th": "ไม่ต้องถามกลับ ถ้าข้อมูลไม่พอให้สมมติเอง แล้วเขียนสมมติฐานไว้ท้ายแผน", "en": "Don't ask me questions. If information is missing, make an assumption and list your assumptions at the end of the plan."}];  /* tagged parts of the long prompt (dots-1) */
 const CHEAT = {"groups": [{"g": "Output style", "gs": "ตอบหน้าตาแบบไหน", "items": [{"n": "Concise", "h": "ตอบแค่ประเด็น", "why": "ตัดคำเกริ่น คำชมคำถาม และการทวนคำถามออก คำตอบจึงมาเร็วและอ่านสั้นลง", "where": "all", "en": "Get straight to the point. Skip the preamble, compliments, and restating my question. Start with the answer.", "th": "ตอบเข้าประเด็นเลย ไม่ต้องเกริ่น ไม่ต้องชมคำถาม และไม่ต้องทวนคำถาม ให้เริ่มที่คำตอบทันที"}, {"n": "Structured", "h": "สรุปก่อน ขยายทีหลัง", "why": "เห็นคำตอบก่อน แล้วรายละเอียดค่อยตามมา อ่านแค่ 2 บรรทัดแรกก็เข้าใจเรื่อง", "where": "all", "en": "Open with a 1–2 line summary of the answer. Then add details, using short sections only when the content needs it.", "th": "เริ่มด้วยสรุปคำตอบ 1–2 บรรทัด แล้วค่อยขยายรายละเอียด และแบ่งหัวข้อย่อยเฉพาะตอนที่เนื้อหาจำเป็น"}, {"n": "Consulting Tone", "h": "ตรง มีจุดยืน", "why": "ให้ Claude เลือกข้างและบอกเหตุผล แทนการตอบว่า “ขึ้นอยู่กับหลายปัจจัย”", "where": "all", "en": "Talk to me like a sharp consultant: be direct, take a clear position, and give your reasoning. Don't hedge or list every possibility without picking one.", "th": "ตอบแบบที่ปรึกษา คือตรงไปตรงมา มีจุดยืนชัด และให้เหตุผลด้วย ไม่ตอบกลางๆ และไม่ไล่ทุกความเป็นไปได้โดยไม่เลือกสักข้อ"}]}, {"g": "Thinking logic", "gs": "คิดแบบไหนก่อนตอบ", "items": [{"n": "Ask First", "h": "ไม่ชัดให้ถามกลับ", "why": "ถ้าโจทย์กว้างเกินไป Claude จะถามกลับก่อน แทนที่จะเดาแล้วทำไปผิดทาง", "where": "all", "en": "If my request is unclear or missing key information, ask me 1–2 questions before answering. Don't guess what I mean.", "th": "ถ้าโจทย์ไม่ชัดหรือขาดข้อมูลสำคัญ ให้ถามกลับ 1–2 ข้อก่อนตอบ อย่าเดาเอง"}, {"n": "Source Only", "h": "ไม่มีในไฟล์ บอกว่าไม่มี", "why": "ใช้เฉพาะข้อมูลจากไฟล์ที่ให้ ถ้าไม่มีก็บอกตรงๆ จะได้ไม่มีตัวเลขหรือชื่อที่ AI แต่งขึ้นมาเอง", "where": "proj", "en": "Answer only from the files in this project. If the answer isn't there, say so clearly instead of filling the gap. Never invent numbers, names, or quotes.", "th": "ตอบจากไฟล์ใน Project นี้เท่านั้น ถ้าไม่มีข้อมูลให้บอกตรงๆ ว่าไม่มี ห้ามแต่งตัวเลข ชื่อ หรือคำพูดขึ้นมาเอง"}, {"n": "Push Back", "h": "เห็นว่าเสี่ยงให้ค้าน", "why": "ให้ Claude ท้วงพร้อมเหตุผลเมื่อแผนมีจุดเสี่ยง แทนที่จะเห็นด้วยกับทุกเรื่อง", "where": "all", "en": "If my plan or assumption looks risky or wrong, push back and explain why. Don't agree with me just to be polite.", "th": "ถ้าเห็นว่าแผนหรือสมมติฐานของฉันเสี่ยงหรือผิด ให้ค้านพร้อมเหตุผล ไม่ต้องเห็นด้วยเพียงเพื่อความสุภาพ"}]}, {"g": "Trigger words", "gs": "พิมพ์คำเดียว เปลี่ยนโหมดทันที", "items": [{"n": "Exec Summary", "h": "สรุปให้ผู้บริหาร", "why": "พิมพ์คำนี้ต่อท้าย Chat ที่ยาว จะได้สรุป 5 บรรทัดที่ส่งให้หัวหน้าได้เลย", "where": "trig", "en": "When I type \"Exec Summary\": summarize this conversation for an executive in 5 lines, covering the key point, the important numbers, and the decision needed.", "th": "ถ้าฉันพิมพ์ \"Exec Summary\" ให้สรุปบทสนทนานี้สำหรับผู้บริหารใน 5 บรรทัด ครอบคลุมประเด็นหลัก ตัวเลขสำคัญ และสิ่งที่ต้องตัดสินใจ"}, {"n": "Skeptic", "h": "หาจุดที่อาจผิด", "why": "ให้ Claude ลองเถียงข้อสรุปของตัวเอง ใช้ก่อนเชื่อข้อสรุปหรือก่อนส่งงานต่อทุกครั้ง", "where": "trig", "en": "When I type \"Skeptic\": find 3 ways your last conclusion could be wrong, and say what evidence would prove each one.", "th": "ถ้าฉันพิมพ์ \"Skeptic\" ให้หา 3 จุดที่ข้อสรุปล่าสุดอาจไม่ถูก และบอกว่าต้องมีหลักฐานอะไรมาพิสูจน์แต่ละข้อ"}, {"n": "Ideation", "h": "ขอไอเดียกว้างๆ", "why": "ได้ 10 ทางเลือกโดยยังไม่ตัดสิน เหมาะกับตอนที่ยังไม่รู้ว่าอยากได้อะไร", "where": "trig", "en": "When I type \"Ideation\": give me 10 different options, from safe to bold. Don't rank or judge them yet.", "th": "ถ้าฉันพิมพ์ \"Ideation\" ให้เสนอ 10 ทางที่ต่างกัน ตั้งแต่ปลอดภัยไปจนถึงกล้าลอง ยังไม่ต้องจัดอันดับหรือตัดสิน"}]}], "test": {"en": "I run a small café with one branch. Should I open a second branch or start selling online first?", "th": "ฉันมีร้านกาแฟเล็กๆ อยู่ 1 สาขา ควรเปิดสาขาสองหรือเริ่มขายออนไลน์ก่อนดี?"}, "tips": ["<b>เริ่มแค่ 3–4 ข้อพอ</b> ถ้าใส่เยอะเกินไป คำสั่งจะเริ่มขัดกันเอง ลองใช้สักสัปดาห์แล้วค่อยเพิ่ม", "<b>Ask First</b> ทำให้ Claude ถามกลับบ่อยขึ้น ถ้ารำคาญก็เอาออกได้", "<b>Source Only</b> เหมาะกับ Project ที่มีไฟล์ ถ้าใส่ไว้ทุก Chat Claude จะตอบคำถามทั่วไปไม่ได้"], "langNote": "แนะนำให้วางเป็นภาษาอังกฤษ เพราะภาษาไทยใช้ token (หน่วยที่ AI ใช้นับข้อความ) มากกว่า และคำสั่งพวกนี้ถูกอ่านทุกครั้งที่เริ่ม Chat ส่วน Claude จะตอบเป็นภาษาไทยตามที่เราพิมพ์ถามเหมือนเดิม", "setupNote": "Source Only ให้วางใน Project แทน โดยเปิด Project แล้วใส่ในช่อง Instructions (ต้องใช้แพลนเสียเงิน) ส่วน Trigger word วางใน Settings พร้อมคำสั่งอื่นได้เลย แล้วพิมพ์คำนั้นใน Chat เมื่ออยากใช้"};  /* copy cards for dots-3 */
@@ -3668,7 +3668,7 @@ function dd(id, title, hint, body, openDefault){
 const howBlock = (title, hint, body) => `<div class="how"><div class="how-h"><b>${title}</b><span>${hint}</span></div>${body}</div>`;
 const driveBtn = (url, label, big) => url
   ? `<a class="dl${big ? " big" : ""}" href="${esc(url)}" target="_blank" rel="noopener">${ICON_DL}<span>${label || "เปิด Google Drive"}</span></a>`
-  : `<span class="dl off${big ? " big" : ""}" aria-disabled="true">${label ? label + " · " : ""}ลิงก์ Drive เร็วๆ นี้</span>`;
+  : "";
 
 /* ---------- home ---------- */
 function caseCard(c){
@@ -3768,7 +3768,7 @@ function renderSetup(){
   return `<section class="setup" id="sec-setup">
     <h2>Setup <span class="tag need">Start here</span></h2>
     <p class="h2-sub">ทำขั้น 1–2 ให้ครบก่อนเริ่มเคสแรก ขั้น 3 (Skill) ข้ามได้ ติดตั้งทีหลังก็ได้</p>
-    <div class="sp-top">${driveBtn(KIT.root, "Resources ทั้งหมด (Google Drive)", true)}</div>
+    <div class="sp-top">${driveBtn(KIT.root, "Resources ทั้งหมด (Google Drive)", true)}${driveBtn(KIT.agency, "Agency Files (Google Drive)", true)}</div>
     ${dd("setup", "วิธีการ Set-up", "3 ขั้นตอน · ขั้น 3 ข้ามได้", panels)}
   </section>`;
 }
@@ -3930,7 +3930,6 @@ function stepPanel(c, s, i, label){
   const prompt = (s.prompt || s.prompts) && !s.setup;
   return `<div class="sp-pane ${s.setup ? "setup" : ""}" id="sp-${c.id}-${i}" role="tabpanel" aria-labelledby="st-${i}" ${i === selStep(c) ? "" : "hidden"}>
       <div class="step-head"><h3><span class="sp-pn">Step ${label}</span>${s.title}</h3>${s.demo ? '<span class="tag demo-pill">Demo</span>' : ""}</div>
-      ${s.setup && c.kit.files && c.kit.files.length ? `<div class="step-dl">${driveBtn(c.kit.files[0].url, "ดาวน์โหลด: " + c.kit.files[0].b, true)}</div>` : ""}
       ${s.todo ? `<ol class="todo">${s.todo.map(t => `<li>${t}</li>`).join("")}</ol>` : ""}
       ${s.cards ? `<div class="ptype">${s.cards.map(k => `<section class="ptype-c"><h4>${esc(k.h)}</h4><p>${k.s}</p>${k.groups.map(g => `<b class="ptype-g">${g.h}</b>${g.items.every(x => /^\d+\. /.test(x)) ? `<ol>${g.items.map(x => `<li>${x.replace(/^\d+\. /, "")}</li>`).join("")}</ol>` : `<ul>${g.items.map(x => `<li>${x}</li>`).join("")}</ul>`}`).join("")}</section>`).join("")}</div>` : ""}
       ${s.must ? `<p class="must"><b>ต้องรู้</b>${esc(s.must)}</p>` : ""}
