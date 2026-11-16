@@ -1339,7 +1339,7 @@ const CASES = [
    "files": [
     {
      "b": "Business Data (CSV 4 ไฟล์)",
-     "path": "Exercise/Exercise-2-Data-Structuring/RAW-Input/",
+     "path": "Exercise-2-Data-Structuring/RAW-Input/",
      "url": "https://drive.google.com/drive/folders/1yFPP1-8yLJvf9JTyNrwqrexCli9tZr1g?usp=sharing",
      "has": []
     }
@@ -1605,7 +1605,7 @@ const CASES = [
    "files": [
     {
      "b": "Messy set เดือนที่ 1",
-     "path": "Case/Case-1-Messy-Files/RAW-Input/",
+     "path": "Case-1-Messy-Files/RAW-Input/",
      "url": "",
      "has": [
       "CSV 4 ไฟล์ (ข้อมูลบริษัท, รายได้รายเดือน, รายสาขา, กำไรตามช่องทาง)",
@@ -1623,8 +1623,8 @@ const CASES = [
     "title": "เตรียมโฟลเดอร์ แล้วเปิดใน Claude Code",
     "setup": true,
     "todo": [
-     "ดาวน์โหลดโฟลเดอร์ Workshop Files จาก Drive แล้วแตกไฟล์ zip (ดับเบิลคลิกที่ไฟล์ได้เลย) วางไว้ใน Documents",
-     "เปิดแอป Claude Desktop ไปที่แท็บ Code (Claude Code) แล้วเลือกโฟลเดอร์ <code>Case/Case-1-Messy-Files</code>"
+     "ดาวน์โหลดโฟลเดอร์ Case-1-Messy-Files จาก Drive แล้วแตกไฟล์ zip (ดับเบิลคลิกที่ไฟล์ได้เลย) วางไว้ใน Documents",
+     "เปิดแอป Claude Desktop ไปที่แท็บ Code (Claude Code) แล้วเลือกโฟลเดอร์ <code>Case-1-Messy-Files</code>"
     ],
     "expected": "ชื่อ Case-1-Messy-Files ขึ้นในช่องแชท แปลว่า Claude มองเห็นไฟล์ใน RAW-Input แล้ว"
    },
@@ -1836,7 +1836,7 @@ const CASES = [
    "files": [
     {
      "b": "Skill 2 ไฟล์ (.zip)",
-     "path": "Skills/Case-2-Competitor/",
+     "path": "Skills/",
      "url": "",
      "has": []
     }
@@ -2023,7 +2023,7 @@ const CASES = [
    "files": [
     {
      "b": "ชุดไฟล์ Case 4",
-     "path": "Case/Case-4-Invoice-Skill/",
+     "path": "Case-4-Invoice-Skill/",
      "url": "",
      "has": [
       "invoice-sample.pdf (invoice เก่า 1 ใบ)",
@@ -2407,7 +2407,7 @@ const CASES = [
    "files": [
     {
      "b": "Skill grilling-cowork (.zip)",
-     "path": "Skills/Starter-Pack/",
+     "path": "Skills/",
      "url": "",
      "has": []
     }
@@ -2870,7 +2870,7 @@ const CASES = [
    "files": [
     {
      "b": "ชุดไฟล์เคส Excel to Skill",
-     "path": "Case/Case-5-Excel-Skill/",
+     "path": "Case-5-Excel-Skill/",
      "url": "",
      "has": [
       "RAW-Input/gl-extract-q1 (Excel ไตรมาส 1 ของบริษัทสมมติ 6 ชีต: บัญชีแยกประเภท เงินเดือน โหวตมื้อเที่ยง บันทึกประชุม สำเนาเก่า และหน้าอ่านก่อน)",
@@ -3082,11 +3082,11 @@ const CASES = [
    "files": [
     {
      "b": "ชุดไฟล์เคส KOL Report",
-     "path": "Case/Case-KOL-Report/",
+     "path": "Agency Files/KOL-Report/",
      "url": "",
      "has": [
-      "RAW-Input/kol-posts_ลิงก์โพสต์KOL.xlsx (ชีตลิงก์โพสต์ TikTok จริง 3 โพสต์ คอลัมน์ตัวเลขยังว่าง ER เป็นสูตร)",
-      "Template/kol-report-template.pptx (Template รายงาน 7 หน้า ช่องที่ต้องเติมเขียนเป็น {{...}} และ speaker notes บอกว่าแต่ละช่องมาจากไหน)"
+      "kol-posts_ลิงก์โพสต์KOL.xlsx (ชีตลิงก์โพสต์ TikTok จริง 3 โพสต์ คอลัมน์ตัวเลขยังว่าง ER เป็นสูตร)",
+      "kol-report-template.pptx (Template รายงาน 7 หน้า ช่องที่ต้องเติมเขียนเป็น {{...}} และ speaker notes บอกว่าแต่ละช่องมาจากไหน)"
      ],
      "short": "kol-posts_ลิงก์โพสต์KOL.xlsx · kol-report-template.pptx"
     }
@@ -3101,8 +3101,8 @@ const CASES = [
     "setup": true,
     "objective": "ให้ Claude เห็นชีตกับ Template และใช้ Apify ได้",
     "todo": [
-     "ดาวน์โหลดโฟลเดอร์ Case-KOL-Report แล้วแตกไฟล์",
-     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Case-KOL-Report",
+     "ดาวน์โหลดโฟลเดอร์ KOL-Report แล้วแตกไฟล์",
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ KOL-Report",
      "เชื่อม Apify: Settings → Connectors → Add custom connector → ใส่ https://mcp.apify.com แล้วล็อกอิน Apify"
     ],
     "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Apify ขึ้นในรายการ Connectors"
@@ -3113,8 +3113,8 @@ const CASES = [
     "expected": "Claude บอกว่ามี 3 โพสต์ TikTok คอลัมน์ตัวเลข วันที่ รูปปก และ Caption ยังว่าง ER เป็นสูตร และ Template มี 7 หน้า พร้อมรายการช่อง {{...}} ตาม speaker notes",
     "tip": "ขั้นนี้ทำให้ Claude รู้กติกาของทั้งสองฝั่งก่อน ถ้าข้ามไป Claude มักเดาเองว่าตัวเลขไหนวางตรงไหน",
     "prompt": {
-     "en": "Read kol-posts_ลิงก์โพสต์KOL.xlsx in RAW-Input and kol-report-template.pptx in Template, including the speaker notes.\nTell me: how many posts are in the sheet, which columns are empty and need filling, and which {{...}} placeholders the template has and where each one's value should come from.\nDon't change anything yet.",
-     "th": "อ่าน kol-posts_ลิงก์โพสต์KOL.xlsx ใน RAW-Input และ kol-report-template.pptx ใน Template รวมถึง speaker notes ด้วย\nบอกฉันว่า ในชีตมีกี่โพสต์ คอลัมน์ไหนยังว่างและต้องเติม และใน Template มีช่อง {{...}} อะไรบ้าง แต่ละช่องต้องเอาค่ามาจากไหน\nตอนนี้ยังไม่ต้องแก้อะไร"
+     "en": "Read kol-posts_ลิงก์โพสต์KOL.xlsx and kol-report-template.pptx, including the speaker notes.\nTell me: how many posts are in the sheet, which columns are empty and need filling, and which {{...}} placeholders the template has and where each one's value should come from.\nDon't change anything yet.",
+     "th": "อ่าน kol-posts_ลิงก์โพสต์KOL.xlsx และ kol-report-template.pptx รวมถึง speaker notes ด้วย\nบอกฉันว่า ในชีตมีกี่โพสต์ คอลัมน์ไหนยังว่างและต้องเติม และใน Template มีช่อง {{...}} อะไรบ้าง แต่ละช่องต้องเอาค่ามาจากไหน\nตอนนี้ยังไม่ต้องแก้อะไร"
     }
    },
    {
@@ -3133,8 +3133,8 @@ const CASES = [
     "expected": "รายงาน 7 หน้าใน Output/ คือหน้าปก ภาพรวม หน้าของแต่ละ KOL ที่มีรูปปก ตัวเลข และลิงก์ ตารางเทียบ 3 KOL และสิ่งที่ควรทำต่อ ไม่มีช่อง {{...}} เหลือ",
     "tip": "Template นี้คือของที่ทีมใช้ซ้ำได้ เปลี่ยนสีหรือใส่โลโก้ของทีมใน Template ครั้งเดียว รายงานทุกฉบับจะได้หน้าตานั้นเอง",
     "prompt": {
-     "en": "Make the client report from the template. Copy Template/kol-report-template.pptx to Output/kol-report-<today's date>.pptx and fill it using only the sheet in Output/.\n- Follow the speaker notes on each slide: they say where each {{...}} comes from.\n- Put each cover from Output/covers/ into its phone frame (Cover_1, Cover_2, Cover_3), keeping 9:16.\n- Make every post link clickable.\n- For totals and averages, add formulas to the sheet first, then copy the results.\n- You write only the titles and summaries, 2 lines each, in Thai. Every claim must quote a number from the sheet.\n- Campaign name: [campaign name]. Data date: today.\nWhen you're done, list any placeholder you couldn't fill.",
-     "th": "ทำรายงานส่งลูกค้าจาก Template คัดลอก Template/kol-report-template.pptx ไปไว้ที่ Output/kol-report-<วันที่วันนี้>.pptx แล้วเติมโดยใช้ข้อมูลจากชีตใน Output/ เท่านั้น\n- ทำตาม speaker notes ของแต่ละหน้า ซึ่งบอกว่าช่อง {{...}} แต่ละช่องมาจากไหน\n- วางรูปปกจาก Output/covers/ ลงในกรอบมือถือของแต่ละหน้า (Cover_1, Cover_2, Cover_3) สัดส่วน 9:16\n- ทำให้ลิงก์โพสต์กดได้ทุกลิงก์\n- ยอดรวมและค่าเฉลี่ย ให้ใส่สูตรในชีตก่อน แล้วค่อยคัดลอกผลมา\n- ส่วนที่เขียนเองได้มีแค่หัวข้อและสรุป ไม่เกิน 2 บรรทัด เป็นภาษาไทย และทุกข้อสรุปต้องอ้างตัวเลขจากชีต\n- ชื่อแคมเปญ: [ชื่อแคมเปญ] วันที่ข้อมูล: วันนี้\nเสร็จแล้วบอกด้วยว่ามีช่องไหนที่เติมไม่ได้"
+     "en": "Make the client report from the template. Copy kol-report-template.pptx to Output/kol-report-<today's date>.pptx and fill it using only the sheet in Output/.\n- Follow the speaker notes on each slide: they say where each {{...}} comes from.\n- Put each cover from Output/covers/ into its phone frame (Cover_1, Cover_2, Cover_3), keeping 9:16.\n- Make every post link clickable.\n- For totals and averages, add formulas to the sheet first, then copy the results.\n- You write only the titles and summaries, 2 lines each, in Thai. Every claim must quote a number from the sheet.\n- Campaign name: [campaign name]. Data date: today.\nWhen you're done, list any placeholder you couldn't fill.",
+     "th": "ทำรายงานส่งลูกค้าจาก Template คัดลอก kol-report-template.pptx ไปไว้ที่ Output/kol-report-<วันที่วันนี้>.pptx แล้วเติมโดยใช้ข้อมูลจากชีตใน Output/ เท่านั้น\n- ทำตาม speaker notes ของแต่ละหน้า ซึ่งบอกว่าช่อง {{...}} แต่ละช่องมาจากไหน\n- วางรูปปกจาก Output/covers/ ลงในกรอบมือถือของแต่ละหน้า (Cover_1, Cover_2, Cover_3) สัดส่วน 9:16\n- ทำให้ลิงก์โพสต์กดได้ทุกลิงก์\n- ยอดรวมและค่าเฉลี่ย ให้ใส่สูตรในชีตก่อน แล้วค่อยคัดลอกผลมา\n- ส่วนที่เขียนเองได้มีแค่หัวข้อและสรุป ไม่เกิน 2 บรรทัด เป็นภาษาไทย และทุกข้อสรุปต้องอ้างตัวเลขจากชีต\n- ชื่อแคมเปญ: [ชื่อแคมเปญ] วันที่ข้อมูล: วันนี้\nเสร็จแล้วบอกด้วยว่ามีช่องไหนที่เติมไม่ได้"
     }
    },
    {
@@ -3265,14 +3265,14 @@ const CASES = [
    "files": [
     {
      "b": "ชุดไฟล์เคส Script Check",
-     "path": "Case/Case-2-Script-Check/",
+     "path": "Agency Files/Script-Check/",
      "url": "",
      "has": [
-      "RAW-Input/brief_บรีฟแคมเปญ.md (บรีฟกันแดดแบรนด์สมมติ ข้อความหลัก 3 ข้อ น้ำเสียง และ CTA)",
-      "RAW-Input/keywords_คำที่ต้องมีและห้ามใช้.xlsx (คำที่ต้องมี 5 แถว คำห้ามใช้ 5 แถว)",
-      "RAW-Input/scripts/ (สคริปต์ KOL 3 ชิ้น (A, B, C))",
-      "Round-2/script-kol-d.md (สคริปต์ชิ้นใหม่ ใช้ทดสอบ Skill)",
-      "Template/script-feedback-template.xlsx (ตารางตรวจ 1 แถวต่อ 1 สคริปต์)"
+      "brief_บรีฟแคมเปญ.md (บรีฟกันแดดแบรนด์สมมติ ข้อความหลัก 3 ข้อ น้ำเสียง และ CTA)",
+      "keywords_คำที่ต้องมีและห้ามใช้.xlsx (คำที่ต้องมี 5 แถว คำห้ามใช้ 5 แถว)",
+      "scripts/ (สคริปต์ KOL 3 ชิ้น (A, B, C))",
+      "round-2/script-kol-d.md (สคริปต์ชิ้นใหม่ ใช้ทดสอบ Skill)",
+      "script-feedback-template.xlsx (ตารางตรวจ 1 แถวต่อ 1 สคริปต์)"
      ],
      "short": "brief_บรีฟแคมเปญ.md · keywords_คำที่ต้องมีและห้ามใช้.xlsx · script-kol-d.md · script-feedback-template.xlsx"
     }
@@ -3287,10 +3287,10 @@ const CASES = [
     "setup": true,
     "objective": "ให้ Claude เห็นบรีฟ ชีตคำ สคริปต์ และ Template",
     "todo": [
-     "ดาวน์โหลดโฟลเดอร์ Case-2-Script-Check แล้วแตกไฟล์",
-     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Case-2-Script-Check"
+     "ดาวน์โหลดโฟลเดอร์ Script-Check แล้วแตกไฟล์",
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Script-Check"
     ],
-    "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ใน RAW-Input และ Template"
+    "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ในโฟลเดอร์"
    },
    {
     "title": "ให้สคริปต์ค้นคำตามชีต",
@@ -3298,8 +3298,8 @@ const CASES = [
     "expected": "A ขาด #ad / #ได้รับการสนับสนุน · B ขาด 30 พ.ย. และเจอ ขาวใน, ดีที่สุด, รักษา · C ขาด SPF50+, PA++++, 30 พ.ย.",
     "tip": "ถ้า Claude ตอบเองโดยไม่เขียนสคริปต์ ให้สั่งว่า \"เขียนเป็นสคริปต์แล้วรัน\" ผลจากสคริปต์ตรวจซ้ำได้ ผลจากการอ่านอาจไม่เหมือนเดิม",
     "prompt": {
-     "en": "Write a small script that checks every script in RAW-Input/scripts against the keyword sheet in RAW-Input.\n- \"must\" words: list the ones missing from each script. A row with | passes if any one of its words is found.\n- \"forbidden\" words: list the ones found, with the line they're on.\nMatch the exact text only. Run it and show me a table: script → missing must-have words → forbidden words found.\nThen copy Template/script-feedback-template.xlsx to Output/script-feedback.xlsx and fill only those two columns, plus Script and KOL.",
-     "th": "เขียนสคริปต์เล็กๆ ตรวจทุกไฟล์ใน RAW-Input/scripts เทียบกับชีตคำใน RAW-Input\n- คำ \"must\": บอกคำที่สคริปต์แต่ละชิ้นขาด แถวที่มี | ถือว่าผ่านถ้าเจอคำใดคำหนึ่ง\n- คำ \"forbidden\": บอกคำที่เจอ พร้อมบรรทัดที่เจอ\nค้นแบบตรงตัวเท่านั้น รันแล้วแสดงตาราง: สคริปต์ → คำที่ต้องมีแต่ขาด → คำห้ามใช้ที่เจอ\nจากนั้นคัดลอก Template/script-feedback-template.xlsx ไปไว้ที่ Output/script-feedback.xlsx แล้วกรอกเฉพาะสองคอลัมน์นี้ กับคอลัมน์ Script และ KOL"
+     "en": "Write a small script that checks every script in scripts/ against the keyword sheet.\n- \"must\" words: list the ones missing from each script. A row with | passes if any one of its words is found.\n- \"forbidden\" words: list the ones found, with the line they're on.\nMatch the exact text only. Run it and show me a table: script → missing must-have words → forbidden words found.\nThen copy script-feedback-template.xlsx to Output/script-feedback.xlsx and fill only those two columns, plus Script and KOL.",
+     "th": "เขียนสคริปต์เล็กๆ ตรวจทุกไฟล์ใน scripts/ เทียบกับชีตคำ\n- คำ \"must\": บอกคำที่สคริปต์แต่ละชิ้นขาด แถวที่มี | ถือว่าผ่านถ้าเจอคำใดคำหนึ่ง\n- คำ \"forbidden\": บอกคำที่เจอ พร้อมบรรทัดที่เจอ\nค้นแบบตรงตัวเท่านั้น รันแล้วแสดงตาราง: สคริปต์ → คำที่ต้องมีแต่ขาด → คำห้ามใช้ที่เจอ\nจากนั้นคัดลอก script-feedback-template.xlsx ไปไว้ที่ Output/script-feedback.xlsx แล้วกรอกเฉพาะสองคอลัมน์นี้ กับคอลัมน์ Script และ KOL"
     }
    },
    {
@@ -3316,17 +3316,17 @@ const CASES = [
     "title": "เก็บวิธีตรวจเป็น Skill",
     "objective": "รอบหน้าไม่ต้องสั่ง Step 1–2 ใหม่",
     "expected": "Claude แสดง SKILL.md ให้ตรวจ แล้วบันทึกเป็น Skill ชื่อ script-check / พิมพ์ / ในช่องแชทแล้วเห็น script-check",
-    "tip": "Skill ไม่ผูกกับแคมเปญนี้ แคมเปญหน้าเปลี่ยนแค่บรีฟกับชีตคำใน RAW-Input",
+    "tip": "Skill ไม่ผูกกับแคมเปญนี้ แคมเปญหน้าเปลี่ยนแค่บรีฟกับชีตคำ",
     "prompt": {
-     "en": "Use skill-creator to turn what we just did into a Skill called script-check.\nI'll run it as: /script-check <script file or folder>\n\nThe Skill should:\n1. Read the brief and the keyword sheet in RAW-Input. If either is missing, ask me.\n2. Check must-have and forbidden words with a script, exact match only.\n3. Read each script against the brief for the 3 key messages and the tone.\n4. Fill a copy of Template/script-feedback-template.xlsx in Output/. Never overwrite an existing file.\n5. Draft the message to each KOL in Thai, no more than 3 points.\n6. Include every correction I made in the last steps.\n\nKeep SKILL.md short. Show it to me before saving.",
-     "th": "ใช้ skill-creator เก็บสิ่งที่เพิ่งทำเป็น Skill ชื่อ script-check\nฉันจะเรียกใช้แบบนี้: /script-check <ไฟล์หรือโฟลเดอร์สคริปต์>\n\nSkill นี้ต้อง:\n1. อ่านบรีฟและชีตคำใน RAW-Input ถ้าไม่มีไฟล์ใดไฟล์หนึ่ง ให้ถามฉัน\n2. ตรวจคำที่ต้องมีและคำห้ามใช้ด้วยสคริปต์ ค้นแบบตรงตัวเท่านั้น\n3. อ่านสคริปต์แต่ละชิ้นเทียบบรีฟ ดูข้อความหลัก 3 ข้อและน้ำเสียง\n4. กรอกผลลงสำเนาของ Template/script-feedback-template.xlsx ใน Output/ และห้ามเขียนทับไฟล์เดิม\n5. ร่างข้อความถึง KOL แต่ละคนเป็นภาษาไทย ไม่เกิน 3 ข้อ\n6. ใส่ทุกจุดที่ฉันสั่งแก้ในขั้นก่อนๆ ไว้ด้วย\n\nเขียน SKILL.md ให้สั้น และให้ฉันดูก่อนบันทึก"
+     "en": "Use skill-creator to turn what we just did into a Skill called script-check.\nI'll run it as: /script-check <script file or folder>\n\nThe Skill should:\n1. Read the brief and the keyword sheet in this folder. If either is missing, ask me.\n2. Check must-have and forbidden words with a script, exact match only.\n3. Read each script against the brief for the 3 key messages and the tone.\n4. Fill a copy of script-feedback-template.xlsx in Output/. Never overwrite an existing file.\n5. Draft the message to each KOL in Thai, no more than 3 points.\n6. Include every correction I made in the last steps.\n\nKeep SKILL.md short. Show it to me before saving.",
+     "th": "ใช้ skill-creator เก็บสิ่งที่เพิ่งทำเป็น Skill ชื่อ script-check\nฉันจะเรียกใช้แบบนี้: /script-check <ไฟล์หรือโฟลเดอร์สคริปต์>\n\nSkill นี้ต้อง:\n1. อ่านบรีฟและชีตคำในโฟลเดอร์นี้ ถ้าไม่มีไฟล์ใดไฟล์หนึ่ง ให้ถามฉัน\n2. ตรวจคำที่ต้องมีและคำห้ามใช้ด้วยสคริปต์ ค้นแบบตรงตัวเท่านั้น\n3. อ่านสคริปต์แต่ละชิ้นเทียบบรีฟ ดูข้อความหลัก 3 ข้อและน้ำเสียง\n4. กรอกผลลงสำเนาของ script-feedback-template.xlsx ใน Output/ และห้ามเขียนทับไฟล์เดิม\n5. ร่างข้อความถึง KOL แต่ละคนเป็นภาษาไทย ไม่เกิน 3 ข้อ\n6. ใส่ทุกจุดที่ฉันสั่งแก้ในขั้นก่อนๆ ไว้ด้วย\n\nเขียน SKILL.md ให้สั้น และให้ฉันดูก่อนบันทึก"
     }
    },
    {
     "title": "ลองกับสคริปต์ชิ้นใหม่",
     "objective": "ใช้ Skill กับสคริปต์ที่ไม่เคยเห็น ด้วยคำสั่งเดียว",
     "todo": [
-     "คัดลอก Round-2/script-kol-d.md ไปไว้ในโฟลเดอร์ที่เปิดอยู่ แล้วเปิด Chat ใหม่ก่อนลอง"
+     "คัดลอก round-2/script-kol-d.md ไปไว้ในโฟลเดอร์ที่เปิดอยู่ แล้วเปิด Chat ใหม่ก่อนลอง"
     ],
     "expected": "D ได้ผล \"แก้\" เพราะเจอคำห้ามใช้ รักษา และ 100% และขาด #ad / #ได้รับการสนับสนุน พร้อมร่างข้อความถึง KOL",
     "tip": "ถ้า Skill พลาดจุดไหน ให้สั่งแก้ Skill ตรงจุดนั้นแล้วลองใหม่ ไม่ต้องสร้างใหม่ทั้งหมด",
@@ -3452,11 +3452,11 @@ const CASES = [
    "files": [
     {
      "b": "ชุดไฟล์เคส KOL Payment Docs",
-     "path": "Case/Case-3-KOL-Payment/",
+     "path": "Agency Files/KOL-Payment/",
      "url": "",
      "has": [
-      "RAW-Input/kol-payments_ค่าจ้างKOL.xlsx (ค่าจ้าง KOL สมมติ 5 คน เลขที่เอกสาร หัก ณ ที่จ่าย 3% และยอดสุทธิเป็นสูตร มี 1 คนที่ข้อมูลไม่ครบ)",
-      "Template/payment-request-template.docx (ใบขอเบิกค่าจ้าง KOL ช่องที่ต้องเติมเขียนเป็น {{...}})"
+      "kol-payments_ค่าจ้างKOL.xlsx (ค่าจ้าง KOL สมมติ 5 คน เลขที่เอกสาร หัก ณ ที่จ่าย 3% และยอดสุทธิเป็นสูตร มี 1 คนที่ข้อมูลไม่ครบ)",
+      "payment-request-template.docx (ใบขอเบิกค่าจ้าง KOL ช่องที่ต้องเติมเขียนเป็น {{...}})"
      ],
      "short": "kol-payments_ค่าจ้างKOL.xlsx · payment-request-template.docx"
     }
@@ -3471,10 +3471,10 @@ const CASES = [
     "setup": true,
     "objective": "ให้ Claude เห็นชีตค่าจ้างและ Template",
     "todo": [
-     "ดาวน์โหลดโฟลเดอร์ Case-3-KOL-Payment แล้วแตกไฟล์",
-     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Case-3-KOL-Payment"
+     "ดาวน์โหลดโฟลเดอร์ KOL-Payment แล้วแตกไฟล์",
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ KOL-Payment"
     ],
-    "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ใน RAW-Input และ Template"
+    "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ในโฟลเดอร์"
    },
    {
     "title": "ให้ Claude เช็กชีตก่อนออกเอกสาร",
@@ -3482,8 +3482,8 @@ const CASES = [
     "expected": "พร้อม 4 คน · KOL สมมติ 4 ขาดเลขที่บัญชีและเลขประจำตัวผู้เสียภาษี",
     "tip": "ถ้า Claude บอกว่าเลขที่เอกสารหรือยอดสุทธิว่าง แปลว่าอ่านสูตรแทนค่า ให้สั่งว่า \"อ่านค่าที่คำนวณแล้วของสูตร\"",
     "prompt": {
-     "en": "Read kol-payments_ค่าจ้างKOL.xlsx in RAW-Input and payment-request-template.docx in Template.\nList every {{...}} in the template and the sheet column each one comes from.\nThen check each row: is everything the template needs filled in? Show a table: KOL → ready or missing → what's missing.\nRead the calculated values of the formula columns; don't recalculate them. Don't create anything yet.",
-     "th": "อ่าน kol-payments_ค่าจ้างKOL.xlsx ใน RAW-Input และ payment-request-template.docx ใน Template\nบอกช่อง {{...}} ทุกช่องใน Template และคอลัมน์ในชีตที่แต่ละช่องต้องใช้\nจากนั้นเช็กทีละแถวว่ามีข้อมูลครบตามที่ Template ต้องใช้ไหม แสดงตาราง: KOL → พร้อมหรือขาด → ขาดอะไร\nให้อ่านค่าที่สูตรคำนวณไว้แล้ว ห้ามคิดใหม่เอง ตอนนี้ยังไม่ต้องสร้างอะไร"
+     "en": "Read kol-payments_ค่าจ้างKOL.xlsx and payment-request-template.docx.\nList every {{...}} in the template and the sheet column each one comes from.\nThen check each row: is everything the template needs filled in? Show a table: KOL → ready or missing → what's missing.\nRead the calculated values of the formula columns; don't recalculate them. Don't create anything yet.",
+     "th": "อ่าน kol-payments_ค่าจ้างKOL.xlsx และ payment-request-template.docx\nบอกช่อง {{...}} ทุกช่องใน Template และคอลัมน์ในชีตที่แต่ละช่องต้องใช้\nจากนั้นเช็กทีละแถวว่ามีข้อมูลครบตามที่ Template ต้องใช้ไหม แสดงตาราง: KOL → พร้อมหรือขาด → ขาดอะไร\nให้อ่านค่าที่สูตรคำนวณไว้แล้ว ห้ามคิดใหม่เอง ตอนนี้ยังไม่ต้องสร้างอะไร"
     }
    },
    {
