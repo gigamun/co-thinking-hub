@@ -7,11 +7,11 @@
 <title>Workshop Hub · Co-Thinking with AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@400;500;600&family=Sarabun:wght@400;500;600&family=Prompt:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Poppins:wght@300;400;500;600;700&family=Anuphan:wght@400;500;600&display=swap">
 <style>
 :root{
   --bg:#FFFCF3; --paper:#FFFFFF; --ink:#2B2B2B; --ink-soft:#6E6A62; --line:#EFE8D6;
-  --red:#DD0035; --red-ink:#FFFFFF; --lime:#D8F45E; --lime-ink:#2B2B2B; --peri:#AAB6FA; --cyan:#7FF0F2;
+  --red:#DB184C; --red-ink:#FFFFFF; --lime:#DAF856; --lime-ink:#2B2B2B; --peri:#AAB6FA; --cyan:#7FF0F2;
   --prompt-bg:#F2F4FF; --prompt-line:#DDE2FF; --tag-a:#E6EAFF; --tag-b:#DBFBFB; --tag-c:#F1FBC9; --note:#F4FBD3;
   --muted-card:#F8F4E8;
   --warn:#FFF1DC; --warn-line:#F3D29E; --ok:#1E8A4C; --bad:#C2410C;
@@ -497,7 +497,7 @@ button.wf-n:hover .wf-go{color:var(--ink)}
 @media (max-width:820px){.gloss{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:480px){.gloss>div{grid-template-columns:1fr}}
 /* gradients: same hues as the brand tokens, slightly shifted */
-:root{--g-red:linear-gradient(135deg,#DD0035,#E21E4D);--g-lime:linear-gradient(135deg,#D8F45E,#8FEFD0);--g-peri:linear-gradient(135deg,#AAB6FA,#7FF0F2)}
+:root{--g-red:linear-gradient(135deg,#DB184C,#E21E4D);--g-lime:linear-gradient(135deg,#DAF856,#8FEFD0);--g-peri:linear-gradient(135deg,#AAB6FA,#7FF0F2)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--g-red:linear-gradient(135deg,#FF4D6F,#FF8AA0)}}
 :root[data-theme="dark"]{--g-red:linear-gradient(135deg,#FF4D6F,#FF8AA0)}
 .copy,.dl,.seg button[aria-pressed="true"]{background-image:var(--g-red);background-size:180% 100%;background-position:0 0;transition:background-position .35s ease,transform .15s ease,box-shadow .2s ease}
@@ -507,7 +507,7 @@ button.wf-n:hover .wf-go{color:var(--ink)}
 .step.setup .num{background-image:var(--g-peri)}
 .copy:disabled,.dl.off{background-image:none}
 .copy:not(:disabled):hover,.dl:not(.off):hover{background-position:100% 0;transform:translateY(-1px);box-shadow:0 4px 12px color-mix(in srgb,var(--red) 30%,transparent)}
-.sp-top .dl.big{background-image:linear-gradient(135deg,#DD0035,#FF6A88)}
+.sp-top .dl.big{background-image:linear-gradient(135deg,#DB184C,#FF6A88)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sp-top .dl.big{background-image:linear-gradient(135deg,#FF4D6F,#FFA0B4)}}
 :root[data-theme="dark"] .sp-top .dl.big{background-image:linear-gradient(135deg,#FF4D6F,#FFA0B4)}
 .copy:not(:disabled):active,.dl:not(.off):active{transform:translateY(0);box-shadow:none}
@@ -520,7 +520,7 @@ button.wf-n:hover .wf-go{color:var(--ink)}
   --code-bg:#141414; --code-line:#141414; --code-ink:#F5F5F5; --code-soft:#BDBDBD;
   --g-grid:linear-gradient(135deg,#B0002E,#C2185B); --on-grid:#FFFFFF;
   --g-dots:linear-gradient(135deg,#AAB6FA,#7FF0F2); --on-dots:#111111;
-  --g-lines:linear-gradient(135deg,#D8F45E,#8FEFD0); --on-lines:#111111;
+  --g-lines:linear-gradient(135deg,#DAF856,#8FEFD0); --on-lines:#111111;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#121212; --paper:#1C1C1C; --ink:#F5F5F5; --ink-soft:#B0B0B0; --line:#333333;
@@ -673,7 +673,7 @@ section.tier-lines{background:transparent;border:0;padding:0}
 @keyframes shimmer{from{background-position:130% 0}to{background-position:-130% 0}}
 @keyframes sweep{0%,82%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
 .reveal-btn[aria-expanded="false"],.dl:not(.off){position:relative;overflow:hidden;isolation:isolate;color:#fff;border-color:transparent;
-  background-image:linear-gradient(110deg,#DD0035 0%,#DD0035 40%,#F2557F 50%,#DD0035 60%,#DD0035 100%)!important;background-size:260% 100%;
+  background-image:linear-gradient(110deg,#DB184C 0%,#DB184C 40%,#F2557F 50%,#DB184C 60%,#DB184C 100%)!important;background-size:260% 100%;
   box-shadow:0 10px 24px -12px rgba(219,24,76,.7);animation:shimmer 2.4s linear 1 both}
 .reveal-btn[aria-expanded="false"]::after,.dl:not(.off)::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 2.2s cubic-bezier(.22,1,.36,1) .6s 1 both}
 .reveal-btn[aria-expanded="false"]:hover,.dl:not(.off):hover{border-color:transparent;animation:shimmer 1.8s linear infinite}
@@ -768,7 +768,7 @@ body[data-tier="lines"] .wft-pn{background:var(--g-lines);color:var(--on-lines)}
 .sp-tt b{font-size:15px;font-weight:600;line-height:1.35}
 .sp-tt small{font-size:13px;line-height:1.45;color:var(--ink-soft)}
 .sp-tab.demo .sp-tt b::after{content:" · Demo";color:var(--red);font-weight:600}
-.sp-panel{position:sticky;top:calc(var(--topH,56px) + 16px);max-height:calc(100vh - var(--topH,56px) - 32px);overflow:auto;overscroll-behavior:contain;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.sp>.sp-panel{position:sticky;top:calc(var(--topH,56px) + 16px);max-height:calc(100vh - var(--topH,56px) - 32px);overflow:auto;overscroll-behavior:contain;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
 .sp-pane h3{margin:0;font-size:19px;font-weight:600;line-height:1.35}
 .sp-pn{display:block;font-size:13px;font-weight:600;color:var(--red);margin-bottom:2px}
 .sp-pane .ptype{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
@@ -787,6 +787,42 @@ body[data-tier="lines"] .wft-pn{background:var(--g-lines);color:var(--on-lines)}
   .sp-panel .copy{white-space:nowrap;padding-left:10px;padding-right:10px}
   .wfl-b{font-size:13.5px}
 }
+
+/* ===== 2026-11-16: website CI (gridanddots.com styles.css). Source: 00 - Brand/brand-decisions.md ===== */
+:root{
+  --bg:#FFFFFF; --paper:#FFFFFF; --ink:#0E0E0E; --ink-soft:#4A4A4A; --line:#E4E4E4; --edge:#D6D6D6;
+  --muted-card:#F4F4F4; --cream:#F4F4F4;
+  --red:#DB184C; --red-ink:#FFFFFF; --lime:#DAF856; --lime-ink:#0E0E0E; --peri:#AAB6FA; --cyan:#7FF0F2;
+  --g-red:linear-gradient(180deg,#B0002E,#DB184C);
+  --g-grid:linear-gradient(180deg,#B0002E,#F06CB0); --on-grid:#FFFFFF;
+  --g-dots:linear-gradient(180deg,#8E9BF0,#7FF0F2); --on-dots:#0E0E0E;
+  --g-peri:linear-gradient(180deg,#8E9BF0,#7FF0F2);
+  --g-lines:linear-gradient(180deg,#DAF856,#8FEFD0); --on-lines:#0E0E0E;
+  --g-lime:linear-gradient(180deg,#DAF856,#8FEFD0);
+  --font:"Poppins","Anuphan",system-ui,sans-serif;
+  --display:"League Spartan","Anuphan",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E0E0E; --paper:#1A1A1A; --ink:#F5F5F5; --ink-soft:#B0B0B0; --line:#2E2E2E; --edge:#444444;
+  --muted-card:#161616; --cream:#222222; --red:#FF4D6F; --red-ink:#0E0E0E;
+  --g-red:linear-gradient(180deg,#FF4D6F,#FF8AA0);
+  --g-grid:linear-gradient(180deg,#FF4D6F,#F06CB0); --on-grid:#0E0E0E;
+  --g-dots:linear-gradient(180deg,#8E9BF0,#4FD3D6); --g-peri:linear-gradient(180deg,#8E9BF0,#4FD3D6);
+  --g-lines:linear-gradient(180deg,#C4E04A,#6FD8B8); --g-lime:linear-gradient(180deg,#C4E04A,#6FD8B8);
+}}
+:root[data-theme="dark"]{
+  --bg:#0E0E0E; --paper:#1A1A1A; --ink:#F5F5F5; --ink-soft:#B0B0B0; --line:#2E2E2E; --edge:#444444;
+  --muted-card:#161616; --cream:#222222; --red:#FF4D6F; --red-ink:#0E0E0E;
+  --g-red:linear-gradient(180deg,#FF4D6F,#FF8AA0);
+  --g-grid:linear-gradient(180deg,#FF4D6F,#F06CB0); --on-grid:#0E0E0E;
+  --g-dots:linear-gradient(180deg,#8E9BF0,#4FD3D6); --g-peri:linear-gradient(180deg,#8E9BF0,#4FD3D6);
+  --g-lines:linear-gradient(180deg,#C4E04A,#6FD8B8); --g-lime:linear-gradient(180deg,#C4E04A,#6FD8B8);
+}
+/* Thai: Anuphan everywhere (website font until LINE Seed Sans TH is licensed); Prompt and Sarabun retired */
+h1 .th,.prompt pre[lang="th"]{font-family:"Anuphan",var(--font)}
+.prompt pre,.prompt pre[lang="th"],.show .seg-part,.pbody,#bundleText{font-family:"Poppins","Anuphan",sans-serif}
+#c4host{--body-font:"Poppins","Anuphan",sans-serif}
+:lang(th),[lang="th"]{line-height:1.8}
 </style>
 </head>
 <body>
@@ -2988,6 +3024,571 @@ const CASES = [
    ],
    "s": "งานไหนต้องสอน AI ซ้ำทุกครั้ง ลองเก็บเป็น Skill ด้วยวิธีเดียวกัน: ทำมือให้ถูกหนึ่งรอบ ตรวจ เก็บเป็น Skill แล้วลองกับไฟล์ที่หน้าตาต่างจากเดิม"
   }
+ },
+ {
+  "id": "agency-1",
+  "tier": "grid",
+  "group": "agency",
+  "order": 6,
+  "code": "Agency",
+  "title": "KOL Report",
+  "titleTh": "จากลิงก์โพสต์ KOL ในชีต เป็นรายงานพร้อมส่งลูกค้า",
+  "minutes": "30",
+  "mode": "demo",
+  "tools": [
+   "Claude Code",
+   "Apify connector",
+   "PowerPoint"
+  ],
+  "lede": "งานรายงานผล KOL ส่วนใหญ่หมดเวลาไปกับการเปิดโพสต์ทีละอัน จดตัวเลข แคปรูป แล้ววางลงสไลด์ เคสนี้เริ่มจากชีตที่มีแค่ลิงก์โพสต์ TikTok จริง 3 โพสต์ ให้ Claude ใช้ Apify ดึงตัวเลขมากรอกชีต แล้วเติมลง Template รายงานที่ทีมใช้อยู่ ได้สไลด์พร้อมรูปปก ตัวเลข และลิงก์ให้ลูกค้ากดดูโพสต์ได้เลย ตัวเลขทุกตัวมาจากชีต ส่วน Claude เขียนแค่สรุป",
+  "learn": [
+   "<b>ส่วนที่ต้องถูกทุกครั้ง ให้เครื่องมือทำ</b> ตัวเลขมาจาก Apify และสูตรในชีต Claude ไม่พิมพ์หรือคิดตัวเลขเอง ส่วนที่ Claude ทำคืออ่าน สรุป และวางของให้ถูกที่<span class=\"use\">ใช้กับงานแบบนี้ได้: รายงานยอดโฆษณาประจำเดือน · สรุปยอดขายจากหลายร้าน</span>",
+   "<b>จาก Template สู่ Template</b> ชีตกำหนดว่าต้องกรอกช่องไหน Template กำหนดว่าต้องวางอะไรตรงไหน Claude ย้ายข้อมูลระหว่างสองฝั่ง ผลจึงออกมาหน้าตาเดิมทุกครั้ง<span class=\"use\">ใช้กับงานแบบนี้ได้: Recap หลังจบแคมเปญ · ใบเสนอราคาจากชีตเรท</span>",
+   "<b>ตรวจด้วยการเทียบกับต้นทาง</b> ก่อนส่งลูกค้า ให้ Claude เทียบตัวเลขทุกตัวในสไลด์กับเซลล์ในชีต แล้วบอกจุดที่ไม่ตรง แต่ห้ามแก้เอง คนเป็นคนตัดสินใจ<span class=\"use\">ใช้กับงานแบบนี้ได้: ตรวจรายงานก่อนส่ง · ตรวจตัวเลขในสไลด์ Pitch</span>"
+  ],
+  "deliver": [
+   "รายงาน KOL 7 หน้า (.pptx) จากลิงก์โพสต์ 3 ลิงก์ พร้อมชีตที่เก็บตัวเลข ณ วันที่ดึง"
+  ],
+  "kit": {
+   "tools": [
+    {
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
+     "s": "ต้องใช้แพลน Pro ขึ้นไป",
+     "need": true
+    },
+    {
+     "b": "Apify connector",
+     "s": "ดึงสถิติโพสต์สาธารณะจากลิงก์ ต้องมีบัญชี Apify (แพลนฟรีมีเครดิตพอสำหรับ 3 โพสต์) ผู้สอนเดโมให้ดู",
+     "need": true
+    },
+    {
+     "b": "PowerPoint, Keynote หรือ Google Slides",
+     "s": "เปิดดูรายงาน",
+     "need": false
+    }
+   ],
+   "settings": [
+    {
+     "b": "เปิด Code execution",
+     "s": "Settings → Capabilities → Code execution and file creation",
+     "need": true
+    },
+    {
+     "b": "เชื่อม Apify",
+     "s": "Settings → Connectors → Add custom connector → https://mcp.apify.com แล้วล็อกอิน Apify",
+     "need": true
+    }
+   ],
+   "files": [
+    {
+     "b": "ชุดไฟล์เคส KOL Report",
+     "path": "Case/Case-KOL-Report/",
+     "url": "",
+     "has": [
+      "RAW-Input/kol-posts_ลิงก์โพสต์KOL.xlsx (ชีตลิงก์โพสต์ TikTok จริง 3 โพสต์ คอลัมน์ตัวเลขยังว่าง ER เป็นสูตร)",
+      "Template/kol-report-template.pptx (Template รายงาน 7 หน้า ช่องที่ต้องเติมเขียนเป็น {{...}} และ speaker notes บอกว่าแต่ละช่องมาจากไหน)"
+     ],
+     "short": "kol-posts_ลิงก์โพสต์KOL.xlsx · kol-report-template.pptx"
+    }
+   ],
+   "notes": [
+    "ลิงก์เป็นโพสต์สาธารณะจริง ตัวเลขที่ดึงได้เป็นข้อมูลจริง ณ เวลาที่ดึง และจะเปลี่ยนทุกครั้งที่ดึงใหม่"
+   ]
+  },
+  "steps": [
+   {
+    "title": "เปิดโฟลเดอร์และเชื่อม Apify",
+    "setup": true,
+    "objective": "ให้ Claude เห็นชีตกับ Template และใช้ Apify ได้",
+    "todo": [
+     "ดาวน์โหลดโฟลเดอร์ Case-KOL-Report แล้วแตกไฟล์",
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Case-KOL-Report",
+     "เชื่อม Apify: Settings → Connectors → Add custom connector → ใส่ https://mcp.apify.com แล้วล็อกอิน Apify"
+    ],
+    "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Apify ขึ้นในรายการ Connectors"
+   },
+   {
+    "title": "ให้ Claude อ่านชีตกับ Template ก่อน",
+    "objective": "รู้ว่าต้องเติมอะไรบ้าง และแต่ละช่องมาจากไหน ก่อนลงมือ",
+    "expected": "Claude บอกว่ามี 3 โพสต์ TikTok คอลัมน์ตัวเลข วันที่ รูปปก และ Caption ยังว่าง ER เป็นสูตร และ Template มี 7 หน้า พร้อมรายการช่อง {{...}} ตาม speaker notes",
+    "tip": "ขั้นนี้ทำให้ Claude รู้กติกาของทั้งสองฝั่งก่อน ถ้าข้ามไป Claude มักเดาเองว่าตัวเลขไหนวางตรงไหน",
+    "prompt": {
+     "en": "Read kol-posts_ลิงก์โพสต์KOL.xlsx in RAW-Input and kol-report-template.pptx in Template, including the speaker notes.\nTell me: how many posts are in the sheet, which columns are empty and need filling, and which {{...}} placeholders the template has and where each one's value should come from.\nDon't change anything yet.",
+     "th": "อ่าน kol-posts_ลิงก์โพสต์KOL.xlsx ใน RAW-Input และ kol-report-template.pptx ใน Template รวมถึง speaker notes ด้วย\nบอกฉันว่า ในชีตมีกี่โพสต์ คอลัมน์ไหนยังว่างและต้องเติม และใน Template มีช่อง {{...}} อะไรบ้าง แต่ละช่องต้องเอาค่ามาจากไหน\nตอนนี้ยังไม่ต้องแก้อะไร"
+    }
+   },
+   {
+    "title": "ให้ Apify ดึงตัวเลขมากรอกชีต",
+    "objective": "ได้ตัวเลขจริงของ 3 โพสต์ในชีต โดยไม่มีใครพิมพ์ตัวเลขเอง",
+    "expected": "ได้ไฟล์ชีตใหม่ใน Output/ ที่ 3 แถวมีตัวเลขครบ ER คำนวณจากสูตรเอง และมีรูปปก 3 รูปใน Output/covers/",
+    "tip": "ตัวเลขเปลี่ยนทุกครั้งที่ดึง เพราะเป็นข้อมูลจริง จึงเก็บเป็นไฟล์ใหม่ตามวันที่ ไม่เขียนทับไฟล์เดิม",
+    "prompt": {
+     "en": "Use Apify to get the public stats of the 3 posts in the sheet. Use the TikTok scraper actor (clockworks/tiktok-scraper) with the post URLs as input. Tell me the estimated cost before you run it.\n\nThen copy the sheet to Output/kol-posts-<today's date>.xlsx and fill the copy:\n- Post date, Views, Likes, Comments, Shares, Saves, Caption: copy exactly from the Apify result. Never type or estimate a number yourself.\n- Cover image: download each video's cover into Output/covers/ (kol1.jpg, kol2.jpg, kol3.jpg) and put the file name in the Cover image column. Don't use the image link: it expires.\n- Don't touch the ER (%) formula column.\nIf a post returns no data, leave its row empty and tell me which one.",
+     "th": "ใช้ Apify ดึงสถิติสาธารณะของ 3 โพสต์ในชีต ใช้ actor TikTok scraper (clockworks/tiktok-scraper) โดยใส่ลิงก์โพสต์เป็น input บอกค่าใช้จ่ายโดยประมาณก่อนรัน\n\nจากนั้นคัดลอกชีตไปไว้ที่ Output/kol-posts-<วันที่วันนี้>.xlsx แล้วกรอกในไฟล์ที่คัดลอก:\n- วันที่โพสต์ Views Likes Comments Shares Saves และ Caption: คัดลอกจากผลของ Apify ตรงๆ ห้ามพิมพ์หรือประมาณตัวเลขเอง\n- รูปปก: ดาวน์โหลดรูปปกของแต่ละวิดีโอไว้ใน Output/covers/ (kol1.jpg, kol2.jpg, kol3.jpg) แล้วใส่ชื่อไฟล์ในคอลัมน์ Cover image ห้ามใช้ลิงก์รูป เพราะลิงก์หมดอายุ\n- ห้ามแตะคอลัมน์สูตร ER (%)\nถ้าโพสต์ไหนดึงข้อมูลไม่ได้ ให้เว้นแถวนั้นไว้ แล้วบอกว่าโพสต์ไหน"
+    }
+   },
+   {
+    "title": "เติม Template รายงาน",
+    "objective": "ได้สไลด์รายงานที่มีรูปปก ตัวเลข และลิงก์ครบทุกหน้า",
+    "expected": "รายงาน 7 หน้าใน Output/ คือหน้าปก ภาพรวม หน้าของแต่ละ KOL ที่มีรูปปก ตัวเลข และลิงก์ ตารางเทียบ 3 KOL และสิ่งที่ควรทำต่อ ไม่มีช่อง {{...}} เหลือ",
+    "tip": "Template นี้คือของที่ทีมใช้ซ้ำได้ เปลี่ยนสีหรือใส่โลโก้ของทีมใน Template ครั้งเดียว รายงานทุกฉบับจะได้หน้าตานั้นเอง",
+    "prompt": {
+     "en": "Make the client report from the template. Copy Template/kol-report-template.pptx to Output/kol-report-<today's date>.pptx and fill it using only the sheet in Output/.\n- Follow the speaker notes on each slide: they say where each {{...}} comes from.\n- Put each cover from Output/covers/ into its phone frame (Cover_1, Cover_2, Cover_3), keeping 9:16.\n- Make every post link clickable.\n- For totals and averages, add formulas to the sheet first, then copy the results.\n- You write only the titles and summaries, 2 lines each, in Thai. Every claim must quote a number from the sheet.\n- Campaign name: [campaign name]. Data date: today.\nWhen you're done, list any placeholder you couldn't fill.",
+     "th": "ทำรายงานส่งลูกค้าจาก Template คัดลอก Template/kol-report-template.pptx ไปไว้ที่ Output/kol-report-<วันที่วันนี้>.pptx แล้วเติมโดยใช้ข้อมูลจากชีตใน Output/ เท่านั้น\n- ทำตาม speaker notes ของแต่ละหน้า ซึ่งบอกว่าช่อง {{...}} แต่ละช่องมาจากไหน\n- วางรูปปกจาก Output/covers/ ลงในกรอบมือถือของแต่ละหน้า (Cover_1, Cover_2, Cover_3) สัดส่วน 9:16\n- ทำให้ลิงก์โพสต์กดได้ทุกลิงก์\n- ยอดรวมและค่าเฉลี่ย ให้ใส่สูตรในชีตก่อน แล้วค่อยคัดลอกผลมา\n- ส่วนที่เขียนเองได้มีแค่หัวข้อและสรุป ไม่เกิน 2 บรรทัด เป็นภาษาไทย และทุกข้อสรุปต้องอ้างตัวเลขจากชีต\n- ชื่อแคมเปญ: [ชื่อแคมเปญ] วันที่ข้อมูล: วันนี้\nเสร็จแล้วบอกด้วยว่ามีช่องไหนที่เติมไม่ได้"
+    }
+   },
+   {
+    "title": "ตรวจเทียบกับชีต แล้วค่อยส่ง",
+    "objective": "แน่ใจว่าตัวเลขทุกตัวในสไลด์ตรงกับชีต ก่อนส่งลูกค้า",
+    "expected": "Claude ยืนยันว่าตัวเลขตรงกันทุกจุด หรือบอกจุดที่ไม่ตรงพร้อมชื่อหน้าและเซลล์",
+    "tip": "หลังจากนี้เป็นงานของคน เปิดสไลด์ อ่านสรุปที่ Claude เขียน แก้ให้เป็นภาษาของทีม แล้วค่อยส่ง",
+    "prompt": {
+     "en": "Check Output/kol-report-<today's date>.pptx against the sheet in Output/.\nCompare every number in the deck with its cell in the sheet, and check that every link opens the right post.\nList anything that doesn't match, and any {{...}} left. Don't fix anything yourself.",
+     "th": "ตรวจ Output/kol-report-<วันที่วันนี้>.pptx เทียบกับชีตใน Output/\nเทียบตัวเลขทุกตัวในสไลด์กับเซลล์ในชีต และเช็กว่าลิงก์ทุกลิงก์เปิดไปที่โพสต์ที่ถูกต้อง\nบอกจุดที่ไม่ตรงกัน และช่อง {{...}} ที่ยังเหลือ ห้ามแก้เอง"
+    }
+   }
+  ],
+  "more": [
+   {
+    "b": "ดึงซ้ำตามรอบ",
+    "s": "ตั้งเวลาให้ดึงตัวเลขใหม่ทุก 7 วัน แล้วเทียบกับรอบก่อนว่ายอดโตขึ้นเท่าไร"
+   },
+   {
+    "b": "ใส่ค่าจ้าง KOL",
+    "s": "เพิ่มคอลัมน์ค่าจ้างในชีต แล้วให้สูตรคิด CPV และ CPE ต่อ"
+   }
+  ],
+  "workflow": [
+   {
+    "who": "you",
+    "title": "วางลิงก์โพสต์ KOL ลงชีต",
+    "text": "ชีตนี้คือต้นทางของทุกตัวเลข",
+    "step": 1
+   },
+   {
+    "who": "claude",
+    "title": "อ่านชีตกับ Template ก่อน",
+    "text": "บอกว่าต้องเติมอะไร ยังไม่แก้อะไร",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 1
+   },
+   {
+    "who": "tool",
+    "title": "Apify ดึงสถิติจากลิงก์",
+    "text": "ตัวเลขสาธารณะ ณ เวลาที่ดึง",
+    "tools": [
+     "Apify connector"
+    ],
+    "step": 2
+   },
+   {
+    "who": "claude",
+    "title": "กรอกชีตและเก็บรูปปก",
+    "text": "ไม่พิมพ์ตัวเลขเอง ER เป็นสูตร",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 2
+   },
+   {
+    "who": "claude",
+    "title": "เติม Template รายงาน",
+    "text": "วางรูป ตัวเลข ลิงก์ และเขียนสรุป",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 3
+   },
+   {
+    "who": "you",
+    "title": "ตรวจเทียบกับชีต แล้วส่งลูกค้า",
+    "text": "คนเป็นคนตัดสินใจ",
+    "step": 4
+   }
+  ],
+  "finale": {
+   "h": "จากชีตลิงก์ เป็นรายงานพร้อมส่ง",
+   "items": [
+    "ชีตที่มีตัวเลขจริงของ 3 โพสต์ ณ วันที่ดึง",
+    "รายงาน 7 หน้า พร้อมรูปปก ตัวเลข และลิงก์โพสต์",
+    "ผลตรวจว่าตัวเลขในสไลด์ตรงกับชีตทุกจุด"
+   ],
+   "s": "งานไหนมีต้นทางเป็นชีตและปลายทางเป็น Template ลองใช้วิธีเดียวกัน: ให้เครื่องมือทำส่วนที่ต้องถูกทุกครั้ง ให้ Claude วางและสรุป แล้วคนตรวจก่อนส่ง"
+  }
+ },
+ {
+  "id": "agency-2",
+  "tier": "grid",
+  "group": "agency",
+  "order": 7,
+  "code": "Agency",
+  "title": "Script Check",
+  "titleTh": "ตรวจสคริปต์ KOL เทียบบรีฟ แล้วเก็บวิธีตรวจเป็น Skill",
+  "minutes": "30",
+  "mode": "hands-on",
+  "tools": [
+   "Claude Code",
+   "Skill skill-creator"
+  ],
+  "lede": "แคมเปญหนึ่งมีสคริปต์ KOL หลายชิ้น และต้องตรวจซ้ำแบบเดิมทุกครั้ง ว่ามีคำที่ต้องมีครบไหม มีคำห้ามใช้หรือเปล่า และพูดข้อความหลักตรงบรีฟไหม เคสนี้ให้สคริปต์เล็กๆ ค้นคำตามชีต ให้ Claude อ่านเทียบบรีฟ แล้วกรอกผลลง Template ตารางตรวจ จากนั้นเก็บวิธีตรวจเป็น Skill รอบหน้าพิมพ์คำสั่งเดียว",
+  "learn": [
+   "<b>แยกงานที่ต้องตรงตัว ออกจากงานที่ต้องใช้วิจารณญาณ</b> การค้นคำต้องห้ามต้องถูกทุกครั้ง จึงให้สคริปต์ค้น ส่วนการดูน้ำเสียงและข้อความหลักต้องอ่านแล้วตัดสิน จึงให้ Claude ทำ<span class=\"use\">ใช้กับงานแบบนี้ได้: ตรวจแคปชั่นก่อนโพสต์ · ตรวจข้อความโฆษณาตามกฎแพลตฟอร์ม</span>",
+   "<b>ให้ Claude ตัดสินตามเกณฑ์ที่เขียนไว้</b> บรีฟและชีตคำคือเกณฑ์ ถ้าเกณฑ์ไม่ชัด ผลตรวจก็ไม่นิ่ง<span class=\"use\">ใช้กับงานแบบนี้ได้: ตรวจงานฟรีแลนซ์ตามบรีฟ · ให้คะแนนไอเดียตามเกณฑ์ทีม</span>",
+   "<b>เก็บวิธีตรวจเป็น Skill</b> ตรวจมือหนึ่งรอบให้ถูก แล้วให้ skill-creator เก็บไว้ ครั้งหน้าแค่เปลี่ยนบรีฟกับชีตคำ<span class=\"use\">ใช้กับงานแบบนี้ได้: Checklist ก่อนส่งงานลูกค้า · ตรวจสคริปต์ทุกแคมเปญ</span>"
+  ],
+  "deliver": [
+   "ตารางตรวจสคริปต์ 3 ชิ้นพร้อมร่างข้อความถึง KOL และ Skill script-check ที่ใช้กับแคมเปญถัดไปได้"
+  ],
+  "kit": {
+   "tools": [
+    {
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
+     "s": "ต้องใช้แพลน Pro ขึ้นไป",
+     "need": true
+    }
+   ],
+   "settings": [
+    {
+     "b": "เปิด Code execution",
+     "s": "Settings → Capabilities → Code execution and file creation",
+     "need": true
+    },
+    {
+     "b": "Skill",
+     "s": "skill-creator อยู่ใน Starter Skill Pack (ติดตั้งตอน Setup)",
+     "need": true,
+     "skill": true
+    }
+   ],
+   "files": [
+    {
+     "b": "ชุดไฟล์เคส Script Check",
+     "path": "Case/Case-2-Script-Check/",
+     "url": "",
+     "has": [
+      "RAW-Input/brief_บรีฟแคมเปญ.md (บรีฟกันแดดแบรนด์สมมติ ข้อความหลัก 3 ข้อ น้ำเสียง และ CTA)",
+      "RAW-Input/keywords_คำที่ต้องมีและห้ามใช้.xlsx (คำที่ต้องมี 5 แถว คำห้ามใช้ 5 แถว)",
+      "RAW-Input/scripts/ (สคริปต์ KOL 3 ชิ้น (A, B, C))",
+      "Round-2/script-kol-d.md (สคริปต์ชิ้นใหม่ ใช้ทดสอบ Skill)",
+      "Template/script-feedback-template.xlsx (ตารางตรวจ 1 แถวต่อ 1 สคริปต์)"
+     ],
+     "short": "brief_บรีฟแคมเปญ.md · keywords_คำที่ต้องมีและห้ามใช้.xlsx · script-kol-d.md · script-feedback-template.xlsx"
+    }
+   ],
+   "notes": [
+    "แบรนด์ สินค้า และสคริปต์ทั้งหมดเป็นข้อมูลสมมติ"
+   ]
+  },
+  "steps": [
+   {
+    "title": "เปิดโฟลเดอร์ใน Claude Code",
+    "setup": true,
+    "objective": "ให้ Claude เห็นบรีฟ ชีตคำ สคริปต์ และ Template",
+    "todo": [
+     "ดาวน์โหลดโฟลเดอร์ Case-2-Script-Check แล้วแตกไฟล์",
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Case-2-Script-Check"
+    ],
+    "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ใน RAW-Input และ Template"
+   },
+   {
+    "title": "ให้สคริปต์ค้นคำตามชีต",
+    "objective": "ได้ผลค้นคำที่ถูกตรงตัวทุกครั้ง โดยไม่ให้ Claude อ่านแล้วเดา",
+    "expected": "A ขาด #ad / #ได้รับการสนับสนุน · B ขาด 30 พ.ย. และเจอ ขาวใน, ดีที่สุด, รักษา · C ขาด SPF50+, PA++++, 30 พ.ย.",
+    "tip": "ถ้า Claude ตอบเองโดยไม่เขียนสคริปต์ ให้สั่งว่า \"เขียนเป็นสคริปต์แล้วรัน\" ผลจากสคริปต์ตรวจซ้ำได้ ผลจากการอ่านอาจไม่เหมือนเดิม",
+    "prompt": {
+     "en": "Write a small script that checks every script in RAW-Input/scripts against the keyword sheet in RAW-Input.\n- \"must\" words: list the ones missing from each script. A row with | passes if any one of its words is found.\n- \"forbidden\" words: list the ones found, with the line they're on.\nMatch the exact text only. Run it and show me a table: script → missing must-have words → forbidden words found.\nThen copy Template/script-feedback-template.xlsx to Output/script-feedback.xlsx and fill only those two columns, plus Script and KOL.",
+     "th": "เขียนสคริปต์เล็กๆ ตรวจทุกไฟล์ใน RAW-Input/scripts เทียบกับชีตคำใน RAW-Input\n- คำ \"must\": บอกคำที่สคริปต์แต่ละชิ้นขาด แถวที่มี | ถือว่าผ่านถ้าเจอคำใดคำหนึ่ง\n- คำ \"forbidden\": บอกคำที่เจอ พร้อมบรรทัดที่เจอ\nค้นแบบตรงตัวเท่านั้น รันแล้วแสดงตาราง: สคริปต์ → คำที่ต้องมีแต่ขาด → คำห้ามใช้ที่เจอ\nจากนั้นคัดลอก Template/script-feedback-template.xlsx ไปไว้ที่ Output/script-feedback.xlsx แล้วกรอกเฉพาะสองคอลัมน์นี้ กับคอลัมน์ Script และ KOL"
+    }
+   },
+   {
+    "title": "ให้ Claude ตรวจเทียบบรีฟ",
+    "objective": "ตรวจส่วนที่ต้องใช้วิจารณญาณ คือข้อความหลักและน้ำเสียง แล้วร่างข้อความถึง KOL",
+    "expected": "ทั้ง 3 สคริปต์ได้ผล \"แก้\" · C ถูกชี้ว่าน้ำเสียงขายแรง (\"ซื้อด่วน!\", \"ของหมดไวมาก\") · มีร่างข้อความถึง KOL ครบ 3 ช่อง",
+    "tip": "อ่านร่างข้อความก่อนส่งทุกครั้ง ถ้าอยากให้เป็นภาษาของทีม ให้แปะข้อความที่เคยส่งจริงสัก 2 ข้อความเป็นตัวอย่าง",
+    "prompt": {
+     "en": "Now read each script against brief_บรีฟแคมเปญ.md and fill the rest of Output/script-feedback.xlsx:\n- Key messages: does the script say all 3 key messages in the brief? Name any that are missing or weak.\n- Tone: does it match the brief (friendly, from real use, no hard sell, no exaggeration)? Quote the line that doesn't.\n- Result: \"ผ่าน\" only if nothing is missing, no forbidden word was found, and all 3 key messages are there. Otherwise \"แก้\".\n- Message to KOL: a short, polite Thai message saying exactly what to change. No more than 3 points.\nDon't change the two columns from Step 1.",
+     "th": "ต่อไปอ่านสคริปต์แต่ละชิ้นเทียบกับ brief_บรีฟแคมเปญ.md แล้วกรอกคอลัมน์ที่เหลือใน Output/script-feedback.xlsx\n- ข้อความหลัก: พูดครบ 3 ข้อตามบรีฟไหม ข้อไหนขาดหรือพูดไม่ชัด\n- น้ำเสียง: ตรงบรีฟไหม (เป็นกันเอง เล่าจากการใช้จริง ไม่ขายแรง ไม่เกินจริง) ยกบรรทัดที่ไม่ตรงมาด้วย\n- ผล: ใส่ \"ผ่าน\" เมื่อไม่มีคำขาด ไม่มีคำห้ามใช้ และข้อความหลักครบ 3 ข้อ นอกนั้นใส่ \"แก้\"\n- ข้อความถึง KOL: ร่างภาษาไทยสั้นๆ สุภาพ บอกให้ชัดว่าต้องแก้อะไร ไม่เกิน 3 ข้อ\nห้ามแก้สองคอลัมน์ที่ได้จาก Step 1"
+    }
+   },
+   {
+    "title": "เก็บวิธีตรวจเป็น Skill",
+    "objective": "รอบหน้าไม่ต้องสั่ง Step 1–2 ใหม่",
+    "expected": "Claude แสดง SKILL.md ให้ตรวจ แล้วบันทึกเป็น Skill ชื่อ script-check / พิมพ์ / ในช่องแชทแล้วเห็น script-check",
+    "tip": "Skill ไม่ผูกกับแคมเปญนี้ แคมเปญหน้าเปลี่ยนแค่บรีฟกับชีตคำใน RAW-Input",
+    "prompt": {
+     "en": "Use skill-creator to turn what we just did into a Skill called script-check.\nI'll run it as: /script-check <script file or folder>\n\nThe Skill should:\n1. Read the brief and the keyword sheet in RAW-Input. If either is missing, ask me.\n2. Check must-have and forbidden words with a script, exact match only.\n3. Read each script against the brief for the 3 key messages and the tone.\n4. Fill a copy of Template/script-feedback-template.xlsx in Output/. Never overwrite an existing file.\n5. Draft the message to each KOL in Thai, no more than 3 points.\n6. Include every correction I made in the last steps.\n\nKeep SKILL.md short. Show it to me before saving.",
+     "th": "ใช้ skill-creator เก็บสิ่งที่เพิ่งทำเป็น Skill ชื่อ script-check\nฉันจะเรียกใช้แบบนี้: /script-check <ไฟล์หรือโฟลเดอร์สคริปต์>\n\nSkill นี้ต้อง:\n1. อ่านบรีฟและชีตคำใน RAW-Input ถ้าไม่มีไฟล์ใดไฟล์หนึ่ง ให้ถามฉัน\n2. ตรวจคำที่ต้องมีและคำห้ามใช้ด้วยสคริปต์ ค้นแบบตรงตัวเท่านั้น\n3. อ่านสคริปต์แต่ละชิ้นเทียบบรีฟ ดูข้อความหลัก 3 ข้อและน้ำเสียง\n4. กรอกผลลงสำเนาของ Template/script-feedback-template.xlsx ใน Output/ และห้ามเขียนทับไฟล์เดิม\n5. ร่างข้อความถึง KOL แต่ละคนเป็นภาษาไทย ไม่เกิน 3 ข้อ\n6. ใส่ทุกจุดที่ฉันสั่งแก้ในขั้นก่อนๆ ไว้ด้วย\n\nเขียน SKILL.md ให้สั้น และให้ฉันดูก่อนบันทึก"
+    }
+   },
+   {
+    "title": "ลองกับสคริปต์ชิ้นใหม่",
+    "objective": "ใช้ Skill กับสคริปต์ที่ไม่เคยเห็น ด้วยคำสั่งเดียว",
+    "todo": [
+     "คัดลอก Round-2/script-kol-d.md ไปไว้ในโฟลเดอร์ที่เปิดอยู่ แล้วเปิด Chat ใหม่ก่อนลอง"
+    ],
+    "expected": "D ได้ผล \"แก้\" เพราะเจอคำห้ามใช้ รักษา และ 100% และขาด #ad / #ได้รับการสนับสนุน พร้อมร่างข้อความถึง KOL",
+    "tip": "ถ้า Skill พลาดจุดไหน ให้สั่งแก้ Skill ตรงจุดนั้นแล้วลองใหม่ ไม่ต้องสร้างใหม่ทั้งหมด",
+    "prompt": {
+     "en": "/script-check script-kol-d.md",
+     "th": "/script-check script-kol-d.md"
+    },
+    "payoff": 2
+   }
+  ],
+  "more": [
+   {
+    "b": "ใช้กับแคมเปญจริง",
+    "s": "เปลี่ยนบรีฟและชีตคำเป็นของแคมเปญที่ทำอยู่ (ไม่ใส่ข้อมูลลับของลูกค้า)"
+   },
+   {
+    "b": "เพิ่มกฎของแพลตฟอร์ม",
+    "s": "ใส่คำต้องห้ามตามกฎโฆษณาของแต่ละหมวดสินค้าลงในชีตคำ"
+   }
+  ],
+  "workflow": [
+   {
+    "who": "you",
+    "title": "เตรียมบรีฟและชีตคำ",
+    "text": "เกณฑ์ที่ใช้ตรวจ",
+    "step": 1
+   },
+   {
+    "who": "tool",
+    "title": "สคริปต์ค้นคำตามชีต",
+    "text": "ถูกตรงตัวทุกครั้ง",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 1
+   },
+   {
+    "who": "claude",
+    "title": "อ่านเทียบบรีฟ",
+    "text": "ข้อความหลักและน้ำเสียง",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 2
+   },
+   {
+    "who": "you",
+    "title": "อ่านร่างข้อความถึง KOL",
+    "text": "แก้ก่อนส่งทุกครั้ง",
+    "step": 2
+   },
+   {
+    "who": "tool",
+    "title": "เก็บวิธีตรวจเป็น Skill",
+    "text": "skill-creator เขียน SKILL.md ให้",
+    "tools": [
+     "Skill skill-creator"
+    ],
+    "step": 3
+   },
+   {
+    "who": "tool",
+    "title": "รัน /script-check กับสคริปต์ใหม่",
+    "text": "คำสั่งเดียว",
+    "tools": [
+     "Skill script-check"
+    ],
+    "step": 4
+   }
+  ],
+  "finale": {
+   "h": "ตรวจสคริปต์ครั้งเดียว แล้วใช้ซ้ำทุกแคมเปญ",
+   "items": [
+    "ตารางตรวจสคริปต์ 3 ชิ้น พร้อมร่างข้อความถึง KOL",
+    "Skill script-check ที่เรียกใช้ได้ด้วยคำสั่งเดียว",
+    "การแบ่งงาน: สคริปต์ค้นคำ Claude ดูความหมาย คนตัดสินก่อนส่ง"
+   ],
+   "s": "งานตรวจไหนที่ทำซ้ำทุกแคมเปญ ลองใช้วิธีเดียวกัน: เขียนเกณฑ์ให้ชัด ส่วนที่ต้องตรงตัวให้สคริปต์ทำ แล้วเก็บเป็น Skill"
+  }
+ },
+ {
+  "id": "agency-3",
+  "tier": "grid",
+  "group": "agency",
+  "order": 8,
+  "code": "Agency",
+  "title": "KOL Payment Docs",
+  "titleTh": "จากชีตค่าจ้าง เป็นใบขอเบิก 1 ใบต่อ 1 KOL ทั้งชุดในครั้งเดียว",
+  "minutes": "25",
+  "mode": "hands-on",
+  "tools": [
+   "Claude Code"
+  ],
+  "lede": "ปลายแคมเปญ ทีมต้องทำใบขอเบิกค่าจ้าง KOL ทีละคน คัดลอกชื่อ ยอดเงิน และเลขบัญชีจากชีตลงเอกสาร ซึ่งพิมพ์ผิดหลักเดียวก็โอนผิด เคสนี้ให้ Claude สร้างใบขอเบิกจาก Template ครบทุกคนในครั้งเดียว ยอดเงินมาจากสูตรในชีต คนไหนข้อมูลไม่ครบจะไม่ออกเอกสาร แต่ร่างข้อความขอข้อมูลให้แทน",
+  "learn": [
+   "<b>ยอดเงินมาจากสูตร ไม่ใช่จาก AI</b> หัก ณ ที่จ่ายและยอดโอนสุทธิคิดในชีต Claude คัดลอกค่าที่คิดเสร็จแล้วไปวางเท่านั้น<span class=\"use\">ใช้กับงานแบบนี้ได้: ใบเสนอราคา · ใบแจ้งหนี้</span>",
+   "<b>ข้อมูลไม่ครบ ต้องหยุด ไม่ใช่เดา</b> แถวที่ขาดเลขบัญชีจะไม่มีเอกสาร Claude ร่างข้อความขอข้อมูลแทน<span class=\"use\">ใช้กับงานแบบนี้ได้: เอกสารเปิดบัญชีลูกค้าใหม่ · ใบสมัครที่กรอกไม่ครบ</span>",
+   "<b>ทำเอกสารเป็นชุดจาก Template เดียว</b> 1 แถวในชีตเท่ากับเอกสาร 1 ใบ หน้าตาเหมือนกันทุกใบ ตรวจง่าย<span class=\"use\">ใช้กับงานแบบนี้ได้: สัญญาจ้าง KOL หลายคน · ใบรับรองผู้เข้าอบรม</span>"
+  ],
+  "deliver": [
+   "ใบขอเบิกค่าจ้าง 4 ใบ (.docx) จากชีตเดียว ร่างข้อความขอข้อมูลจาก KOL ที่ข้อมูลไม่ครบ และผลตรวจยอดเทียบชีต"
+  ],
+  "kit": {
+   "tools": [
+    {
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
+     "s": "ต้องใช้แพลน Pro ขึ้นไป",
+     "need": true
+    },
+    {
+     "b": "Word หรือ Google Docs",
+     "s": "เปิดดูเอกสาร",
+     "need": false
+    }
+   ],
+   "settings": [
+    {
+     "b": "เปิด Code execution",
+     "s": "Settings → Capabilities → Code execution and file creation",
+     "need": true
+    }
+   ],
+   "files": [
+    {
+     "b": "ชุดไฟล์เคส KOL Payment Docs",
+     "path": "Case/Case-3-KOL-Payment/",
+     "url": "",
+     "has": [
+      "RAW-Input/kol-payments_ค่าจ้างKOL.xlsx (ค่าจ้าง KOL สมมติ 5 คน เลขที่เอกสาร หัก ณ ที่จ่าย 3% และยอดสุทธิเป็นสูตร มี 1 คนที่ข้อมูลไม่ครบ)",
+      "Template/payment-request-template.docx (ใบขอเบิกค่าจ้าง KOL ช่องที่ต้องเติมเขียนเป็น {{...}})"
+     ],
+     "short": "kol-payments_ค่าจ้างKOL.xlsx · payment-request-template.docx"
+    }
+   ],
+   "notes": [
+    "ชื่อ เลขบัญชี และเลขประจำตัวผู้เสียภาษีทั้งหมดเป็นข้อมูลปลอม ห้ามใช้บัตรประชาชนหรือสมุดบัญชีจริงในคลาส"
+   ]
+  },
+  "steps": [
+   {
+    "title": "เปิดโฟลเดอร์ใน Claude Code",
+    "setup": true,
+    "objective": "ให้ Claude เห็นชีตค่าจ้างและ Template",
+    "todo": [
+     "ดาวน์โหลดโฟลเดอร์ Case-3-KOL-Payment แล้วแตกไฟล์",
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Case-3-KOL-Payment"
+    ],
+    "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ใน RAW-Input และ Template"
+   },
+   {
+    "title": "ให้ Claude เช็กชีตก่อนออกเอกสาร",
+    "objective": "รู้ว่าใครพร้อมออกเอกสาร และใครข้อมูลยังไม่ครบ",
+    "expected": "พร้อม 4 คน · KOL สมมติ 4 ขาดเลขที่บัญชีและเลขประจำตัวผู้เสียภาษี",
+    "tip": "ถ้า Claude บอกว่าเลขที่เอกสารหรือยอดสุทธิว่าง แปลว่าอ่านสูตรแทนค่า ให้สั่งว่า \"อ่านค่าที่คำนวณแล้วของสูตร\"",
+    "prompt": {
+     "en": "Read kol-payments_ค่าจ้างKOL.xlsx in RAW-Input and payment-request-template.docx in Template.\nList every {{...}} in the template and the sheet column each one comes from.\nThen check each row: is everything the template needs filled in? Show a table: KOL → ready or missing → what's missing.\nRead the calculated values of the formula columns; don't recalculate them. Don't create anything yet.",
+     "th": "อ่าน kol-payments_ค่าจ้างKOL.xlsx ใน RAW-Input และ payment-request-template.docx ใน Template\nบอกช่อง {{...}} ทุกช่องใน Template และคอลัมน์ในชีตที่แต่ละช่องต้องใช้\nจากนั้นเช็กทีละแถวว่ามีข้อมูลครบตามที่ Template ต้องใช้ไหม แสดงตาราง: KOL → พร้อมหรือขาด → ขาดอะไร\nให้อ่านค่าที่สูตรคำนวณไว้แล้ว ห้ามคิดใหม่เอง ตอนนี้ยังไม่ต้องสร้างอะไร"
+    }
+   },
+   {
+    "title": "ออกใบขอเบิกทั้งชุด",
+    "objective": "ได้ใบขอเบิก 1 ใบต่อ 1 KOL ที่ข้อมูลครบ ในครั้งเดียว",
+    "expected": "ได้ 4 ไฟล์ (PAY-2611-001, 002, 003, 005) ค่าจ้างรวม 78,000.00 หัก ณ ที่จ่าย 2,340.00 ยอดโอนสุทธิรวม 75,660.00 บาท",
+    "tip": "ลองเปิดไฟล์สักใบ ถ้ายังเห็น {{...}} เหลืออยู่ ให้บอก Claude ว่าช่องไหน แล้วสั่งตรวจทุกไฟล์อีกรอบ",
+    "prompt": {
+     "en": "For every row that's ready, make a payment request from the template:\n- Save each one as Output/<Doc no>_<KOL name>.docx. Never overwrite an existing file.\n- Fill every {{...}} from that row only. Copy amounts exactly as the sheet shows them, with thousand separators and 2 decimals. Never type or calculate an amount yourself.\n- {{date}} = today.\n- Skip any row that's missing information. Don't fill the gap and don't guess.\nWhen you're done, show a table: file → fee → WHT → net, and the total of each column.",
+     "th": "สร้างใบขอเบิกจาก Template ให้ทุกแถวที่ข้อมูลพร้อม\n- บันทึกแต่ละใบเป็น Output/<Doc no>_<KOL name>.docx และห้ามเขียนทับไฟล์เดิม\n- เติม {{...}} ทุกช่องจากแถวนั้นเท่านั้น คัดลอกยอดเงินตามที่ชีตแสดง มีคอมมาและทศนิยม 2 ตำแหน่ง ห้ามพิมพ์หรือคิดยอดเงินเอง\n- {{date}} = วันนี้\n- แถวที่ข้อมูลไม่ครบ ให้ข้ามไป ห้ามเติมช่องที่ขาดเอง และห้ามเดา\nเสร็จแล้วแสดงตาราง: ไฟล์ → ค่าจ้าง → หัก ณ ที่จ่าย → ยอดสุทธิ พร้อมยอดรวมของแต่ละคอลัมน์"
+    }
+   },
+   {
+    "title": "ร่างข้อความขอข้อมูลที่ขาด",
+    "objective": "KOL ที่ข้อมูลไม่ครบได้ข้อความที่ส่งได้ทันที โดยคนเป็นคนส่ง",
+    "expected": "ร่างข้อความถึง KOL สมมติ 4 ขอเลขที่บัญชีและเลขประจำตัวผู้เสียภาษี พร้อมบอกกำหนดจ่าย 30 พ.ย. 2026",
+    "tip": "ได้ข้อมูลครบแล้วเติมในชีต แล้วสั่ง Step 2 ใหม่ Claude จะข้ามไฟล์ที่มีอยู่แล้ว และออกเฉพาะใบที่เพิ่งพร้อม",
+    "prompt": {
+     "en": "For each KOL that was skipped, draft a short, polite LINE message in Thai asking for exactly what's missing.\nSay what it's for (the payment for the Lumi Dew campaign) and the due date in the sheet.\nDon't ask for anything the sheet already has. Save the drafts in Output/missing-info-messages.md. Don't send anything.",
+     "th": "ร่างข้อความ LINE ภาษาไทยสั้นๆ สุภาพ ถึง KOL แต่ละคนที่ถูกข้ามไป ขอเฉพาะข้อมูลที่ขาด\nบอกว่าขอไปเพื่ออะไร (จ่ายค่าจ้างแคมเปญ Lumi Dew) และกำหนดจ่ายตามชีต\nห้ามขอข้อมูลที่ชีตมีอยู่แล้ว บันทึกร่างไว้ใน Output/missing-info-messages.md และห้ามส่งเอง"
+    }
+   },
+   {
+    "title": "ตรวจยอดเทียบชีตก่อนส่งอนุมัติ",
+    "objective": "แน่ใจว่าทุกใบตรงกับชีต ก่อนส่งให้คนอนุมัติและโอนเงิน",
+    "expected": "Claude ยืนยันว่า 4 ไฟล์ตรงกับชีตทุกช่อง หรือบอกไฟล์และช่องที่ไม่ตรง",
+    "tip": "การโอนเงินเป็นงานของคนเสมอ Claude ทำเอกสารและตรวจให้ แต่คนเป็นคนอนุมัติและโอน",
+    "prompt": {
+     "en": "Check every .docx in Output/ against the sheet.\nFor each file, compare name, account no., fee, WHT and net with its row. Check that no {{...}} is left.\nList anything that doesn't match. Don't fix anything yourself.",
+     "th": "ตรวจไฟล์ .docx ทุกไฟล์ใน Output/ เทียบกับชีต\nแต่ละไฟล์ให้เทียบชื่อ เลขที่บัญชี ค่าจ้าง หัก ณ ที่จ่าย และยอดสุทธิ กับแถวของคนนั้น และเช็กว่าไม่มีช่อง {{...}} เหลือ\nบอกจุดที่ไม่ตรงกัน ห้ามแก้เอง"
+    }
+   }
+  ],
+  "more": [
+   {
+    "b": "เก็บเป็น Skill",
+    "s": "ใช้ skill-creator เก็บ Step 1–4 เป็น Skill เช่น /payment-docs ใช้ทุกปลายแคมเปญ"
+   },
+   {
+    "b": "รวมเป็น PDF ไฟล์เดียว",
+    "s": "ให้ Claude รวมทุกใบเป็น PDF ไฟล์เดียวไว้ส่งฝ่ายบัญชี"
+   }
+  ],
+  "workflow": [
+   {
+    "who": "tool",
+    "title": "สูตรในชีตคิดหัก ณ ที่จ่ายและยอดสุทธิ",
+    "text": "ยอดเงินไม่ผ่าน AI",
+    "tools": [
+     "Excel"
+    ],
+    "step": 1
+   },
+   {
+    "who": "claude",
+    "title": "เช็กว่าใครข้อมูลครบ",
+    "text": "ยังไม่สร้างอะไร",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 1
+   },
+   {
+    "who": "claude",
+    "title": "ออกใบขอเบิกจาก Template ทั้งชุด",
+    "text": "ข้ามแถวที่ไม่ครบ",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 2
+   },
+   {
+    "who": "claude",
+    "title": "ร่างข้อความขอข้อมูลที่ขาด",
+    "text": "คนเป็นคนส่ง",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 3
+   },
+   {
+    "who": "claude",
+    "title": "ตรวจทุกใบเทียบชีต",
+    "text": "บอกจุดที่ไม่ตรง ไม่แก้เอง",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 4
+   },
+   {
+    "who": "you",
+    "title": "อนุมัติแล้วโอนเงิน",
+    "text": "งานของคนเสมอ",
+    "step": 4
+   }
+  ],
+  "finale": {
+   "h": "จากชีตเดียว เป็นเอกสารทั้งชุด",
+   "items": [
+    "ใบขอเบิก 4 ใบ ยอดเงินตรงกับสูตรในชีต",
+    "ร่างข้อความขอข้อมูลจาก KOL ที่ข้อมูลไม่ครบ",
+    "ผลตรวจทุกใบเทียบชีต ก่อนส่งอนุมัติ"
+   ],
+   "s": "เอกสารไหนที่ทำซ้ำจากชีตทุกเดือน ลองใช้วิธีเดียวกัน: ตัวเลขอยู่ในสูตร Claude วางลง Template ข้อมูลไม่ครบให้หยุด แล้วคนอนุมัติ"
+  }
  }
 ];
 const KIT = { root:"https://drive.google.com/drive/folders/1hy5FPWZd-5Ignn9-ZmWtybPq6UTMxKvD?usp=sharing", dots:"", grid1:"", grid2:"", lines:{ morning:"", deck:"", portfolio:"", retire:"" } };
@@ -3297,6 +3898,9 @@ const WF_PHASES = {
   "dots-3":[["Choose your instructions",1,1],["Save them in Claude",2,2],["Test them",3,4]],
   "grid-1":[["Sort the files",1,2],["Merge into one sheet",3,4],["Build the branded dashboard",5,6],["Save it for next month",7,8]],
   "audit-1":[["Look first",1,1],["Teach it",2,4],["Save it",5,5],["Reuse it",6,7]],
+  "agency-1":[["Collect",1,4],["Fill the template",5,5],["Check and send",6,6]],
+  "agency-2":[["Check words",1,2],["Check against brief",3,4],["Save and reuse",5,6]],
+  "agency-3":[["Check the sheet",1,2],["Make the docs",3,4],["Check and approve",5,6]],
   "grid-4":[["Prepare the context",1,1],["Do it once by hand",2,3],["Turn it into a Skill",4,5],["Run and improve",6,8]],
   "grid-2":[["Set up and give the task",1,2],["Pull and analyze their ads",3,4],["Find the gaps",5,6]],
   "lines-1":[["Connect and check",1,3],["Build the brief",4,6],["Schedule it for 8:00",7,7]],
@@ -3424,8 +4028,8 @@ function renderSide(c, sub){
   const subList = items => items && items.length ? `<ul class="sd-sub">${items.map(x => `<li><button type="button" data-go="${x.id}" title="${esc(x.label)}">${esc(x.label)}</button></li>`).join("")}</ul>` : "";
   side.innerHTML = `<nav aria-label="เมนู">
     <a href="#home"${c ? "" : ' aria-current="page"'}>หน้าแรก</a>${c ? "" : subList(sub)}
-    ${[["dots", TIERS.dots.en], ["grid", TIERS.grid.en], ["lines", TIERS.lines.en], ["audit", "Audit Class"]].map(([t, label]) => `<p class="sd-tier tier-${t === "audit" ? "grid" : t}">${label}</p>
-    <ul class="sd-list">${CASES.filter(x => t === "audit" ? x.group === "audit" : x.tier === t && !x.group).sort((a, b) => a.order - b.order).map(x => {
+    ${[["dots", TIERS.dots.en], ["grid", TIERS.grid.en], ["lines", TIERS.lines.en], ["audit", "Audit Class"], ["agency", "Agency"]].map(([t, label]) => `<p class="sd-tier tier-${TIERS[t] ? t : "grid"}">${label}</p>
+    <ul class="sd-list">${CASES.filter(x => TIERS[t] ? x.tier === t && !x.group : x.group === t).sort((a, b) => a.order - b.order).map(x => {
       const on = c && x.id === c.id;
       return `<li><a href="#${x.id}"${on ? ' aria-current="page"' : ""}><span class="sd-code">${esc(x.code)}</span>${esc(x.title)}</a>${on ? subList(sub) : ""}</li>`;
     }).join("")}</ul>`).join("")}
