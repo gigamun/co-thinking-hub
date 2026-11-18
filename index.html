@@ -596,11 +596,17 @@ button.wf-n.script:hover{background:#141414;filter:brightness(1.4);border-color:
 body[data-tier="dots"] .stepbar button.on{background:var(--g-dots);color:var(--on-dots)}
 body[data-tier="grid"] .stepbar button.on{background:var(--g-grid);color:var(--on-grid)}
 body[data-tier="lines"] .stepbar button.on{background:var(--g-lines);color:var(--on-lines)}
+body[data-tier="agency"] .stepbar button.on{background:var(--g-agency);color:var(--on-agency)}
 /* tier bands (home) */
+:root{--g-agency:linear-gradient(135deg,#0B1F3A,#1E3A6E);--on-agency:#FFFFFF;--agency-ink:#1E3A6E}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--agency-ink:#7FB8F5}}
+:root[data-theme="dark"]{--agency-ink:#7FB8F5}
+.tier-agency .ex-code{color:var(--agency-ink)}
 .tier-band{padding:18px 22px;border:0;border-radius:20px}
 .tier-dots .tier-band{background:var(--g-dots);color:var(--on-dots)}
 .tier-grid .tier-band{background:var(--g-grid);color:var(--on-grid)}
 .tier-lines .tier-band{background:var(--g-lines);color:var(--on-lines)}
+.tier-agency .tier-band{background:var(--g-agency);color:var(--on-agency)}
 .tier-band .tier-eyebrow,.tier-band .h2-sub,.tier-band .tier-meta,.tier-band .tier-meta b{color:inherit}
 .tier-band .h2-sub,.tier-band .tier-meta span{opacity:.85}
 .tier-band .tag.opt{background:rgba(255,255,255,.55);color:#111;border-color:transparent}
@@ -611,6 +617,7 @@ section.tier-lines{background:transparent;border:0;padding:0}
 .case-hero.tier-dots{background:var(--g-dots);color:var(--on-dots)}
 .case-hero.tier-grid{background:var(--g-grid);color:var(--on-grid)}
 .case-hero.tier-lines{background:var(--g-lines);color:var(--on-lines)}
+.case-hero.tier-agency{background:var(--g-agency);color:var(--on-agency)}
 .case-hero .crumb,.case-hero .case-code,.case-hero h1,.case-hero h1 .th,.case-hero .lede{color:inherit}
 .case-hero .crumb:hover{opacity:.7}
 .case-hero h1 .th,.case-hero .lede{opacity:.88}
@@ -649,6 +656,7 @@ section.tier-lines{background:transparent;border:0;padding:0}
 .sd-tier::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--g-dots)}
 .sd-tier.tier-grid::before{background:var(--g-grid)}
 .sd-tier.tier-lines::before{background:var(--g-lines)}
+.sd-tier.tier-agency::before{background:var(--g-agency)}
 .sd-list,.sd-sub{list-style:none;margin:0;padding:0}
 .sd-sub{margin:4px 0 8px 14px;padding-left:8px;border-left:2px solid var(--line)}
 .sd-sub button{min-height:36px;padding:6px 10px;font-size:13.5px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -694,6 +702,7 @@ section.tier-lines{background:transparent;border:0;padding:0}
 body[data-tier="dots"] .wft-pn{background:var(--g-dots);color:var(--on-dots)}
 body[data-tier="grid"] .wft-pn{background:var(--g-grid);color:var(--on-grid)}
 body[data-tier="lines"] .wft-pn{background:var(--g-lines);color:var(--on-lines)}
+body[data-tier="agency"] .wft-pn{background:var(--g-agency);color:var(--on-agency)}
 .wft-list{display:flex;flex-direction:column;gap:8px;margin-left:14px;padding-left:26px;border-left:2px solid var(--line)}
 .wft-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;padding:2px 8px 2px 2px;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;scroll-margin-top:calc(var(--topH,56px) + 64px)}
 .wft-row.claude{border-color:color-mix(in srgb,var(--red) 45%,var(--line))}
@@ -3027,8 +3036,7 @@ const CASES = [
  },
  {
   "id": "agency-1",
-  "tier": "grid",
-  "group": "agency",
+  "tier": "agency",
   "order": 6,
   "code": "Agency",
   "title": "KOL Report",
@@ -3083,7 +3091,7 @@ const CASES = [
     {
      "b": "ชุดไฟล์เคส KOL Report",
      "path": "Agency Files/KOL-Report/",
-     "url": "",
+     "url": "https://drive.google.com/drive/folders/1YLsl-mSWzeslAtbX7vu1hMQax0vfm_xF",
      "has": [
       "kol-posts_ลิงก์โพสต์KOL.xlsx (ชีตลิงก์โพสต์ TikTok จริง 3 โพสต์ คอลัมน์ตัวเลขยังว่าง ER เป็นสูตร)",
       "kol-report-template.pptx (Template รายงาน 7 หน้า ช่องที่ต้องเติมเขียนเป็น {{...}} และ speaker notes บอกว่าแต่ละช่องมาจากไหน)"
@@ -3220,8 +3228,7 @@ const CASES = [
  },
  {
   "id": "agency-2",
-  "tier": "grid",
-  "group": "agency",
+  "tier": "agency",
   "order": 7,
   "code": "Agency",
   "title": "Script Check",
@@ -3266,7 +3273,7 @@ const CASES = [
     {
      "b": "ชุดไฟล์เคส Script Check",
      "path": "Agency Files/Script-Check/",
-     "url": "",
+     "url": "https://drive.google.com/drive/folders/1IeQn2SD6Yu9xdug4tfHFaXxvh5Rbfq5j",
      "has": [
       "brief_บรีฟแคมเปญ.md (บรีฟกันแดดแบรนด์สมมติ ข้อความหลัก 3 ข้อ น้ำเสียง และ CTA)",
       "keywords_คำที่ต้องมีและห้ามใช้.xlsx (คำที่ต้องมี 5 แถว คำห้ามใช้ 5 แถว)",
@@ -3409,8 +3416,7 @@ const CASES = [
  },
  {
   "id": "agency-3",
-  "tier": "grid",
-  "group": "agency",
+  "tier": "agency",
   "order": 8,
   "code": "Agency",
   "title": "KOL Payment Docs",
@@ -3453,7 +3459,7 @@ const CASES = [
     {
      "b": "ชุดไฟล์เคส KOL Payment Docs",
      "path": "Agency Files/KOL-Payment/",
-     "url": "",
+     "url": "https://drive.google.com/drive/folders/1KVb-a5bh1GAWQvCGDllLZ33AL0Ej4G7l",
      "has": [
       "kol-payments_ค่าจ้างKOL.xlsx (ค่าจ้าง KOL สมมติ 5 คน เลขที่เอกสาร หัก ณ ที่จ่าย 3% และยอดสุทธิเป็นสูตร มี 1 คนที่ข้อมูลไม่ครบ)",
       "payment-request-template.docx (ใบขอเบิกค่าจ้าง KOL ช่องที่ต้องเติมเขียนเป็น {{...}})"
@@ -3589,9 +3595,502 @@ const CASES = [
    ],
    "s": "เอกสารไหนที่ทำซ้ำจากชีตทุกเดือน ลองใช้วิธีเดียวกัน: ตัวเลขอยู่ในสูตร Claude วางลง Template ข้อมูลไม่ครบให้หยุด แล้วคนอนุมัติ"
   }
+ },
+ {
+  "id": "agency-a1",
+  "tier": "agency",
+  "order": 1,
+  "code": "A1",
+  "title": "Data to One File",
+  "titleTh": "จากไฟล์หลายแหล่ง รวมเป็น Excel ไฟล์เดียวที่ตรวจย้อนได้",
+  "minutes": "30",
+  "mode": "hands-on",
+  "tools": [
+   "Claude Code"
+  ],
+  "lede": "ปิดแคมเปญทีไร ข้อมูลกระจายอยู่หลายที่ ทั้งไฟล์ export ค่าโฆษณาจาก Meta และ TikTok ชีตผลงาน KOL ชีตค่าจ้าง และยอดขายของลูกค้าจาก Shopee กับเว็บไซต์ เคสนี้ให้ Claude สำรวจทุกไฟล์ เสนอวิธีจับคู่ แล้วรวมเป็น Excel ไฟล์เดียว ที่ตัวเลขรวมเป็นสูตรและทุกแถวบอกที่มา",
+  "learn": [
+   "<b>ให้ Claude สำรวจและเสนอวิธีจับคู่ก่อนรวม</b> แต่ละไฟล์ใช้ชื่อคอลัมน์ไม่เหมือนกัน เช่น \"Amount spent\" กับ \"Cost\" เราดูแผนการจับคู่ก่อน Claude ถึงจะลงมือ<span class=\"use\">ใช้กับงานแบบนี้ได้: รวมรายงานโฆษณาหลายแพลตฟอร์ม · รวมยอดขายหลายช่องทาง</span>",
+   "<b>ใช้ตัวเชื่อมที่มีอยู่ในข้อมูล</b> เดือนเชื่อมค่าใช้จ่ายกับยอดขาย ส่วนโค้ดส่วนลดเชื่อม KOL แต่ละคนกับยอดขายที่เขาทำได้<span class=\"use\">ใช้กับงานแบบนี้ได้: วัดผล affiliate · เทียบผลงานพนักงานขายจากรหัสคูปอง</span>",
+   "<b>ไฟล์เดียวที่ตรวจย้อนได้</b> ทุกชีตมีคอลัมน์ Source และตัวเลขสรุปเป็นสูตรในชีต ไม่ใช่ตัวเลขที่ AI คิดเอง<span class=\"use\">ใช้กับงานแบบนี้ได้: รายงานประจำเดือนส่งลูกค้า · สรุปงบการตลาดรายไตรมาส</span>",
+   "<b>ข้อมูลขาดให้เว้นว่างและจดไว้</b> มี KOL 1 คนที่ยังไม่ส่งตัวเลข Saves Claude ต้องไม่เดา และต้องบอกในรายงานว่าตัวเลขไหนได้รับผลกระทบ<span class=\"use\">ใช้กับงานแบบนี้ได้: รายงานที่รอข้อมูลจากหลายฝ่าย · ปิดงบที่บางใบเสร็จยังไม่มา</span>"
+  ],
+  "deliver": [
+   "campaign-master.xlsx ไฟล์เดียวที่รวมข้อมูลทุกแหล่ง ดูได้ทั้งรายเดือน ราย KOL และราย media พร้อมชีต Missing data"
+  ],
+  "kit": {
+   "tools": [
+    {
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
+     "s": "ต้องใช้แพลน Pro ขึ้นไป",
+     "need": true
+    },
+    {
+     "b": "Excel หรือ Google Sheets",
+     "s": "เปิดดูไฟล์ master",
+     "need": false
+    }
+   ],
+   "settings": [
+    {
+     "b": "เปิด Code execution",
+     "s": "Settings → Capabilities → Code execution and file creation",
+     "need": true
+    }
+   ],
+   "files": [
+    {
+     "b": "ชุดไฟล์เคส Campaign Wrap",
+     "path": "Agency Files/Campaign-Wrap/",
+     "url": "https://drive.google.com/drive/folders/1P7biGL8OtOyvYwyw48SkT4S8l6bPEpUp",
+     "has": [
+      "campaign-info_ข้อมูลแคมเปญ.md (สินค้า ช่วงแคมเปญ งบ เป้ายอดขาย และโค้ดส่วนลด)",
+      "media_meta-ads.csv (export ค่าโฆษณา Meta รายเดือน แยก 2 ad set)",
+      "media_tiktok-ads.xlsx (export ค่าโฆษณา TikTok รายเดือน)",
+      "kol_ผลงานโพสต์.xlsx (ผลงาน 10 โพสต์ของ KOL 5 คน)",
+      "kol_ค่าจ้างและโค้ด.xlsx (ค่าจ้าง โค้ดส่วนลด และรูปของ KOL แต่ละคน)",
+      "sales_shopee.xlsx และ sales_เว็บไซต์แบรนด์.xlsx (ยอดขายของลูกค้ารายเดือน แยกตามโค้ดที่ใช้)",
+      "images/ (รูป KOL 5 รูปกับรูปสินค้า 3 รูป (ภาพสมมติ))"
+     ],
+     "short": "campaign-info_ข้อมูลแคมเปญ.md · media_meta-ads.csv · media_tiktok-ads.xlsx"
+    }
+   ],
+   "notes": [
+    "แบรนด์ KOL ตัวเลข และรูปทั้งหมดเป็นข้อมูลปลอม"
+   ]
+  },
+  "steps": [
+   {
+    "title": "เปิดโฟลเดอร์ใน Claude Code",
+    "setup": true,
+    "objective": "ให้ Claude เห็นไฟล์ทั้งหมดของแคมเปญ",
+    "todo": [
+     "ดาวน์โหลดโฟลเดอร์ Campaign-Wrap จากปุ่ม Agency Files ในหน้าแรก (Setup) แล้วแตกไฟล์",
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Campaign-Wrap"
+    ],
+    "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ในโฟลเดอร์"
+   },
+   {
+    "title": "สำรวจไฟล์ และเสนอวิธีจับคู่",
+    "objective": "รู้ว่าแต่ละไฟล์มีอะไร จะเชื่อมกันด้วยอะไร และมีข้อมูลไหนขาด ก่อนจะรวมจริง",
+    "expected": "Claude บอกว่าเชื่อมด้วยเดือนและโค้ดส่วนลด (LUMI-A ถึง LUMI-E = KOL แต่ละคน, LUMI10 = โฆษณา) มีตารางชื่อคอลัมน์ และเจอว่า Saves ของ KOL D โพสต์ 9 ก.ย. ยังว่าง",
+    "tip": "ถ้า Claude ยังไม่พูดถึงโค้ดส่วนลด ให้ถามว่า \"ยอดขายของ KOL แต่ละคนดูจากอะไรได้บ้าง\"",
+    "prompt": {
+     "en": "Read every file in this folder, including campaign-info_ข้อมูลแคมเปญ.md and the images folder.\n\nTell me:\n1. What each file contains (one line each).\n2. How the files connect: which column links media spend, KOL results and sales together.\n3. Columns that mean the same thing but have different names across files (e.g. spend vs cost). Show a table: file → column → what it means → the name we'll use.\n4. Anything missing or blank.\n\nDon't create or change any file yet. Wait for my approval.",
+     "th": "อ่านทุกไฟล์ในโฟลเดอร์นี้ รวมถึง campaign-info_ข้อมูลแคมเปญ.md และโฟลเดอร์ images\n\nบอกฉันว่า:\n1. แต่ละไฟล์มีข้อมูลอะไร (ไฟล์ละ 1 บรรทัด)\n2. ไฟล์เหล่านี้เชื่อมกันอย่างไร คอลัมน์ไหนใช้เชื่อมค่าโฆษณา ผลงาน KOL และยอดขายเข้าด้วยกัน\n3. คอลัมน์ที่ความหมายเดียวกันแต่แต่ละไฟล์ตั้งชื่อต่างกัน (เช่น ค่าโฆษณา กับ cost) ทำเป็นตาราง: ไฟล์ → คอลัมน์ → หมายถึงอะไร → ชื่อที่เราจะใช้\n4. ข้อมูลที่ขาดหรือช่องที่ว่าง\n\nตอนนี้ยังไม่ต้องสร้างหรือแก้ไฟล์ใด รอให้ฉันอนุมัติก่อน"
+    }
+   },
+   {
+    "title": "รวมเป็น Excel ไฟล์เดียว",
+    "objective": "ได้ไฟล์ master ไฟล์เดียวที่ดูได้ทั้งรายเดือน ราย KOL และราย media โดยทุกตัวเลขตรวจย้อนได้",
+    "expected": "มีไฟล์ Output/campaign-master.xlsx ครบ 6 ชีต แถวรวมในชีต Summary ได้ยอดขายรวม 2,145,476 บาท ใช้จ่ายรวม 503,000 บาท และ ROAS 4.27 เท่า ชีต Missing data มี Saves ของ KOL D",
+    "tip": "คลิกช่องยอดรวมดูว่าเป็นสูตรจริงไหม แล้วสุ่มเทียบ 1 แถวกับไฟล์ที่เขียนไว้ในคอลัมน์ Source",
+    "prompt": {
+     "en": "Approved. Create campaign-master.xlsx in a new folder called Output, with these sheets:\n- Summary by month: Month · Meta spend · TikTok spend · KOL fee · Total spend · Shopee sales · Website sales · Total sales · ROAS, plus a total row for the 3 months\n- Media: Meta and TikTok in one table with the same column names\n- KOL_Posts: one row per post, with Engagement and ER (%)\n- KOL_Summary: one row per KOL: fee, code, views, ER, CPV, CPE, units and sales through their code, sales ÷ fee, and the image file name\n- Sales: Shopee and website in one table, with a column saying where each sale came from (which KOL, ads code LUMI10, or no code)\n- Missing data\n\nRules:\n- 1 row = 1 record. Every sheet has a \"Source\" column with the original file name.\n- Totals, ER, CPV, CPE, ROAS and sales ÷ fee must be Excel formulas, not numbers you calculate.\n- Unit in the column header (THB, %). Months as YYYY-MM.\n- Never invent numbers. If something is blank, leave it blank and list it in \"Missing data\" with which numbers it affects.\nDon't change the original files.",
+     "th": "อนุมัติ สร้างไฟล์ campaign-master.xlsx ไว้ในโฟลเดอร์ใหม่ชื่อ Output โดยมีชีตตามนี้:\n- Summary รายเดือน: เดือน · ค่าโฆษณา Meta · ค่าโฆษณา TikTok · ค่าจ้าง KOL · ใช้จ่ายรวม · ยอดขาย Shopee · ยอดขายเว็บไซต์ · ยอดขายรวม · ROAS และแถวรวม 3 เดือน\n- Media: รวม Meta กับ TikTok ไว้ตารางเดียว ใช้ชื่อคอลัมน์ชุดเดียวกัน\n- KOL_Posts: 1 แถวต่อ 1 โพสต์ พร้อม Engagement และ ER (%)\n- KOL_Summary: 1 แถวต่อ KOL 1 คน: ค่าจ้าง โค้ด Views ER CPV CPE จำนวนชิ้นและยอดขายผ่านโค้ด ยอดขาย ÷ ค่าจ้าง และชื่อไฟล์รูป\n- Sales: รวม Shopee กับเว็บไซต์ไว้ตารางเดียว มีคอลัมน์บอกว่ายอดนั้นมาจากไหน (KOL คนไหน โค้ดโฆษณา LUMI10 หรือไม่ใช้โค้ด)\n- Missing data\n\nกติกา:\n- 1 แถว = 1 รายการ ทุกชีตมีคอลัมน์ \"Source\" บอกชื่อไฟล์ต้นทาง\n- ยอดรวม ER CPV CPE ROAS และยอดขาย ÷ ค่าจ้าง ต้องเป็นสูตร Excel ไม่ใช่ตัวเลขที่คุณคิดเอง\n- หน่วยอยู่ที่หัวคอลัมน์ (บาท, %) เดือนเขียนแบบ YYYY-MM\n- ห้ามแต่งตัวเลข ช่องไหนว่างให้เว้นว่างไว้ แล้วลงในชีต \"Missing data\" พร้อมบอกว่ากระทบตัวเลขไหน\nห้ามแก้ไฟล์ต้นฉบับ"
+    }
+   }
+  ],
+  "more": [
+   {
+    "b": "อยากได้ตัวเลขโพสต์แบบสด",
+    "s": "ดูเคส KOL Report ที่ดึงตัวเลขจาก TikTok ผ่าน Apify แล้วเอาชีตที่ได้มาแทนไฟล์ kol_ผลงานโพสต์.xlsx"
+   },
+   {
+    "b": "ต่อเคส A2",
+    "s": "เอาไฟล์ master ที่เพิ่งได้ไปทำสไลด์และ Dashboard"
+   }
+  ],
+  "workflow": [
+   {
+    "who": "claude",
+    "title": "สำรวจไฟล์ เสนอวิธีจับคู่",
+    "text": "ยังไม่สร้างอะไร",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 1
+   },
+   {
+    "who": "you",
+    "title": "อนุมัติวิธีจับคู่",
+    "text": "เดือน + โค้ดส่วนลด",
+    "step": 1
+   },
+   {
+    "who": "tool",
+    "title": "รวมเป็น master.xlsx",
+    "text": "ยอดรวมเป็นสูตร มี Source ทุกชีต",
+    "tools": [
+     "Excel"
+    ],
+    "step": 2
+   },
+   {
+    "who": "you",
+    "title": "สุ่มเทียบกับไฟล์ต้นทาง",
+    "text": "ก่อนเอาไปทำรายงาน",
+    "step": 2
+   }
+  ],
+  "finale": {
+   "h": "ไฟล์เดียวที่เชื่อถือได้",
+   "items": [
+    "รู้ว่าแต่ละไฟล์เชื่อมกันด้วยอะไร",
+    "campaign-master.xlsx ที่ตรวจย้อนได้ทุกแถว",
+    "ชีต Missing data ที่บอกว่าขาดอะไร"
+   ],
+   "s": "ข้อมูลกระจายกี่ไฟล์ก็ตาม ให้ Claude เสนอวิธีจับคู่ก่อน แล้วค่อยรวม ตัวเลขรวมต้องเป็นสูตรเสมอ"
+  }
+ },
+ {
+  "id": "agency-a2",
+  "tier": "agency",
+  "order": 2,
+  "code": "A2",
+  "title": "One File to Many Reports",
+  "titleTh": "จาก Excel ไฟล์เดียว เป็นสไลด์ส่งลูกค้าและ Dashboard ที่ตัวเลขตรงกัน",
+  "minutes": "30",
+  "mode": "hands-on",
+  "tools": [
+   "Claude Code",
+   "Artifacts"
+  ],
+  "lede": "พอมีไฟล์ master ไฟล์เดียวแล้ว ไม่ต้องเริ่มทำรายงานจากศูนย์ทุกครั้ง เคสนี้ให้ Claude ทำสไลด์สรุปแคมเปญที่หัวข้อทุกหน้าเป็นข้อสรุป และ Dashboard ที่แชร์เป็นลิงก์ได้ จากไฟล์เดียวกัน แล้วตรวจว่าตัวเลขทุกที่ตรงกัน",
+  "learn": [
+   "<b>ไฟล์เดียว ต่อได้หลายผลลัพธ์</b> สไลด์และ Dashboard ดึงจากไฟล์ master เดียวกัน ตัวเลขจึงตรงกันทุกที่<span class=\"use\">ใช้กับงานแบบนี้ได้: รายงานผู้บริหาร · หน้าสรุปที่แชร์ให้ลูกค้าดูเอง</span>",
+   "<b>หัวข้อสไลด์คือข้อสรุป ไม่ใช่ชื่อหัวข้อ</b> \"ยอดขายโตทุกเดือน\" บอกคนอ่านได้มากกว่า \"ยอดขายรายเดือน\"<span class=\"use\">ใช้กับงานแบบนี้ได้: รายงานผู้บริหาร · สรุปผลส่งลูกค้า</span>",
+   "<b>ตัวเลขที่ได้รับผลจากข้อมูลที่ขาด ต้องบอกไว้</b> ใส่ * แล้วอธิบายใต้ตาราง ลูกค้าจะเชื่อรายงานมากขึ้น ไม่ใช่น้อยลง<span class=\"use\">ใช้กับงานแบบนี้ได้: รายงานที่ยังรอตัวเลขบางส่วน · รายงานระหว่างแคมเปญ</span>",
+   "<b>ตรวจข้ามรูปแบบก่อนส่ง</b> ให้ Claude เทียบตัวเลขในสไลด์ Dashboard และไฟล์ master ว่าตรงกันทุกตัว<span class=\"use\">ใช้กับงานแบบนี้ได้: รายงานที่ทำหลายเวอร์ชัน · เอกสารที่หลายคนช่วยกันทำ</span>"
+  ],
+  "deliver": [
+   "สไลด์สรุปแคมเปญ campaign-report.pptx ประมาณ 8 หน้า Dashboard พร้อมลิงก์แชร์ และผลตรวจว่าตัวเลขตรงกันทุกที่"
+  ],
+  "kit": {
+   "tools": [
+    {
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
+     "s": "ต้องใช้แพลน Pro ขึ้นไป",
+     "need": true
+    },
+    {
+     "b": "Artifacts",
+     "s": "ใช้เผยแพร่ Dashboard ให้เป็นลิงก์ที่แชร์ได้",
+     "need": true
+    },
+    {
+     "b": "PowerPoint, Keynote หรือ Google Slides",
+     "s": "เปิดดูสไลด์",
+     "need": false
+    }
+   ],
+   "settings": [
+    {
+     "b": "เปิด Code execution",
+     "s": "Settings → Capabilities → Code execution and file creation",
+     "need": true
+    }
+   ],
+   "files": [
+    {
+     "b": "ชุดไฟล์เคส Campaign Wrap (โฟลเดอร์เดียวกับ A1)",
+     "path": "Agency Files/Campaign-Wrap/",
+     "url": "https://drive.google.com/drive/folders/1P7biGL8OtOyvYwyw48SkT4S8l6bPEpUp",
+     "has": [
+      "Output/campaign-master.xlsx (ไฟล์ที่ได้จาก A1)",
+      "A2-starter/campaign-master.xlsx (ไฟล์ master สำเร็จรูป สำหรับคนที่ยังไม่ได้ทำ A1)",
+      "images/ (รูป KOL 5 รูปกับรูปสินค้า 3 รูป (ภาพสมมติ))"
+     ],
+     "short": "Output/campaign-master.xlsx · A2-starter/campaign-master.xlsx · images/"
+    }
+   ],
+   "notes": [
+    "แบรนด์ KOL ตัวเลข และรูปทั้งหมดเป็นข้อมูลปลอม"
+   ]
+  },
+  "steps": [
+   {
+    "title": "เปิดโฟลเดอร์ และเช็กไฟล์ master",
+    "setup": true,
+    "objective": "มีไฟล์ master พร้อมใช้ใน Output",
+    "todo": [
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Campaign-Wrap เดิมจาก A1",
+     "ถ้ายังไม่มี Output/campaign-master.xlsx ให้สร้างโฟลเดอร์ Output แล้วก๊อปไฟล์จาก A2-starter ไปวาง"
+    ],
+    "expected": "มีไฟล์ Output/campaign-master.xlsx และ Claude เห็นโฟลเดอร์ images"
+   },
+   {
+    "title": "ทำสไลด์สรุปแคมเปญ",
+    "objective": "ได้สไลด์ส่งลูกค้าที่ทุกตัวเลขมาจากไฟล์ master",
+    "expected": "มีไฟล์ campaign-report.pptx ประมาณ 8 หน้า หน้า KOL มีรูปครบ 5 คน KOL C ได้ยอดขาย ÷ ค่าจ้างสูงสุด 7.00 เท่า และ ER ของ KOL D มี * กำกับ",
+    "tip": "หน้าตาสไลด์ของแต่ละคนจะไม่เหมือนกัน และอาจไม่ตรงใจตั้งแต่รอบแรก ให้สั่งแก้เป็นหน้าๆ ได้ แต่ตัวเลขต้องตรงกับไฟล์ master ทุกตัว",
+    "prompt": {
+     "en": "Using only Output/campaign-master.xlsx and the images folder, create Output/campaign-report.pptx (16:9, about 8 slides) for the client:\n1. Cover: campaign name and period, with a product image\n2. Overview: 4 numbers (total sales vs target, total spend vs budget, ROAS, total KOL views) and 1 sentence\n3. By month: spend vs sales chart and a short table\n4. Where sales came from: KOL codes, ads code, no code, with shares (%)\n5. KOL comparison: a table with each KOL's photo, views, ER, fee, sales through code, sales ÷ fee\n6. Best KOL: photo and key numbers\n7. Ads: Meta vs TikTok\n8. 3 next steps\n\nRules:\n- Every slide title is the takeaway in one sentence, not a topic.\n- Every number must match the master file. Add a small source line at the bottom of each slide.\n- If a number is affected by missing data, mark it with * and explain under the table.\n- White background, dark grey text, one accent colour. Leave a \"[LOGO agency]\" spot at the top right.",
+     "th": "ใช้ข้อมูลจาก Output/campaign-master.xlsx และโฟลเดอร์ images เท่านั้น สร้าง Output/campaign-report.pptx (16:9 ประมาณ 8 หน้า) ส่งลูกค้า:\n1. ปก: ชื่อแคมเปญและช่วงเวลา พร้อมรูปสินค้า\n2. ภาพรวม: ตัวเลข 4 ตัว (ยอดขายรวมเทียบเป้า ใช้จ่ายรวมเทียบงบ ROAS และ Views รวมของ KOL) กับสรุป 1 ประโยค\n3. รายเดือน: กราฟใช้จ่ายเทียบยอดขาย และตารางสั้นๆ\n4. ยอดขายมาจากไหน: โค้ด KOL โค้ดโฆษณา และไม่ใช้โค้ด พร้อมสัดส่วน (%)\n5. เทียบ KOL: ตารางที่มีรูป KOL แต่ละคน Views ER ค่าจ้าง ยอดขายผ่านโค้ด และยอดขาย ÷ ค่าจ้าง\n6. KOL เด่น: รูปและตัวเลขหลัก\n7. โฆษณา: เทียบ Meta กับ TikTok\n8. สิ่งที่ควรทำต่อ 3 ข้อ\n\nกติกา:\n- หัวข้อทุกหน้าเป็นข้อสรุปของหน้านั้น 1 ประโยค ไม่ใช่ชื่อหัวข้อ\n- ตัวเลขทุกตัวต้องตรงกับไฟล์ master และใส่บรรทัดที่มาเล็กๆ ไว้ล่างทุกหน้า\n- ตัวเลขไหนได้รับผลจากข้อมูลที่ขาด ให้ใส่ * แล้วอธิบายไว้ใต้ตาราง\n- พื้นขาว ตัวอักษรเทาเข้ม ใช้สีเน้นสีเดียว เว้นที่ \"[LOGO เอเจนซี่]\" ไว้มุมขวาบน"
+    }
+   },
+   {
+    "title": "ทำ Dashboard แล้วแชร์เป็นลิงก์",
+    "objective": "เอาไฟล์ master ไฟล์เดิมไปทำเป็นหน้าสรุปที่ลูกค้าเปิดดูเองได้",
+    "expected": "ได้ลิงก์ Artifact ที่เปิดดู Dashboard ได้ ตัวเลขบนการ์ดตรงกับสไลด์หน้า 2",
+    "tip": "รูปที่อยู่ในเครื่องอาจไม่ขึ้นบนลิงก์ Artifact ถ้าไม่ขึ้น ให้สั่ง Claude ฝังรูปเข้าไปในไฟล์ หรือตัดรูปออกจากตาราง",
+    "prompt": {
+     "en": "Using only Output/campaign-master.xlsx, build a single-file Output/dashboard.html:\n- Top: 4 number cards (total sales vs target, total spend vs budget, ROAS, total KOL views)\n- Chart: spend vs sales by month\n- Chart: where sales came from\n- Table: one row per KOL with photo, views, ER, CPE, fee, sales through code, sales ÷ fee\n- Table: Meta vs TikTok\n- A note under the KOL table about the missing data\nSame look as the slides. Chart.js from cdnjs. Numbers with thousand separators and units. Never invent numbers.\nThen publish it as an Artifact so I get a shareable link.",
+     "th": "ใช้ข้อมูลจาก Output/campaign-master.xlsx เท่านั้น สร้าง Output/dashboard.html ไฟล์เดียว:\n- บนสุด: การ์ดตัวเลข 4 ใบ (ยอดขายรวมเทียบเป้า ใช้จ่ายรวมเทียบงบ ROAS และ Views รวมของ KOL)\n- กราฟ: ใช้จ่ายเทียบยอดขายรายเดือน\n- กราฟ: ยอดขายมาจากไหน\n- ตาราง: 1 แถวต่อ KOL 1 คน มีรูป Views ER CPE ค่าจ้าง ยอดขายผ่านโค้ด และยอดขาย ÷ ค่าจ้าง\n- ตาราง: เทียบ Meta กับ TikTok\n- หมายเหตุใต้ตาราง KOL เรื่องข้อมูลที่ขาด\nหน้าตาเหมือนสไลด์ ใช้ Chart.js จาก cdnjs ตัวเลขมีคอมมาและหน่วย ห้ามแต่งตัวเลข\nจากนั้นเผยแพร่เป็น Artifact ให้ได้ลิงก์ที่แชร์ได้"
+    }
+   },
+   {
+    "title": "ตรวจว่าตัวเลขตรงกันทุกที่",
+    "objective": "แน่ใจว่าสไลด์ Dashboard และไฟล์ master ใช้ตัวเลขชุดเดียวกัน ก่อนส่งลูกค้า",
+    "expected": "ตารางที่ทุกแถวตรง หรือบอกจุดที่ไม่ตรงชัดๆ แล้วเราเป็นคนตัดสินว่าจะแก้ที่ไหน",
+    "tip": "ถ้าเจอจุดไม่ตรง ให้แก้ที่ไฟล์ master ก่อน แล้วสั่งทำสไลด์และ Dashboard ใหม่ อย่าแก้ตัวเลขในสไลด์ตรงๆ",
+    "prompt": {
+     "en": "Check every number in Output/campaign-report.pptx and Output/dashboard.html against Output/campaign-master.xlsx.\nShow a table: where (slide or dashboard section) → number shown → number in master → match or not.\nList anything that doesn't match. Don't fix anything yourself.",
+     "th": "ตรวจตัวเลขทุกตัวใน Output/campaign-report.pptx และ Output/dashboard.html เทียบกับ Output/campaign-master.xlsx\nทำเป็นตาราง: อยู่ที่ไหน (หน้าสไลด์หรือส่วนของ Dashboard) → ตัวเลขที่แสดง → ตัวเลขในไฟล์ master → ตรงหรือไม่ตรง\nลิสต์จุดที่ไม่ตรง ห้ามแก้เอง"
+    }
+   }
+  ],
+  "more": [
+   {
+    "b": "ใช้ Template ของเอเจนซี่",
+    "s": "ดูเคส KOL Report ที่เติมรายงานลง Template เดิม หน้าตาเหมือนกันทุกครั้ง"
+   },
+   {
+    "b": "เดือนหน้าสั่งคำเดียว",
+    "s": "ให้ Claude เขียน CLAUDE.md ประจำโฟลเดอร์ เก็บวิธีจับคู่และรูปแบบรายงานไว้ เดือนหน้าวางไฟล์ใหม่แล้วสั่ง \"อัปเดตรายงานเดือนนี้\""
+   }
+  ],
+  "workflow": [
+   {
+    "who": "claude",
+    "title": "ทำสไลด์จาก master",
+    "text": "หัวข้อ = ข้อสรุป",
+    "tools": [
+     "Claude Code",
+     "PowerPoint"
+    ],
+    "step": 1
+   },
+   {
+    "who": "claude",
+    "title": "ทำ Dashboard แล้วแชร์",
+    "text": "ไฟล์ master เดียวกัน",
+    "tools": [
+     "Artifacts"
+    ],
+    "step": 2
+   },
+   {
+    "who": "claude",
+    "title": "ตรวจตัวเลขข้ามทุกรูปแบบ",
+    "text": "บอกจุดไม่ตรง ไม่แก้เอง",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 3
+   },
+   {
+    "who": "you",
+    "title": "ตัดสินแล้วส่งลูกค้า",
+    "text": "แก้ที่ master ก่อนเสมอ",
+    "step": 3
+   }
+  ],
+  "finale": {
+   "h": "ไฟล์เดียว เล่าได้หลายแบบ",
+   "items": [
+    "สไลด์สรุปแคมเปญที่หัวข้อทุกหน้าเป็นข้อสรุป",
+    "Dashboard พร้อมลิงก์แชร์",
+    "ผลตรวจว่าตัวเลขตรงกันทุกที่"
+   ],
+   "s": "รายงานทุกแบบดึงจากไฟล์ master เดียวกัน ถ้าตัวเลขไม่ตรง ให้แก้ที่ต้นทาง ไม่แก้ที่ปลายทาง"
+  }
+ },
+ {
+  "id": "agency-a3",
+  "tier": "agency",
+  "order": 3,
+  "code": "A3",
+  "title": "Materials to Playbook",
+  "titleTh": "ถอดสูตรจากงานเก่า เป็น Playbook และ Template ใช้กับแคมเปญถัดไป",
+  "minutes": "40",
+  "mode": "hands-on",
+  "tools": [
+   "Claude Code",
+   "Skill skill-creator"
+  ],
+  "lede": "ทีมทำแคมเปญมาหลายครั้ง แต่สิ่งที่ได้ผลอยู่ในหัวคน เคสนี้ให้ Claude อ่านบรีฟและผลของ 3 แคมเปญที่ผ่านมา ถอดออกมาว่าอะไรทำให้ ER และยอดขายสูง เขียนเป็น Playbook ของทีม แล้วใช้ Playbook นั้นแปลงบันทึกคุยกับลูกค้าใหม่ให้เป็น Creative Brief, แผนคอนเทนต์ และโครงรายงานที่พร้อมใช้ตั้งแต่วันแรก",
+  "learn": [
+   "<b>ถอดสูตรจากหลายตัวอย่าง</b> แคมเปญเดียวบอกไม่ได้ว่าอะไรคือแพทเทิร์น ต้องเทียบหลายชุด แล้วดูว่าผลซ้ำกันไหม<span class=\"use\">ใช้กับงานแบบนี้ได้: ถอดสไตล์จากสไลด์ที่ลูกค้าชอบ · หาแพทเทิร์นโพสต์ที่ยอดดี</span>",
+   "<b>ทุกสูตรต้องมีตัวเลขยืนยัน</b> Claude ต้องบอกค่าเฉลี่ยและจำนวน KOL ที่ใช้คำนวณ ส่วนข้อไหนตัวอย่างน้อยก็ต้องบอกข้อจำกัดไว้<span class=\"use\">ใช้กับงานแบบนี้ได้: สรุปบทเรียนหลังแคมเปญ · ข้อเสนอให้ลูกค้าเปลี่ยนวิธี</span>",
+   "<b>คนตัดสินว่าอะไรคือสูตร อะไรคือบังเอิญ</b> KOL ที่มีผู้ติดตามล้านกว่าคนขายได้เยอะ แม้จะเปิดคลิปด้วยสินค้า แต่ยอดนั้นมาจากขนาดฐานผู้ติดตาม ไม่ได้มาจาก hook<span class=\"use\">ใช้กับงานแบบนี้ได้: อ่านผล A/B test · ตัดสินว่าจะเปลี่ยนกลยุทธ์ไหม</span>",
+   "<b>Playbook → Template → งานใหม่</b> สูตรที่ถอดได้กลายเป็นช่องใน Creative Brief และแผนคอนเทนต์ คนในทีมทุกคนจึงทำงานตามมาตรฐานเดียวกัน<span class=\"use\">ใช้กับงานแบบนี้ได้: บรีฟ KOL · content plan รายเดือน · รายงานหลังแคมเปญ</span>",
+   "<b>เก็บทั้งชุดเป็น Skill</b> แคมเปญหน้าสั่งคำเดียว Claude ก็อ่าน playbook แล้วทำบรีฟกับแผนให้ทันที<span class=\"use\">ใช้กับงานแบบนี้ได้: onboarding ลูกค้าใหม่ · งานที่ต้องทำซ้ำทุกเดือน</span>"
+  ],
+  "deliver": [
+   "playbook.md ของทีม Creative Brief และแผนคอนเทนต์ของลูกค้าใหม่ โครงรายงานฟ้า-ขาว และ Skill ที่ใช้ซ้ำได้"
+  ],
+  "kit": {
+   "tools": [
+    {
+     "b": "Claude Desktop → แท็บ Code (Claude Code)",
+     "s": "ต้องใช้แพลน Pro ขึ้นไป",
+     "need": true
+    },
+    {
+     "b": "PowerPoint, Keynote หรือ Google Slides",
+     "s": "เปิดดูโครงรายงาน",
+     "need": false
+    }
+   ],
+   "settings": [
+    {
+     "b": "เปิด Code execution",
+     "s": "Settings → Capabilities → Code execution and file creation",
+     "need": true
+    },
+    {
+     "b": "Skill: skill-creator",
+     "s": "อยู่ใน Starter Skill Pack แล้ว",
+     "need": true
+    }
+   ],
+   "files": [
+    {
+     "b": "ชุดไฟล์เคส Playbook",
+     "path": "Agency Files/Playbook/",
+     "url": "https://drive.google.com/drive/folders/1VhRJYUHnXxgzs1-VEq4jvzNI5YWl_cNY",
+     "has": [
+      "campaign-2026-02_mizu-clear/, campaign-2026-05_velvet-bloom/, campaign-2026-08_lumi-dew/ (แต่ละโฟลเดอร์มี brief.md และ results.xlsx (ประโยคเปิดคลิป CTA ท้ายคลิป Views ER ค่าจ้าง ยอดขายผ่านโค้ด และรอบแก้สคริปต์ของ KOL แต่ละคน))",
+      "new-client_บรีฟลูกค้าใหม่.md (บันทึกคุยกับลูกค้าใหม่ที่ยังไม่ได้เรียบเรียง)",
+      "report-template_ฟ้าขาว.pptx (โครงรายงานมาตรฐานของทีม ช่องที่ต้องเติมเขียนเป็น {{...}} และ speaker notes บอกว่าแต่ละช่องมาจากไหน)"
+     ],
+     "short": "campaign-2026-02_mizu-clear/, campaign-2026-05_velvet-bloom/, campaign-2026-08_lumi-dew/ · new-client_บรีฟลูกค้าใหม่.md · report-template_ฟ้าขาว.pptx"
+    }
+   ],
+   "notes": [
+    "แบรนด์ KOL และตัวเลขทั้งหมดเป็นข้อมูลปลอม"
+   ]
+  },
+  "steps": [
+   {
+    "title": "เปิดโฟลเดอร์ใน Claude Code",
+    "setup": true,
+    "objective": "ให้ Claude เห็นของเก่าทั้ง 3 แคมเปญ และบันทึกของลูกค้าใหม่",
+    "todo": [
+     "ดาวน์โหลดโฟลเดอร์ Playbook จากปุ่ม Agency Files ในหน้าแรก (Setup) แล้วแตกไฟล์",
+     "เปิด Claude Desktop → แท็บ Code (Claude Code) → เลือกโฟลเดอร์ Playbook"
+    ],
+    "expected": "ชื่อโฟลเดอร์ขึ้นในช่องแชท และ Claude เห็นไฟล์ในโฟลเดอร์"
+   },
+   {
+    "title": "ถอดสูตรจาก 3 แคมเปญ",
+    "objective": "รู้ว่าอะไรที่ทำให้ ER และยอดขายสูงซ้ำๆ พร้อมตัวเลขยืนยัน",
+    "expected": "เปิดคลิปด้วยปัญหาในชีวิตจริงได้ ER เฉลี่ย 6.54% เทียบกับ 4.26% · ปิดด้วยโค้ดพร้อมวันหมดเขตได้ยอดขาย 5.82 เท่าของค่าจ้าง เทียบกับ 3.03 เท่า · บรีฟ 3 ข้อแก้สคริปต์น้อยกว่า · และ Claude ชี้ว่า KOL I ไม่เข้าแพทเทิร์น",
+    "tip": "ถ้า Claude ไม่พูดถึง KOL I ให้ถามว่า \"ใครขายได้เยอะทั้งที่ไม่ได้ใช้สูตร เพราะอะไร\"",
+    "prompt": {
+     "en": "Read brief.md and results.xlsx in all 3 campaign folders.\n\n1. Group each KOL's opening line (first 3 seconds) into types, and each closing CTA into types. Show which KOL is in which group.\n2. For each group, give the average ER and the average sales ÷ fee, and how many KOLs are in it.\n3. Compare the briefs: number of key messages vs script revision rounds.\n4. List the patterns that repeat across campaigns, each with its numbers.\n5. Point out any KOL whose result doesn't fit a pattern, and what else might explain it.\n\nCalculate averages with code from the sheets, don't estimate. Don't write any file yet.",
+     "th": "อ่าน brief.md และ results.xlsx ของทั้ง 3 แคมเปญ\n\n1. จัดกลุ่มประโยคเปิดคลิป (3 วินาทีแรก) ของ KOL แต่ละคนเป็นประเภท และจัดกลุ่ม CTA ท้ายคลิปเป็นประเภท บอกด้วยว่า KOL คนไหนอยู่กลุ่มไหน\n2. แต่ละกลุ่มให้บอก ER เฉลี่ย ยอดขาย ÷ ค่าจ้างเฉลี่ย และมี KOL กี่คน\n3. เทียบบรีฟ: จำนวนข้อความหลัก กับจำนวนรอบแก้สคริปต์\n4. ลิสต์แพทเทิร์นที่เกิดซ้ำข้ามแคมเปญ พร้อมตัวเลขของแต่ละข้อ\n5. ชี้ KOL ที่ผลไม่เข้ากับแพทเทิร์น และบอกว่าอะไรอาจอธิบายได้\n\nคำนวณค่าเฉลี่ยด้วยโค้ดจากชีต ห้ามประมาณเอง ตอนนี้ยังไม่ต้องเขียนไฟล์"
+    }
+   },
+   {
+    "title": "เขียน Playbook",
+    "objective": "เก็บสูตรที่ใช้ได้จริงไว้ในไฟล์เดียวที่ทั้งทีมใช้",
+    "expected": "playbook.md มี 3–4 สูตร ทุกข้อมีตัวเลขยืนยัน มีหัวข้อ \"สิ่งที่ไม่ใช่สูตร\" ที่พูดถึง KOL I",
+    "tip": "อ่านแล้วตัดข้อที่ทีมไม่เห็นด้วยออกได้เลย คนเป็นคนตัดสิน ไม่ใช่ Claude",
+    "prompt": {
+     "en": "Write playbook.md from what we found. For each rule: the rule in one line, the evidence (averages and number of KOLs), one good example line from the data, how to use it, and its limits.\nAdd a section \"Not a rule\" for results we should not copy, with the reason.\nAdd a section \"Team standard\": every campaign report uses report-template_ฟ้าขาว.pptx, and its Playbook Check slide says whether each rule was used.\nPlain Thai, short sentences.",
+     "th": "เขียน playbook.md จากสิ่งที่เจอ แต่ละสูตรมี: สูตร 1 บรรทัด หลักฐาน (ค่าเฉลี่ยและจำนวน KOL) ตัวอย่างประโยคที่ได้ผลจากข้อมูล 1 ประโยค วิธีใช้ และข้อจำกัด\nเพิ่มหัวข้อ \"สิ่งที่ไม่ใช่สูตร\" สำหรับผลที่ไม่ควรลอกตาม พร้อมเหตุผล\nเพิ่มหัวข้อ \"มาตรฐานงานของทีม\": รายงานทุกแคมเปญใช้ report-template_ฟ้าขาว.pptx และหน้า Playbook Check ต้องบอกว่าใช้สูตรแต่ละข้อไหม\nภาษาไทยง่ายๆ ประโยคสั้น"
+    }
+   },
+   {
+    "title": "ใช้ Playbook กับลูกค้าใหม่",
+    "objective": "เปลี่ยนบันทึกคุยกับลูกค้าที่ยังไม่เรียบเรียง ให้เป็นงานที่พร้อมส่งต่อ 3 ชิ้น",
+    "expected": "Creative Brief เหลือข้อความหลัก 3 ข้อจาก 6 เรื่องที่ลูกค้าอยากพูด ส่วนลดและวันหมดเขตยังเป็น [รอลูกค้ายืนยัน] แผนคอนเทนต์ทุกแถวเปิดด้วยปัญหาและปิดด้วยโค้ดพร้อมวันหมดเขต และโครงรายงานมีชื่อแคมเปญ ส่วนผลลัพธ์ยังว่าง",
+    "tip": "ลองถามต่อ \"ลูกค้าอยากพูดครบ 6 เรื่อง ช่วยร่างข้อความอธิบายลูกค้าว่าทำไมเหลือ 3\" จะได้ข้อความไปคุยกับลูกค้าจริง",
+    "prompt": {
+     "en": "Using playbook.md, turn new-client_บรีฟลูกค้าใหม่.md into 3 files in a new folder Output:\n1. creative-brief_koko-shield.md: product, target, the problem to open with, max 3 key messages (say where the other messages go), tone, CTA, platform, goal and budget. Say which playbook rule each part follows.\n2. content-plan_koko-shield.xlsx: one row per planned post for January 2027: week, dates, platform, KOL type, opening problem, key messages, CTA, target ER, target sales ÷ fee. Also a second sheet \"Template\" with the same columns, empty.\n3. koko-shield_report-skeleton.pptx: report-template_ฟ้าขาว.pptx with campaign name, brand, period, target, budget and the 3 playbook rules filled in. Leave every result as {{...}}.\n\nAnything the client hasn't confirmed: write [รอลูกค้ายืนยัน], don't guess.",
+     "th": "ใช้ playbook.md แปลง new-client_บรีฟลูกค้าใหม่.md เป็น 3 ไฟล์ ไว้ในโฟลเดอร์ใหม่ชื่อ Output:\n1. creative-brief_koko-shield.md: สินค้า กลุ่มเป้าหมาย ปัญหาที่ใช้เปิดคลิป ข้อความหลักไม่เกิน 3 ข้อ (บอกด้วยว่าข้อที่เหลือย้ายไปไว้ไหน) น้ำเสียง CTA แพลตฟอร์ม เป้าหมายและงบ ระบุว่าแต่ละส่วนทำตามสูตรข้อไหนใน playbook\n2. content-plan_koko-shield.xlsx: 1 แถวต่อโพสต์ที่วางแผนไว้ใน ม.ค. 2027: สัปดาห์ ช่วงวันที่ แพลตฟอร์ม ประเภท KOL ปัญหาที่เปิดคลิป ข้อความหลัก CTA เป้า ER เป้ายอดขาย ÷ ค่าจ้าง และชีตที่ 2 ชื่อ \"Template\" ที่มีคอลัมน์เดียวกันแต่ว่างไว้\n3. koko-shield_report-skeleton.pptx: เอา report-template_ฟ้าขาว.pptx มาเติมชื่อแคมเปญ แบรนด์ ช่วงเวลา เป้า งบ และสูตร 3 ข้อจาก playbook ส่วนผลลัพธ์ทั้งหมดให้คงเป็น {{...}} ไว้\n\nอะไรที่ลูกค้ายังไม่ยืนยัน ให้เขียนว่า [รอลูกค้ายืนยัน] ห้ามเดา"
+    }
+   },
+   {
+    "title": "เก็บเป็น Skill",
+    "objective": "แคมเปญหน้าไม่ต้องสั่งทีละขั้นอีก",
+    "expected": "มี Skill campaign-playbook ใช้งานได้ และผลที่ได้ใกล้เคียงกับ Step 3",
+    "tip": "หลังจบแคมเปญจริง ให้สั่ง \"อัปเดต playbook จากผลแคมเปญนี้\" playbook จะได้แม่นขึ้นทุกรอบ",
+    "prompt": {
+     "en": "Use skill-creator to make a Skill called campaign-playbook.\nInput: a client brief or meeting notes. Output: the same 3 files as Step 3.\nPut playbook.md, report-template_ฟ้าขาว.pptx and the empty content plan template inside the Skill.\nRules: follow the playbook, max 3 key messages, write [รอลูกค้ายืนยัน] for anything missing, never invent numbers.\nThen test it on new-client_บรีฟลูกค้าใหม่.md and show me what changed compared to Step 3.",
+     "th": "ใช้ skill-creator สร้าง Skill ชื่อ campaign-playbook\nรับ: บรีฟลูกค้าหรือบันทึกประชุม ส่งออก: ไฟล์ 3 ชิ้นแบบเดียวกับ Step 3\nใส่ playbook.md, report-template_ฟ้าขาว.pptx และ template แผนคอนเทนต์เปล่าไว้ใน Skill\nกติกา: ทำตาม playbook ข้อความหลักไม่เกิน 3 ข้อ ข้อมูลไหนขาดให้เขียน [รอลูกค้ายืนยัน] ห้ามแต่งตัวเลข\nจากนั้นลองใช้กับ new-client_บรีฟลูกค้าใหม่.md แล้วบอกว่าผลต่างจาก Step 3 ตรงไหน"
+    }
+   }
+  ],
+  "more": [
+   {
+    "b": "ปิดวงจร",
+    "s": "พอแคมเปญ Koko Shield จบ เอาไฟล์ผลมารวมแบบ Workshop 1 ทำรายงานจากโครงที่เตรียมไว้แบบ Workshop 2 แล้วกลับมาอัปเดต playbook"
+   },
+   {
+    "b": "ถอดสไตล์งานนำเสนอ",
+    "s": "ใช้วิธีเดียวกันกับสไลด์ที่ลูกค้าชอบ ให้ Claude ถอดโครงหน้า น้ำเสียง และกติกาการแบ่งหน้า เป็นไฟล์ style reference ของทีม"
+   }
+  ],
+  "workflow": [
+   {
+    "who": "script",
+    "title": "คำนวณค่าเฉลี่ยจากชีต",
+    "text": "ไม่ประมาณเอง",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 1
+   },
+   {
+    "who": "claude",
+    "title": "ถอดแพทเทิร์นข้าม 3 แคมเปญ",
+    "text": "ทุกข้อมีตัวเลขยืนยัน",
+    "tools": [
+     "Claude Code"
+    ],
+    "step": 1
+   },
+   {
+    "who": "you",
+    "title": "ตัดสินว่าอะไรคือสูตร",
+    "text": "อะไรคือบังเอิญ",
+    "step": 2
+   },
+   {
+    "who": "claude",
+    "title": "Brief + แผนคอนเทนต์ + โครงรายงาน",
+    "text": "ตาม playbook",
+    "tools": [
+     "Claude Code",
+     "PowerPoint"
+    ],
+    "step": 3
+   },
+   {
+    "who": "tool",
+    "title": "เก็บทั้งชุดเป็น Skill",
+    "text": "แคมเปญหน้าสั่งคำเดียว",
+    "tools": [
+     "skill-creator"
+    ],
+    "step": 4
+   }
+  ],
+  "finale": {
+   "h": "งานเก่ากลายเป็นสูตรของทีม",
+   "items": [
+    "playbook.md ที่ทุกข้อมีตัวเลขยืนยัน",
+    "Creative Brief และแผนคอนเทนต์ของลูกค้าใหม่",
+    "โครงรายงานฟ้า-ขาว และ Skill campaign-playbook"
+   ],
+   "s": "จบแคมเปญเมื่อไหร่ เอาผลมาอัปเดต playbook สูตรของทีมจะแม่นขึ้นทุกรอบ"
+  }
  }
 ];
-const KIT = { agency:"", root:"https://drive.google.com/drive/folders/1hy5FPWZd-5Ignn9-ZmWtybPq6UTMxKvD?usp=sharing", dots:"", grid1:"", grid2:"", lines:{ morning:"", deck:"", portfolio:"", retire:"" } };
+const KIT = { agency:"https://drive.google.com/drive/folders/1N71wVjBUFT2Gj4j3TLe3FHXjpm_OAC7u", root:"https://drive.google.com/drive/folders/1hy5FPWZd-5Ignn9-ZmWtybPq6UTMxKvD?usp=sharing", dots:"", grid1:"", grid2:"", lines:{ morning:"", deck:"", portfolio:"", retire:"" } };
 const ROUTE_ALIAS = { "ws-0":"grid-1", "ws-4-1":"grid-1", "ws-4-3":"grid-2", "ws-4-4":"grid-3", "ex-1":"dots-1", "ex-3":"dots-2", "ex-2":"dots-3" };
 const ANATOMY = [{"t": "who", "lbl": "เราคือใคร + ข้อมูลสินค้า", "th": "ฉันมีแบรนด์สินค้าสัตว์เลี้ยงเล็กๆ ขายออนไลน์ผ่าน Shopee, TikTok Shop และ LINE OA ตอนนี้กำลังจะเปิดตัวสินค้าใหม่ เป็นพัดลมไฟฟ้าพกพาสำหรับสุนัข หนีบกับสายจูงหรือกระเป๋าสัตว์เลี้ยงได้ ชาร์จผ่าน USB-C ใช้ได้ประมาณ 4 ชั่วโมง ขายราคา 690 บาท งบการตลาดเดือนแรก 50,000 บาท ทีมมี 2 คน", "en": "I own a small pet-products brand that sells online through Shopee, TikTok Shop and LINE OA. I'm about to launch a new product: a portable electric fan for dogs that clips onto a leash or pet bag, charges via USB-C and runs for about 4 hours. It sells for 690 baht. The first-month marketing budget is 50,000 baht, and the team is 2 people."}, {"t": "why", "lbl": "เอาไปใช้ทำอะไร", "th": "ฉันจะเอาแผนนี้ไปคุยกับหุ้นส่วน เพื่อตัดสินใจว่าจะลงเงินตรงไหน", "en": "I'll use this plan with my business partner to decide where to put the money."}, {"t": "ctx", "lbl": "Context", "th": "บริบท: เมืองไทยร้อนเกือบทั้งปี คนเลี้ยงสุนัขในคอนโดมักพาไปเดินตอนเย็น และเจ้าของสุนัขหน้าสั้น (ปั๊ก เฟรนช์บูลด็อก ชิสุ) เป็นห่วงเรื่องสุนัขร้อนเป็นพิเศษ", "en": "Context: Thailand is hot almost all year. Condo dog owners usually walk their dogs in the evening, and owners of flat-faced breeds (Pug, French Bulldog, Shih Tzu) worry about overheating in particular."}, {"t": "out", "lbl": "หน้าตาผลลัพธ์", "th": "ช่วยวางแผนการตลาดสำหรับเดือนแรกของการเปิดตัว โดยตอบตามหัวข้อนี้:\n1. กลุ่มเป้าหมายหลัก 2 กลุ่ม: เป็นใคร มีปัญหาอะไร และอะไรทำให้ตัดสินใจซื้อ\n2. ข้อความหลัก 1 ประโยค พร้อมเหตุผลว่าทำไมต้องซื้อตอนนี้\n3. ตารางช่องทาง: ช่องทาง / หน้าที่ / งบ / KPI (รวมแล้วไม่เกิน 50,000 บาท)\n4. แผน 4 สัปดาห์ ว่าแต่ละสัปดาห์ทำอะไร\n5. ความเสี่ยง 3 ข้อ พร้อมวิธีรับมือแต่ละข้อ", "en": "Plan the marketing for the first month of the launch, in this format:\n1. 2 main target groups: who they are, their problem, and what makes them buy\n2. 1 key message, plus the reason to buy now\n3. Channel table: channel / role / budget / KPI (total no more than 50,000 baht)\n4. A 4-week timeline of what happens each week\n5. 3 risks and how to handle each"}, {"t": "rule", "lbl": "กติกา", "th": "กติกา:\n- ทุกเป้าหมายต้องมีตัวเลข ห้ามเขียนกว้างๆ เช่น \"สร้างการรับรู้\" เฉยๆ\n- ตัวเลขที่ประมาณเอง ให้ใส่ (ประมาณการ) ต่อท้าย\n- ห้ามอ้างสรรพคุณทางการแพทย์ เช่น \"ป้องกันฮีทสโตรก\"\n- เขียนเป็นภาษาไทย กระชับ อ่านจบใน 3 นาที", "en": "Rules:\n- Every goal needs a number. No vague goals like \"build awareness\".\n- Mark any number you estimate with (estimate).\n- No medical claims, such as \"prevents heatstroke\".\n- Write in Thai, concise, readable in 3 minutes."}, {"t": "fall", "lbl": "ถ้าข้อมูลไม่พอ", "th": "ไม่ต้องถามกลับ ถ้าข้อมูลไม่พอให้สมมติเอง แล้วเขียนสมมติฐานไว้ท้ายแผน", "en": "Don't ask me questions. If information is missing, make an assumption and list your assumptions at the end of the plan."}];  /* tagged parts of the long prompt (dots-1) */
 const CHEAT = {"groups": [{"g": "Output style", "gs": "ตอบหน้าตาแบบไหน", "items": [{"n": "Concise", "h": "ตอบแค่ประเด็น", "why": "ตัดคำเกริ่น คำชมคำถาม และการทวนคำถามออก คำตอบจึงมาเร็วและอ่านสั้นลง", "where": "all", "en": "Get straight to the point. Skip the preamble, compliments, and restating my question. Start with the answer.", "th": "ตอบเข้าประเด็นเลย ไม่ต้องเกริ่น ไม่ต้องชมคำถาม และไม่ต้องทวนคำถาม ให้เริ่มที่คำตอบทันที"}, {"n": "Structured", "h": "สรุปก่อน ขยายทีหลัง", "why": "เห็นคำตอบก่อน แล้วรายละเอียดค่อยตามมา อ่านแค่ 2 บรรทัดแรกก็เข้าใจเรื่อง", "where": "all", "en": "Open with a 1–2 line summary of the answer. Then add details, using short sections only when the content needs it.", "th": "เริ่มด้วยสรุปคำตอบ 1–2 บรรทัด แล้วค่อยขยายรายละเอียด และแบ่งหัวข้อย่อยเฉพาะตอนที่เนื้อหาจำเป็น"}, {"n": "Consulting Tone", "h": "ตรง มีจุดยืน", "why": "ให้ Claude เลือกข้างและบอกเหตุผล แทนการตอบว่า “ขึ้นอยู่กับหลายปัจจัย”", "where": "all", "en": "Talk to me like a sharp consultant: be direct, take a clear position, and give your reasoning. Don't hedge or list every possibility without picking one.", "th": "ตอบแบบที่ปรึกษา คือตรงไปตรงมา มีจุดยืนชัด และให้เหตุผลด้วย ไม่ตอบกลางๆ และไม่ไล่ทุกความเป็นไปได้โดยไม่เลือกสักข้อ"}]}, {"g": "Thinking logic", "gs": "คิดแบบไหนก่อนตอบ", "items": [{"n": "Ask First", "h": "ไม่ชัดให้ถามกลับ", "why": "ถ้าโจทย์กว้างเกินไป Claude จะถามกลับก่อน แทนที่จะเดาแล้วทำไปผิดทาง", "where": "all", "en": "If my request is unclear or missing key information, ask me 1–2 questions before answering. Don't guess what I mean.", "th": "ถ้าโจทย์ไม่ชัดหรือขาดข้อมูลสำคัญ ให้ถามกลับ 1–2 ข้อก่อนตอบ อย่าเดาเอง"}, {"n": "Source Only", "h": "ไม่มีในไฟล์ บอกว่าไม่มี", "why": "ใช้เฉพาะข้อมูลจากไฟล์ที่ให้ ถ้าไม่มีก็บอกตรงๆ จะได้ไม่มีตัวเลขหรือชื่อที่ AI แต่งขึ้นมาเอง", "where": "proj", "en": "Answer only from the files in this project. If the answer isn't there, say so clearly instead of filling the gap. Never invent numbers, names, or quotes.", "th": "ตอบจากไฟล์ใน Project นี้เท่านั้น ถ้าไม่มีข้อมูลให้บอกตรงๆ ว่าไม่มี ห้ามแต่งตัวเลข ชื่อ หรือคำพูดขึ้นมาเอง"}, {"n": "Push Back", "h": "เห็นว่าเสี่ยงให้ค้าน", "why": "ให้ Claude ท้วงพร้อมเหตุผลเมื่อแผนมีจุดเสี่ยง แทนที่จะเห็นด้วยกับทุกเรื่อง", "where": "all", "en": "If my plan or assumption looks risky or wrong, push back and explain why. Don't agree with me just to be polite.", "th": "ถ้าเห็นว่าแผนหรือสมมติฐานของฉันเสี่ยงหรือผิด ให้ค้านพร้อมเหตุผล ไม่ต้องเห็นด้วยเพียงเพื่อความสุภาพ"}]}, {"g": "Trigger words", "gs": "พิมพ์คำเดียว เปลี่ยนโหมดทันที", "items": [{"n": "Exec Summary", "h": "สรุปให้ผู้บริหาร", "why": "พิมพ์คำนี้ต่อท้าย Chat ที่ยาว จะได้สรุป 5 บรรทัดที่ส่งให้หัวหน้าได้เลย", "where": "trig", "en": "When I type \"Exec Summary\": summarize this conversation for an executive in 5 lines, covering the key point, the important numbers, and the decision needed.", "th": "ถ้าฉันพิมพ์ \"Exec Summary\" ให้สรุปบทสนทนานี้สำหรับผู้บริหารใน 5 บรรทัด ครอบคลุมประเด็นหลัก ตัวเลขสำคัญ และสิ่งที่ต้องตัดสินใจ"}, {"n": "Skeptic", "h": "หาจุดที่อาจผิด", "why": "ให้ Claude ลองเถียงข้อสรุปของตัวเอง ใช้ก่อนเชื่อข้อสรุปหรือก่อนส่งงานต่อทุกครั้ง", "where": "trig", "en": "When I type \"Skeptic\": find 3 ways your last conclusion could be wrong, and say what evidence would prove each one.", "th": "ถ้าฉันพิมพ์ \"Skeptic\" ให้หา 3 จุดที่ข้อสรุปล่าสุดอาจไม่ถูก และบอกว่าต้องมีหลักฐานอะไรมาพิสูจน์แต่ละข้อ"}, {"n": "Ideation", "h": "ขอไอเดียกว้างๆ", "why": "ได้ 10 ทางเลือกโดยยังไม่ตัดสิน เหมาะกับตอนที่ยังไม่รู้ว่าอยากได้อะไร", "where": "trig", "en": "When I type \"Ideation\": give me 10 different options, from safe to bold. Don't rank or judge them yet.", "th": "ถ้าฉันพิมพ์ \"Ideation\" ให้เสนอ 10 ทางที่ต่างกัน ตั้งแต่ปลอดภัยไปจนถึงกล้าลอง ยังไม่ต้องจัดอันดับหรือตัดสิน"}]}], "test": {"en": "I run a small café with one branch. Should I open a second branch or start selling online first?", "th": "ฉันมีร้านกาแฟเล็กๆ อยู่ 1 สาขา ควรเปิดสาขาสองหรือเริ่มขายออนไลน์ก่อนดี?"}, "tips": ["<b>เริ่มแค่ 3–4 ข้อพอ</b> ถ้าใส่เยอะเกินไป คำสั่งจะเริ่มขัดกันเอง ลองใช้สักสัปดาห์แล้วค่อยเพิ่ม", "<b>Ask First</b> ทำให้ Claude ถามกลับบ่อยขึ้น ถ้ารำคาญก็เอาออกได้", "<b>Source Only</b> เหมาะกับ Project ที่มีไฟล์ ถ้าใส่ไว้ทุก Chat Claude จะตอบคำถามทั่วไปไม่ได้"], "langNote": "แนะนำให้วางเป็นภาษาอังกฤษ เพราะภาษาไทยใช้ token (หน่วยที่ AI ใช้นับข้อความ) มากกว่า และคำสั่งพวกนี้ถูกอ่านทุกครั้งที่เริ่ม Chat ส่วน Claude จะตอบเป็นภาษาไทยตามที่เราพิมพ์ถามเหมือนเดิม", "setupNote": "Source Only ให้วางใน Project แทน โดยเปิด Project แล้วใส่ในช่อง Instructions (ต้องใช้แพลนเสียเงิน) ส่วน Trigger word วางใน Settings พร้อมคำสั่งอื่นได้เลย แล้วพิมพ์คำนั้นใน Chat เมื่ออยากใช้"};  /* copy cards for dots-3 */
@@ -3609,7 +4108,8 @@ const app = document.getElementById("app");
 const TIERS = {
   dots:  { en:"Connect the Dots", th:"แบบฝึก 1 ขั้น", n:3 },
   grid:  { en:"Build the Grid",   th:"เคสใหญ่ ต่อกันเป็นระบบ", n:4 },
-  lines: { en:"Draw the Line",    th:"งานง่าย/งานอัตโนมัติ ทำต่อเองได้", n:3, opt:true }
+  lines: { en:"Draw the Line",    th:"งานง่าย/งานอัตโนมัติ ทำต่อเองได้", n:3, opt:true },
+  agency:{ en:"Agency",           th:"เคสสำหรับงานเอเจนซี่: ดึงข้อมูล รวมไฟล์ ทำรายงาน", n:3 }
 };
 const SKILLS = [
   { b:"grilling", s:"ให้ Claude ถามกลับทีละข้อ จนแผนของเราชัดขึ้น" },
@@ -3645,7 +4145,9 @@ const MOTIF = {
   grid:{ c:[["#B0002E","#F0507F"],["#D81B60","#FF8A65"],["#C2185B","#FF7A8A"],["#E53935","#FFA06A"]],
     s:`<circle cx="19" cy="19" r="8.2" fill="url(#mg0)"/><circle cx="37" cy="19" r="8.2" fill="url(#mg1)"/><circle cx="19" cy="37" r="8.2" fill="url(#mg2)"/><circle cx="37" cy="37" r="8.2" fill="url(#mg3)"/>` },
   lines:{ c:[["#8CC21A","#2FB89A"],["#2E8F8A","#9AD13A"]],
-    s:`<rect x="5" y="24.5" width="26" height="7" rx="3.5" fill="url(#mg0)"/><circle cx="42" cy="28" r="9" fill="url(#mg1)"/>` }
+    s:`<rect x="5" y="24.5" width="26" height="7" rx="3.5" fill="url(#mg0)"/><circle cx="42" cy="28" r="9" fill="url(#mg1)"/>` },
+  agency:{ c:[["#0B1F3A","#1E6FD9"],["#1E3A6E","#4A90E2"],["#1E6FD9","#7FB8F5"]],
+    s:`<rect x="8" y="30" width="10" height="18" rx="3" fill="url(#mg0)"/><rect x="23" y="20" width="10" height="28" rx="3" fill="url(#mg1)"/><rect x="38" y="9" width="10" height="39" rx="3" fill="url(#mg2)"/>` }
 };
 const motif = t => { const m = MOTIF[t], id = "mf-" + t;
   const defs = m.c.map((c,i) => `<linearGradient id="${id}-g${i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c[0]}"/><stop offset="1" stop-color="${c[1]}"/></linearGradient>`).join("");
@@ -3682,14 +4184,14 @@ function caseCard(c){
     <span class="go" aria-hidden="true">${ICON_ARROW}</span>
   </a>`;
 }
-const TIER_NOUN = { dots:"exercises", grid:"cases", lines:"workshops" };
+const TIER_NOUN = { dots:"exercises", grid:"cases", lines:"workshops", agency:"cases" };
 function renderTier(t){
   const T = TIERS[t], list = CASES.filter(c => c.tier === t).sort((a,b) => a.order - b.order);
   const mins = list.reduce((n,c) => n + (parseInt(c.minutes, 10) || 0), 0);
   return `<section class="tier tier-${t}" id="tier-${t}">
     <header class="tier-band">
       <span class="tier-icon">${motif(t)}</span>
-      <div class="tier-t"><span class="tier-eyebrow">Tier ${["dots","grid","lines"].indexOf(t) + 1}</span><h2>${T.en}</h2><p class="h2-sub">${T.th}</p></div>
+      <div class="tier-t"><span class="tier-eyebrow">${t === "agency" ? "Agency Track" : "Tier " + (["dots","grid","lines"].indexOf(t) + 1)}</span><h2>${T.en}</h2><p class="h2-sub">${T.th}</p></div>
       <div class="tier-meta"><b>${list.length} ${TIER_NOUN[t]}</b><span>about ${mins} min</span>${T.opt ? '<span class="tag opt">Optional · self-paced</span>' : ""}</div>
     </header>
     <div class="grid">${list.map(caseCard).join("")}</div>
@@ -3781,9 +4283,9 @@ function renderHub(){
     <p class="lede">ทุกเคสเริ่มจากเป้าหมายก่อน เพราะถ้าลองคิดเองก่อนว่าจะสั่งอะไร จะเข้าใจ Prompt มากกว่า<span style="white-space:nowrap">การก๊อปไปวางเฉยๆ</span></p>
     ${renderSetup()}
     ${renderGlossary()}
-    ${["dots","grid","lines"].map(renderTier).join("")}
+    ${["dots","grid","lines","agency"].map(renderTier).join("")}
     <p class="foot">© 2026 Co-Thinking with AI · All rights reserved</p>`;
-  renderSide(null, [{ id:"sec-setup", label:"Setup" }, { id:"sec-gloss", label:"คำที่ควรรู้" }, ...["dots","grid","lines"].map(t => ({ id:"tier-" + t, label:TIERS[t].en }))]);
+  renderSide(null, [{ id:"sec-setup", label:"Setup" }, { id:"sec-gloss", label:"คำที่ควรรู้" }, ...["dots","grid","lines","agency"].map(t => ({ id:"tier-" + t, label:TIERS[t].en }))]);
   wireCopy(app);
   wireSetup(app);
 }
@@ -3901,6 +4403,9 @@ const WF_PHASES = {
   "agency-1":[["Collect",1,4],["Fill the template",5,5],["Check and send",6,6]],
   "agency-2":[["Check words",1,2],["Check against brief",3,4],["Save and reuse",5,6]],
   "agency-3":[["Check the sheet",1,2],["Make the docs",3,4],["Check and approve",5,6]],
+  "agency-a1":[["Map the files",1,2],["One master file",3,4]],
+  "agency-a2":[["Slides",1,1],["Dashboard",2,2],["Check and send",3,4]],
+  "agency-a3":[["Find the formula",1,2],["Write the playbook",3,3],["Use it and save it",4,5]],
   "grid-4":[["Prepare the context",1,1],["Do it once by hand",2,3],["Turn it into a Skill",4,5],["Run and improve",6,8]],
   "grid-2":[["Set up and give the task",1,2],["Pull and analyze their ads",3,4],["Find the gaps",5,6]],
   "lines-1":[["Connect and check",1,3],["Build the brief",4,6],["Schedule it for 8:00",7,7]],
@@ -4027,7 +4532,7 @@ function renderSide(c, sub){
   const subList = items => items && items.length ? `<ul class="sd-sub">${items.map(x => `<li><button type="button" data-go="${x.id}" title="${esc(x.label)}">${esc(x.label)}</button></li>`).join("")}</ul>` : "";
   side.innerHTML = `<nav aria-label="เมนู">
     <a href="#home"${c ? "" : ' aria-current="page"'}>หน้าแรก</a>${c ? "" : subList(sub)}
-    ${[["dots", TIERS.dots.en], ["grid", TIERS.grid.en], ["lines", TIERS.lines.en], ["audit", "Audit Class"], ["agency", "Agency"]].map(([t, label]) => `<p class="sd-tier tier-${TIERS[t] ? t : "grid"}">${label}</p>
+    ${[["dots", TIERS.dots.en], ["grid", TIERS.grid.en], ["lines", TIERS.lines.en], ["audit", "Audit Class"], ["agency", TIERS.agency.en]].map(([t, label]) => `<p class="sd-tier tier-${TIERS[t] ? t : "grid"}">${label}</p>
     <ul class="sd-list">${CASES.filter(x => TIERS[t] ? x.tier === t && !x.group : x.group === t).sort((a, b) => a.order - b.order).map(x => {
       const on = c && x.id === c.id;
       return `<li><a href="#${x.id}"${on ? ' aria-current="page"' : ""}><span class="sd-code">${esc(x.code)}</span>${esc(x.title)}</a>${on ? subList(sub) : ""}</li>`;
